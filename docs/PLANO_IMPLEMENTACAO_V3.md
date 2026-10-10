@@ -39,7 +39,7 @@
 - [x] Testes de disponibilidade HTTP das 12 rotas (100% status 200 OK).
 - [x] Emissão do relatório final `docs/HOMOLOGACAO_V3.md`.
 
-#### Fase 6: Versionamento Git e Deploy Netlify (EM ANDAMENTO)
-- [ ] Commit semântico no branch `main`.
-- [ ] Envio para `origin main` via `git push`.
-- [ ] Verificação do status de publicação no Netlify.
+#### Fase 6: Versionamento Git e Deploy Netlify (CONCLUÍDA)
+- [x] Commit semântico no branch `main`.
+- [x] Envio para `origin main` via `git push`.
+- [x] Verificação do status de publicação no Netlify.
