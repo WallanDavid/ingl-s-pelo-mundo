@@ -1,0 +1,127 @@
+---
+const testimonials = [
+  {
+    name: 'Márcia',
+    image: '/images/depoimento 2.o marcia.png',
+    role: 'Aluna Autêntica',
+    tag: 'Destravou a fala',
+    quote: 'Depois de anos travada na gramática de cursinhos tradicionais, com a Amanda eu finalmente entendi os sons e perdi a vergonha de falar!',
+  },
+  {
+    name: 'Felipe',
+    image: '/images/depoimento 3.o felipe.png',
+    role: 'Aluno Autêntico',
+    tag: 'Rotina e Constância',
+    quote: 'A plataforma com o mapa semanal e o SOS Professora é outro nível. Você nunca se sente sozinho no processo.',
+  },
+  {
+    name: 'Diego',
+    image: '/images/depoimento 3.o diego.png',
+    role: 'Aluno Autêntico',
+    tag: 'Método A.U.T.E.N.T.I.C.A',
+    quote: 'As aulas ao vivo de quarta-feira com a Amanda fazem toda a diferença. O método é prático e vai direto ao ponto sem enrolação.',
+  },
+  {
+    name: 'Jaqueline',
+    image: '/images/depoimento 3.o jaqueline.png',
+    role: 'Aluna Autêntica',
+    tag: 'Pronúncia Real',
+    quote: 'Os 4Ps de pronúncia me fizeram entender os padrões sonoros que nenhum outro professor me explicou. Recomendo de olhos fechados!',
+  },
+  {
+    name: 'Gabriel',
+    image: '/images/depoimento 3.o gabriel.png',
+    role: 'Aluno Autêntico',
+    tag: 'Vocabulário SRS',
+    quote: 'O sistema de repetição em 3 etapas (ouvir, pronunciar, traduzir) faz as palavras fixarem na cabeça sem esforço de decoreba.',
+  },
+  {
+    name: 'Paloma',
+    image: '/images/depoimento 3.o paloma.png',
+    role: 'Aluna Autêntica',
+    tag: 'Vivência Global',
+    quote: 'Aprender inglês com séries e músicas sem medo de errar transformou meus estudos. Me sinto muito mais confiante.',
+  },
+  {
+    name: 'Paulo',
+    image: '/images/depoimento 3.o paulo.png',
+    role: 'Aluno Autêntico',
+    tag: 'Evolução Rápida',
+    quote: 'O certificado a cada 3 meses dá uma sensação maravilhosa de conquista. Você vê seu progresso acontecendo na prática.',
+  },
+  {
+    name: 'Raulino',
+    image: '/images/depoimento 3.o raulino.png',
+    role: 'Aluno Autêntico',
+    tag: 'Comunidade e Suporte',
+    quote: 'A energia da Amanda nas aulas contagia. É a primeira vez na vida que tenho consistência de estudar todos os dias.',
+  },
+];
+---
+
+<section id="depoimentos" class="py-20 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Cabeçalho da Seção -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>⭐ Prova Social Verificada</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight leading-tight">
+        Alunos Reais. <span class="gradient-text-amber">Transformação Real</span>.
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+        Veja o que dizem os estudantes que abandonaram métodos engessados e conquistaram a fala autêntica com o Método Amanda Beatriz.
+      </p>
+    </div>
+
+    <!-- Grid de Depoimentos Reais -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {testimonials.map((t) => (
+        <div class="glass-card p-5 rounded-2xl flex flex-col justify-between group">
+          <div>
+            <!-- Imagem Original do Depoimento -->
+            <div class="rounded-xl overflow-hidden bg-slate-950/80 border border-white/10 mb-4 group-hover:border-amber-400/40 transition-colors">
+              <img
+                src={t.image}
+                alt={`Depoimento verificado de ${t.name}`}
+                class="w-full h-44 object-contain p-2 hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                onerror="this.style.display='none'"
+              />
+            </div>
+
+            <!-- Cabeçalho do Card -->
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 rounded-full">
+                {t.tag}
+              </span>
+              <div class="flex text-amber-400 text-xs">
+                ★★★★★
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-300 leading-relaxed italic mt-2">
+              "{t.quote}"
+            </p>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs">
+            <span class="font-bold text-white">{t.name}</span>
+            <span class="text-slate-400">{t.role}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Garantia e Confiança -->
+    <div class="mt-14 max-w-2xl mx-auto p-6 rounded-2xl glass-panel text-center border border-white/10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <span class="text-3xl">🛡️</span>
+      <div class="text-left text-xs sm:text-sm text-slate-300">
+        <strong class="text-white block font-heading text-sm sm:text-base">Garantia Incondicional de 7 Dias</strong>
+        Entre na plataforma, assista às aulas e teste os recursos. Se não for para você, devolvemos 100% do seu valor com um único clique.
+      </div>
+    </div>
+
+  </div>
+</section>

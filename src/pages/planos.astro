@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PricingCard from '../components/PricingCard.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+
+const pageTitle = 'Planos e Matrícula | Fluente no Mundo - A partir de R$ 39,90/mês';
+const pageDesc = 'Matricule-se no Fluente no Mundo por apenas R$ 39,90/mês. Aulas ao vivo semanais, SOS Professora em 48h, repetição espaçada e garantia de 7 dias.';
+
+const pricingFaqs = [
+  {
+    question: 'Como funciona a cobrança da assinatura mensal de R$ 39,90?',
+    answer: 'A assinatura mensal é debitada automaticamente no seu cartão de crédito a cada 30 dias, como uma assinatura de streaming. Você não compromete o limite total do cartão com um valor anual elevado e pode cancelar a qualquer momento sem multas.',
+  },
+  {
+    question: 'Posso pagar por PIX?',
+    answer: 'Sim! Aceitamos PIX para o plano anual à vista com desconto especial, garantindo liberação imediata do seu acesso à plataforma.',
+  },
+  {
+    question: 'Como solicito o reembolso caso eu não me adapte nos primeiros 7 dias?',
+    answer: 'É simples e sem constrangimento. Basta entrar em contato com nossa equipe pela própria plataforma ou pelo suporte de e-mail/WhatsApp dentro do prazo de 7 dias e o reembolso integral será processado imediatamente.',
+  },
+  {
+    question: 'O plano mensal inclui mesmo as aulas ao vivo com a Prof. Amanda?',
+    answer: 'Sim! Todos os alunos matriculados, sejam do plano mensal ou anual, têm acesso garantido às aulas ao vivo semanais às quartas-feiras e ao acervo completo de gravações.',
+  },
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDesc}
+  canonicalUrl="https://fluentenomundo.com/planos"
+>
+  
+  <!-- CABEÇALHO DA PÁGINA -->
+  <section class="py-16 sm:py-20 relative border-b border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>💎 Escolha o Seu Plano</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-heading font-black text-white tracking-tight leading-tight">
+        Invista na sua <span class="gradient-text-indigo">fluência real</span>
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+        Acesso completo à plataforma, cronogramas diários, aulas ao vivo semanais e mentoria individual com a Prof. Amanda Beatriz.
+      </p>
+    </div>
+  </section>
+
+  <!-- CARDS DE PLANOS -->
+  <PricingCard />
+
+  <!-- SELOS DE SEGURANÇA E FORMAS DE PAGAMENTO -->
+  <section class="py-12 border-y border-white/5 bg-[#070b16]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-xs uppercase font-bold tracking-widest text-slate-400 block mb-6">
+        Formas de Pagamento Seguras & Homologadas
+      </span>
+      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-slate-400 text-sm">
+        <div class="flex items-center gap-2">
+          <span>⚡</span>
+          <strong class="text-white">PIX Instantâneo</strong>
+        </div>
+        <div class="flex items-center gap-2">
+          <span>💳</span>
+          <strong class="text-white">Cartão de Crédito</strong>
+        </div>
+        <div class="flex items-center gap-2">
+          <span>📄</span>
+          <strong class="text-white">Boleto Bancário</strong>
+        </div>
+        <div class="flex items-center gap-2 text-emerald-400">
+          <span>🔒</span>
+          <strong>Checkout Criptografado SSL</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ DE PREÇOS -->
+  <FaqAccordion
+    items={pricingFaqs}
+    title="Dúvidas sobre Matrícula e Pagamento"
+    subtitle="Esclarecimentos transparentes para você se matricular com total segurança."
+  />
+
+</BaseLayout>

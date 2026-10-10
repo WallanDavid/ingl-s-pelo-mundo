@@ -1,0 +1,34 @@
+# Node & Build artifacts
+node_modules/
+dist/
+.dist/
+build/
+.astro/
+.next/
+.cache/
+.netlify/
+
+# Large media files exceeding GitHub limits (>100MB) or raw camera dumps
+media/
+*.mp4
+*.mov
+*.avi
+images/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local IDE and temporary files
+.ide-memory/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Private Student Area Documentation & PDFs (STRICT PRIVACY / LGPD)
+docs/referencias/
+*.pdf
+_external/
+_legacy/

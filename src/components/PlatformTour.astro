@@ -1,0 +1,317 @@
+---
+const platformModules = [
+  {
+    id: 'dashboard',
+    title: 'Dashboard & Foco Diário',
+    subtitle: 'Seu mapa diário de estudos sem sobrecarga',
+    badge: 'Rotina Inteligente',
+    icon: '📊',
+    highlight: 'Polyglot Check & Recado da Professora',
+    description: 'Ao entrar na plataforma, você não se perde em dezenas de pastas confusas. O dashboard indica exatamente qual é a missão do dia, o mapa de foco semanal e a sua evolução contínua.',
+    features: [
+      'Mapa de Foco Semanal estruturado dia a dia',
+      'Polyglot Check para acompanhar seu progresso diário',
+      'Recados ao vivo e orientações semanais da Prof. Amanda',
+      'Acesso imediato às formações essenciais e complementares',
+    ],
+    previewCard: {
+      tag: 'VISÃO DO ALUNO',
+      title: 'Hoje na sua Jornada',
+      status: 'Quarta-feira · Aula ao Vivo às 20h',
+      stats: [
+        { label: 'Streak Atual', value: '14 dias 🔥' },
+        { label: 'Check-in Hoje', value: '+10 pts ⚡' },
+        { label: 'Palavras para Revisar', value: '12 expressões' },
+      ],
+      notice: '📌 "BORA BORA MEUS QUERIDOS: Hoje temos Masterclass ao vivo de desmistificação de padrões fonéticos!"',
+    },
+  },
+  {
+    id: 'vocabulario',
+    title: 'Vocabulário SRS (3 Etapas)',
+    subtitle: 'Repetição espaçada inteligente para retenção real',
+    badge: 'Fixação Científica',
+    icon: '🧠',
+    highlight: 'Ouvir ➔ Pronunciar ➔ Traduzir',
+    description: 'O inglês tem milhões de palavras, mas você só precisa de um vocabulário ativo selecionado para ser fluente. O sistema SRS calcula o momento exato em que seu cérebro começaria a esquecer para apresentar a revisão.',
+    features: [
+      'Processo em 3 etapas guiadas: Ouvir áudio ➔ Gravar pronúncia ➔ Tradução contextual',
+      'Banco de vocabulário pessoal integrado com as aulas assistidas',
+      'Banco Global de expressões idiomáticas da vida real',
+      'Rastreador de meta de expressões dominadas (rumo à fluência)',
+    ],
+    previewCard: {
+      tag: 'SISTEMA SRS',
+      title: 'Revisão Autêntica Ativa',
+      status: 'Treinamento de Expressões',
+      stats: [
+        { label: 'Expressões Dominadas', value: '1.240' },
+        { label: 'Precisão Auditiva', value: '94%' },
+        { label: 'Próxima Revisão', value: 'Amanhã 09:00' },
+      ],
+      notice: '💡 Passo 1: Ouça o nativo · Passo 2: Grave e compare o padrão fonético · Passo 3: Aplicação em frase real.',
+    },
+  },
+  {
+    id: 'sos',
+    title: 'SOS Professora',
+    subtitle: 'Mentoria individual com a Prof. Amanda em até 48h',
+    badge: 'Acompanhamento Humano',
+    icon: '🎙️',
+    highlight: 'Resposta em Áudio, Texto ou Print',
+    description: 'Em cursinhos tradicionais, você é um número anônimo. No Fluente no Mundo, você envia sua dúvida específica (em texto, gravação de áudio ou print) e a própria professora fundadora responde pessoalmente.',
+    features: [
+      'Envio de dúvidas particulares diretamente pela plataforma',
+      'Suporte a mensagens de texto, gravações de voz e capturas de tela',
+      'Resposta humana e acolhedora em até 48 horas úteis',
+      'Limite saudável de 1 SOS por semana para acompanhamento individual com profundidade',
+    ],
+    previewCard: {
+      tag: 'CANAL DIRETO',
+      title: 'Dúvida em Análise',
+      status: 'Prof. Amanda responde pessoalmente',
+      stats: [
+        { label: 'Prazo Máximo', value: 'Até 48h' },
+        { label: 'Formato', value: 'Áudio & Texto' },
+        { label: 'Disponibilidade', value: '1 SOS / semana' },
+      ],
+      notice: '💬 "Oi, Rodrigo! Ouvi seu áudio praticando o som de \'th\'. A posição da sua língua está perfeita, ajuste apenas a saída de ar..."',
+    },
+  },
+  {
+    id: 'vivencia',
+    title: 'Vivência Global & Cultura',
+    subtitle: 'Aculturamento através de filmes, séries e músicas',
+    badge: 'Cultura & Imersão',
+    icon: '🎬',
+    highlight: 'Desafios Reais da Semana',
+    description: 'Aprenda através daquilo que você ama consumir. O módulo de Vivência Global analisa produções culturais autênticas para que você entenda gírias, ritmo de fala nativa e nuances culturais.',
+    features: [
+      'Módulos especiais: Filmes & Séries com roteiro de escuta',
+      'Treino com Podcasts e áudios de conversas reais de rua',
+      'Músicas e Letras para destravar entonação e ritmo vocal',
+      'Desafio da Semana prático (ex.: assistir episódio sem legenda em PT e caçar expressões)',
+    ],
+    previewCard: {
+      tag: 'DESAFIO SEMANAL',
+      title: 'Imersão Cultural Ativa',
+      status: 'Séries & Podcasts Selecionados',
+      stats: [
+        { label: 'Mídias Disponíveis', value: 'Filmes, Músicas, Séries' },
+        { label: 'Desafio Atual', value: 'Episódio sem Legenda PT' },
+        { label: 'Foco Cultural', value: 'Gírias & Ritmo Cotidiano' },
+      ],
+      notice: '🍿 "Desafio da Semana: Assista a 1 cena de Suits sem legenda em português e liste 3 phrasal verbs corporais usados."'
+    },
+  },
+  {
+    id: 'gamificacao',
+    title: 'Conquista & Constância',
+    subtitle: 'Streaks, badges e certificados trimestrais',
+    badge: 'Motivação Contínua',
+    icon: '🏆',
+    highlight: 'Certificação a cada 3 meses',
+    description: 'A consistência é o único segredo da fluência. Nossa plataforma recompensa cada dia ativo de estudo com pontos, streaks e badges, culminando em certificados modulares a cada 3 meses.',
+    features: [
+      'Contador de Streak diário para manter sua disciplina aquecida',
+      'Check-in diário de estudo (+10 pontos acumulativos)',
+      'Badges e medalhas de marcos alcançados',
+      'Certificados de conclusão a cada módulo trimestral com carga horária comprovada',
+    ],
+    previewCard: {
+      tag: 'GAMIFICAÇÃO',
+      title: 'Seu Histórico de Evolução',
+      status: 'Certificação Modular Ativa',
+      stats: [
+        { label: 'Streak', value: '28 dias seguidos' },
+        { label: 'Nível', value: 'Aluno Autêntico Prata' },
+        { label: 'Próximo Certificado', value: 'Módulo 1 (3 meses)' },
+      ],
+      notice: '🏅 Mini módulos trimestrais comprovam seu esforço e mantêm você motivado sem esperar anos por um certificado!'
+    },
+  },
+];
+---
+
+<section id="experiencia-plataforma" class="py-20 relative bg-[#070a14]/60 border-y border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Cabeçalho da Seção -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>💻 Por Dentro da Plataforma do Aluno</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight leading-tight">
+        Não são apenas vídeos gravados. <br class="hidden sm:inline" />
+        É um <span class="gradient-text-teal">ecossistema diário de estudo</span>.
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+        Veja exatamente o que você encontra após fazer sua matrícula: ferramentas inteligentes desenvolvidas para guiar sua rotina, destravar sua fala e acompanhar sua consistência.
+      </p>
+    </div>
+
+    <!-- Navegação por Abas (Tabs) -->
+    <div class="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar" role="tablist">
+      {platformModules.map((mod, index) => (
+        <button
+          type="button"
+          role="tab"
+          data-tab-target={mod.id}
+          class={`platform-tab-btn whitespace-nowrap px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-2 ${
+            index === 0
+              ? 'bg-indigo-600 text-white shadow-glow-indigo border border-indigo-400/30'
+              : 'bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10'
+          }`}
+          aria-selected={index === 0 ? 'true' : 'false'}
+        >
+          <span>{mod.icon}</span>
+          <span>{mod.title}</span>
+        </button>
+      ))}
+    </div>
+
+    <!-- Conteúdo dos Painéis das Abas -->
+    <div class="relative">
+      {platformModules.map((mod, index) => (
+        <div
+          id={`tab-panel-${mod.id}`}
+          class={`platform-tab-content ${index === 0 ? 'block' : 'hidden'} transition-opacity duration-300`}
+          role="tabpanel"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Descrição e Recursos do Módulo -->
+            <div class="lg:col-span-6 flex flex-col gap-6">
+              <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-3">
+                  <span>{mod.badge}</span>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-heading font-bold text-white">
+                  {mod.title}
+                </h3>
+                <h4 class="text-sm font-semibold text-teal-400 mt-1">
+                  {mod.subtitle}
+                </h4>
+              </div>
+
+              <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                {mod.description}
+              </p>
+
+              <!-- Lista de Benefícios Reais -->
+              <div class="space-y-3">
+                {mod.features.map((feat) => (
+                  <div class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs">
+                      ✓
+                    </span>
+                    <span class="text-sm text-slate-300 leading-normal">{feat}</span>
+                  </div>
+                ))}
+              </div>
+
+              <!-- CTA para o Módulo -->
+              <div class="pt-2">
+                <a href="/plataforma" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-400 hover:text-indigo-300 group">
+                  <span>Explorar todas as telas e recursos da plataforma</span>
+                  <span class="group-hover:translate-x-1 transition-transform">➔</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card de Simulação Visual da Interface do Aluno -->
+            <div class="lg:col-span-6">
+              <div class="glass-card p-6 sm:p-8 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden bg-gradient-to-br from-[#121a36] to-[#0d1326]">
+                <!-- Barra de Janela Superior -->
+                <div class="flex items-center justify-between pb-4 mb-6 border-b border-white/10 text-xs text-slate-400">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-rose-500/70 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-amber-500/70 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-emerald-500/70 inline-block"></span>
+                    <span class="ml-2 font-mono text-[11px] text-slate-400 hidden sm:inline">alunos.fluentenomundo.com</span>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 text-[10px] font-bold tracking-wider">
+                    {mod.previewCard.tag}
+                  </span>
+                </div>
+
+                <!-- Conteúdo do Card de Demonstração -->
+                <div class="space-y-6">
+                  <div>
+                    <span class="text-xs font-semibold text-slate-400 block mb-1">Status Ativo</span>
+                    <h4 class="text-xl font-heading font-extrabold text-white">
+                      {mod.previewCard.title}
+                    </h4>
+                    <p class="text-xs text-teal-400 font-medium mt-1">
+                      {mod.previewCard.status}
+                    </p>
+                  </div>
+
+                  <!-- Métricas em Pílulas -->
+                  <div class="grid grid-cols-3 gap-3">
+                    {mod.previewCard.stats.map((st) => (
+                      <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex flex-col justify-center">
+                        <span class="text-[10px] text-slate-400 font-medium block truncate">{st.label}</span>
+                        <span class="text-xs sm:text-sm font-heading font-bold text-white mt-0.5 truncate">{st.value}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <!-- Caixa de Notificação / Dica da Professora -->
+                  <div class="p-4 rounded-xl bg-indigo-950/40 border border-indigo-500/20 text-xs text-indigo-200 leading-relaxed font-sans">
+                    {mod.previewCard.notice}
+                  </div>
+                </div>
+
+                <!-- Marca d'água sutil -->
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+                  <span>Plataforma Oficial Fluente no Mundo</span>
+                  <span class="text-emerald-400 font-semibold flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    Ambiente Aluno
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const tabButtons = document.querySelectorAll('.platform-tab-btn');
+  const tabPanels = document.querySelectorAll('.platform-tab-content');
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-tab-target');
+
+      // Update button states
+      tabButtons.forEach((b) => {
+        b.classList.remove('bg-indigo-600', 'text-white', 'shadow-glow-indigo', 'border-indigo-400/30');
+        b.classList.add('bg-white/5', 'text-slate-300', 'border-white/10');
+        b.setAttribute('aria-selected', 'false');
+      });
+
+      btn.classList.add('bg-indigo-600', 'text-white', 'shadow-glow-indigo', 'border-indigo-400/30');
+      btn.classList.remove('bg-white/5', 'text-slate-300', 'border-white/10');
+      btn.setAttribute('aria-selected', 'true');
+
+      // Show targeted panel
+      tabPanels.forEach((panel) => {
+        panel.classList.add('hidden');
+        panel.classList.remove('block');
+      });
+
+      const activePanel = document.getElementById(`tab-panel-${targetId}`);
+      if (activePanel) {
+        activePanel.classList.remove('hidden');
+        activePanel.classList.add('block');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'Termos de Uso | Fluente no Mundo';
+const pageDesc = 'Termos e Condições de Uso dos serviços educacionais e da plataforma digital Fluente no Mundo.';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDesc}
+  canonicalUrl="https://fluentenomundo.com/termos"
+>
+  
+  <section class="py-16 sm:py-20 relative border-b border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>📄 Condições Contratuais</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-heading font-black text-white tracking-tight leading-tight">
+        Termos de Uso
+      </h1>
+      <p class="mt-4 text-xs sm:text-sm text-slate-400">
+        Última atualização: 10 de Outubro de 2026.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#070b16]">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-slate-300 text-sm leading-relaxed space-y-8">
+      
+      <div>
+        <h2 class="text-xl font-heading font-bold text-white mb-2">1. Aceitação dos Termos</h2>
+        <p>
+          Ao acessar o site ou se matricular em qualquer plano do <strong>Fluente no Mundo</strong>, você concorda com estes Termos de Uso e com nossa Política de Privacidade. Caso não concorde, recomendamos não utilizar os serviços.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-heading font-bold text-white mb-2">2. Propriedade Intelectual</h2>
+        <p>
+          Todos os conteúdos disponibilizados — incluindo vídeos, metodologias (especialmente o Método A.U.T.E.N.T.I.C.A), textos, apostilas, ebooks em PDF, ilustrações e marcas registradas — são de propriedade exclusiva da Prof. Amanda Beatriz e do Fluente no Mundo. É expressamente proibida a reprodução, distribuição ou comercialização de qualquer material sem autorização prévia por escrito.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-heading font-bold text-white mb-2">3. Acesso à Plataforma do Aluno</h2>
+        <p>
+          O acesso à plataforma é pessoal e intransferível. O compartilhamento de credenciais de login com terceiros é vedado e pode acarretar o bloqueio definitivo da conta sem direito a reembolso.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-heading font-bold text-white mb-2">4. Garantia Incondicional de 7 Dias</h2>
+        <p>
+          Em consonância com o Artigo 49 do Código de Defesa do Consumidor (CDC), oferecemos garantia incondicional de 7 (sete) dias a contar da data de confirmação da matrícula. Dentro deste período, o aluno pode solicitar cancelamento e receber 100% do valor pago.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-heading font-bold text-white mb-2">5. Assinaturas e Cancelamento</h2>
+        <p>
+          A assinatura mensal recorrente pode ser cancelada a qualquer momento antes do início do próximo ciclo de cobrança. O cancelamento interrompe cobranças futuras e o acesso permanece disponível até o encerramento do período mensal já pago.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-heading font-bold text-white mb-2">6. Foro e Legislação Aplicável</h2>
+        <p>
+          Estes Termos são regidos pelas leis da República Federativa do Brasil. Para a resolução de eventuais controvérsias, fica eleito o foro da comarca da sede da empresa.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>

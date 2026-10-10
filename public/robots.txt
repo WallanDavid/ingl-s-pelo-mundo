@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /referencias/
+Disallow: /_legacy/
+
+Sitemap: https://fluentenomundo.com/sitemap.xml

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="globeGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="#0a0e1a" stroke="url(#globeGrad)" stroke-width="3"/>
+  <circle cx="32" cy="32" r="24" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.6"/>
+  <ellipse cx="32" cy="32" rx="24" ry="11" stroke="#38bdf8" stroke-width="1.8" opacity="0.8"/>
+  <ellipse cx="32" cy="32" rx="11" ry="24" stroke="#38bdf8" stroke-width="1.8" opacity="0.8"/>
+  <path d="M32 8 V56" stroke="#06b6d4" stroke-width="2"/>
+  <path d="M8 32 H56" stroke="#06b6d4" stroke-width="2"/>
+  <circle cx="32" cy="32" r="5" fill="#f59e0b"/>
+</svg>

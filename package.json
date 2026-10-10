@@ -1,0 +1,24 @@
+{
+  "name": "fluente-no-mundo",
+  "type": "module",
+  "version": "2.0.0",
+  "description": "Site comercial oficial e moderno da escola Fluente no Mundo por Amanda Beatriz",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.5",
+    "astro": "^5.4.2",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9"
+  }
+}

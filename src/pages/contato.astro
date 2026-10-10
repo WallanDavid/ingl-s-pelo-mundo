@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'Fale Conosco | Atendimento e Suporte Fluente no Mundo';
+const pageDesc = 'Entre em contato com a equipe do Fluente no Mundo. Tire dúvidas sobre matrículas, parcerias ou suporte pedagógico.';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDesc}
+  canonicalUrl="https://fluentenomundo.com/contato"
+>
+  
+  <section class="py-16 sm:py-20 relative border-b border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>💬 Atendimento Humano</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-heading font-black text-white tracking-tight leading-tight">
+        Fale com a Nossa <span class="gradient-text-indigo">Equipe</span>
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+        Estamos prontos para orientar sua escolha de plano ou esclarecer qualquer dúvida sobre o ecossistema Fluente no Mundo.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#070b16]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Formulário Seguro de Contato -->
+        <div class="lg:col-span-7">
+          <div class="glass-card p-8 rounded-3xl border border-white/10">
+            <h2 class="text-2xl font-heading font-bold text-white mb-2">Envie uma Mensagem</h2>
+            <p class="text-xs text-slate-400 mb-6">Respondemos em até 24 horas úteis por e-mail ou WhatsApp.</p>
+
+            <form id="contact-form" class="space-y-4">
+              <div>
+                <label for="name" class="block text-xs font-semibold text-slate-300 mb-1">Seu Nome Completo</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  placeholder="Ex.: Juliana Silva"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block text-xs font-semibold text-slate-300 mb-1">Seu Melhor E-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  placeholder="exemplo@gmail.com"
+                />
+              </div>
+
+              <div>
+                <label for="subject" class="block text-xs font-semibold text-slate-300 mb-1">Assunto</label>
+                <select
+                  id="subject"
+                  name="subject"
+                  class="w-full px-4 py-3 rounded-xl bg-[#0f152b] border border-white/10 text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                >
+                  <option value="duvida_matricula">Dúvida sobre matrícula ou planos</option>
+                  <option value="metodologia">Dúvida sobre o Método Autêntico</option>
+                  <option value="pagamento">Formas de pagamento e PIX</option>
+                  <option value="outro">Outro assunto</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-xs font-semibold text-slate-300 mb-1">Sua Mensagem</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  placeholder="Como podemos te ajudar hoje?"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn-primary w-full text-center text-sm font-semibold !py-3.5"
+              >
+                Enviar Mensagem Segura
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Canais Rápidos & Contatos Oficiais -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          <div class="glass-card p-6 rounded-2xl border border-white/10">
+            <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full uppercase inline-block mb-3">
+              ⚡ Atendimento Ágil
+            </span>
+            <h3 class="text-xl font-heading font-bold text-white mb-2">WhatsApp Comercial</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Prefere tirar dúvidas pelo WhatsApp antes de se matricular? Nossa equipe de suporte está à disposição em horário comercial.
+            </p>
+            <a
+              href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20o%20Fluente%20no%20Mundo"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary w-full text-center text-xs font-semibold !py-3 flex items-center justify-center gap-2"
+            >
+              <span>Conversar no WhatsApp</span>
+              <span>↗</span>
+            </a>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl border border-white/10">
+            <h3 class="text-base font-heading font-bold text-white mb-3">Para Alunos Ativos</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Se você já é aluno matriculado e precisa de suporte pedagógico em uma aula, utilize o canal exclusivo <strong>SOS Professora</strong> dentro da sua plataforma para resposta em áudio pela Prof. Amanda.
+            </p>
+            <a
+              href="https://alunos.fluentenomundo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold"
+            >
+              Acessar SOS Professora na Área do Aluno ➔
+            </a>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl border border-white/10">
+            <h3 class="text-base font-heading font-bold text-white mb-2">Canais Oficiais</h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li><strong>YouTube:</strong> youtube.com/@fluentenomundo</li>
+              <li><strong>Instagram:</strong> instagram.com/fluentenomundo</li>
+              <li><strong>Horário:</strong> Segunda a Sexta, das 09h às 18h</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Obrigado! Sua mensagem foi enviada à equipe do Fluente no Mundo com sucesso.');
+        form.reset();
+      });
+    }
+  </script>
+
+</BaseLayout>

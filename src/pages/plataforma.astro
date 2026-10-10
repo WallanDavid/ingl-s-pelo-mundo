@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PlatformTour from '../components/PlatformTour.astro';
+
+const pageTitle = 'A Plataforma do Aluno | Ecossistema Digital Fluente no Mundo';
+const pageDesc = 'Explore por dentro a plataforma do aluno: Dashboard inteligente, repetição espaçada SRS de vocabulário, SOS Professora em 48h, gamificação e certificação trimestral.';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDesc}
+  canonicalUrl="https://fluentenomundo.com/plataforma"
+>
+  
+  <!-- CABEÇALHO DA PÁGINA -->
+  <section class="py-16 sm:py-20 relative border-b border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>💻 Experiência do Estudante</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-heading font-black text-white tracking-tight leading-tight">
+        Conheça a <span class="gradient-text-teal">Plataforma do Aluno</span>
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+        Ambiente exclusivo projetado em cada detalhe para orientar seu estudo diário, eliminar a procrastinação e conectar você diretamente com a professora.
+      </p>
+
+      <div class="mt-6 flex items-center justify-center gap-3">
+        <a
+          href="https://alunos.fluentenomundo.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-secondary !text-xs !py-2.5 !px-5"
+        >
+          <span>Já sou aluno · Acessar Plataforma</span>
+          <span>↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- O TOUR INTERATIVO COMPLETO -->
+  <PlatformTour />
+
+  <!-- DETALHES DE RECURSOS ESPECIAIS EXTRAÍDOS DOS PDFS -->
+  <section class="py-20 bg-[#070b16]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">
+          Recursos Desenvolvidos para sua Rotina
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base mt-2">
+          Evidências reais documentadas na área interna de cada matriculado.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Recurso: SOS Professora -->
+        <div class="glass-card p-6 rounded-2xl border-t-4 border-t-indigo-500">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-300 flex items-center justify-center text-xl mb-4">
+            🎙️
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white mb-2">
+            SOS Professora
+          </h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Envie dúvidas particulares em texto, gravação de áudio ou print. A Prof. Amanda responde pessoalmente em até 48 horas úteis (limite de 1 envio por semana).
+          </p>
+          <span class="text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full">
+            Atendimento 100% Humano
+          </span>
+        </div>
+
+        <!-- Recurso: SRS Vocabulário 3 Etapas -->
+        <div class="glass-card p-6 rounded-2xl border-t-4 border-t-teal-500">
+          <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-300 flex items-center justify-center text-xl mb-4">
+            🧠
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white mb-2">
+            Vocabulário & SRS
+          </h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Sistema de repetição espaçada em 3 etapas ativas: ouvir a pronúncia correta, gravar e comparar a sua fala, e aplicar a tradução em frases reais.
+          </p>
+          <span class="text-[11px] font-semibold text-teal-400 bg-teal-500/10 px-2.5 py-1 rounded-full">
+            Fixação sem Decoreba
+          </span>
+        </div>
+
+        <!-- Recurso: Biblioteca de Materiais -->
+        <div class="glass-card p-6 rounded-2xl border-t-4 border-t-amber-500">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center text-xl mb-4">
+            📖
+          </div>
+          <h3 class="text-xl font-heading font-bold text-white mb-2">
+            Sua Biblioteca Digital
+          </h3>
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Visualizador integrado com ebooks exclusivos, resumos em PDF de cada aula, slides e materiais complementares para download.
+          </p>
+          <span class="text-[11px] font-semibold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full">
+            Apoio Completo
+          </span>
+        </div>
+
+      </div>
+
+      <!-- TRANSPARÊNCIA: STATUS DOS RECURSOS EM DESENVOLVIMENTO -->
+      <div class="mt-16 p-6 sm:p-8 rounded-3xl glass-panel border border-white/10 max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-2xl">🔍</span>
+          <div>
+            <h3 class="text-lg font-heading font-bold text-white">Transparência & Roadmap de Inovações</h3>
+            <span class="text-xs text-slate-400">Compromisso do Fluente no Mundo com dados verificáveis</span>
+          </div>
+        </div>
+        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+          Acreditamos em marketing honesto. Abaixo detalhamos o status exato de recursos que estão em nosso roadmap de tecnologia para os alunos:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+          <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+            <span class="text-amber-400 font-bold block mb-1">🤖 Prof Robô (IA 24h)</span>
+            <span class="text-slate-400">Em desenvolvimento. Assistente de inteligência artificial complementar para dúvidas pontuais.</span>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+            <span class="text-amber-400 font-bold block mb-1">🧒 Mundo Fluente Kids</span>
+            <span class="text-slate-400">Em planejamento para futuras turmas infantis. Não ativo no plano atual.</span>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+            <span class="text-indigo-400 font-bold block mb-1">📱 EduFeed & Shorts</span>
+            <span class="text-slate-400">Pílulas de conteúdo rápido e micro-learning atualizadas progressivamente.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>

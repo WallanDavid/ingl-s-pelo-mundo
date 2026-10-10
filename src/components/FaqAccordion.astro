@@ -1,0 +1,134 @@
+---
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  items?: FaqItem[];
+  title?: string;
+  subtitle?: string;
+}
+
+const defaultFaqs: FaqItem[] = [
+  {
+    question: 'Nunca estudei inglês ou sou iniciante do zero. O método serve para mim?',
+    answer: 'Sim, com certeza! A Metodologia A.U.T.E.N.T.I.C.A foi desenhada exatamente para acolher quem nunca estudou ou tem trauma de métodos tradicionais. Você começa pelas Formações Essenciais com explicações claras em português, aprendendo os padrões fonéticos e a pronúncia sem pressão e sem vocabulário técnico complicado.',
+  },
+  {
+    question: 'Como funcionam as aulas ao vivo com a Prof. Amanda Beatriz?',
+    answer: 'Nossas aulas ao vivo acontecem semanalmente às quartas-feiras. São encontros práticos e dinâmicos onde a professora trabalha pontos de destrave, pronúncia, tira dúvidas e conduz dinâmicas culturais. Caso você não consiga assistir ao vivo, a gravação integral fica disponível na plataforma no módulo Imersão com a Prof para você assistir quando quiser.',
+  },
+  {
+    question: 'O que é o SOS Professora e em quanto tempo recebo resposta?',
+    answer: 'O SOS Professora é o nosso canal exclusivo de mentoria direta. Dentro da plataforma, você pode enviar sua dúvida específica em formato de texto, gravação de áudio ou captura de tela. A Prof. Amanda responde pessoalmente em até 48 horas úteis. Para garantir a qualidade de resposta a todos os alunos, cada estudante tem o limite de 1 envio por semana.',
+  },
+  {
+    question: 'Como funciona o sistema de certificados modulares?',
+    answer: 'Ao contrário de cursos que demoram anos para emitir qualquer documento, no Fluente no Mundo sua jornada é dividida em mini módulos de 3 meses. Ao concluir as aulas, exercícios e avaliações do módulo, você recebe um certificado emitido pela Metodologia Autêntica com seu nome, formação e carga horária comprovada para anexar ao currículo e LinkedIn.',
+  },
+  {
+    question: 'Como funciona a Jornada Poliglota e os 12 idiomas?',
+    answer: 'A Jornada Poliglota é um espaço de exploração cultural e linguística leve, sem pressão de fluência. Nela você tem contato com idiomas como Espanhol, Italiano, Francês, Alemão, Mandarim, Coreano, Japonês, entre outros, através de oficinas de habilidades e aculturamento. A formação aprofundada principal é o Inglês Autêntico.',
+  },
+  {
+    question: 'Como funciona a garantia de 7 dias?',
+    answer: 'Você tem 7 dias corridos a partir da data de matrícula para explorar a plataforma, assistir às aulas gravadas, participar da aula ao vivo e testar todos os recursos. Se por qualquer motivo sentir que o método não é para você, basta solicitar o reembolso na plataforma ou com nosso suporte e devolveremos 100% do seu investimento.',
+  },
+  {
+    question: 'O que é o sistema SRS de vocabulário e como ele me ajuda?',
+    answer: 'SRS significa Spaced Repetition System (Sistema de Repetição Espaçada). Em vez de tentar decorar listas intermináveis de palavras e esquecê-las na semana seguinte, a plataforma agenda revisões automáticas no momento ideal da sua curva de esquecimento, usando um processo de 3 etapas: Ouvir o som nativo, Pronunciar e Traduzir no contexto real.',
+  },
+  {
+    question: 'Como posso cancelar minha assinatura?',
+    answer: 'A assinatura do plano mensal pode ser cancelada a qualquer momento diretamente pelo painel do aluno ou pela plataforma de pagamento, sem multas, sem taxas ocultas e sem qualquer burocracia.',
+  },
+];
+
+const {
+  items = defaultFaqs,
+  title = 'Perguntas Frequentes',
+  subtitle = 'Tire todas as suas dúvidas sobre a metodologia, a plataforma e o acesso.',
+} = Astro.props;
+---
+
+<section id="faq" class="py-20 relative">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Cabeçalho -->
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>❓ Dúvidas Comuns</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">
+        {title}
+      </h2>
+      <p class="mt-3 text-slate-300 text-sm sm:text-base">
+        {subtitle}
+      </p>
+    </div>
+
+    <!-- Lista de Acordeão -->
+    <div class="space-y-4">
+      {items.map((item) => (
+        <div class="faq-card glass-card rounded-2xl border border-white/10 overflow-hidden transition-colors">
+          <button
+            type="button"
+            class="faq-trigger w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            aria-expanded="false"
+          >
+            <span class="text-base sm:text-lg font-heading font-bold text-white leading-snug">
+              {item.question}
+            </span>
+            <span class="faq-icon w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-indigo-400 font-bold transition-transform duration-300">
+              +
+            </span>
+          </button>
+          
+          <div class="faq-panel hidden px-5 pb-6 sm:px-6 sm:pb-6 text-slate-300 text-sm sm:text-base leading-relaxed border-t border-white/5 pt-4">
+            {item.answer}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const triggers = document.querySelectorAll('.faq-trigger');
+
+  triggers.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.faq-card');
+      const panel = card?.querySelector('.faq-panel');
+      const icon = card?.querySelector('.faq-icon');
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all other panels for clean accordeon behavior
+      triggers.forEach((otherBtn) => {
+        if (otherBtn !== btn) {
+          const otherCard = otherBtn.closest('.faq-card');
+          const otherPanel = otherCard?.querySelector('.faq-panel');
+          const otherIcon = otherCard?.querySelector('.faq-icon');
+          otherBtn.setAttribute('aria-expanded', 'false');
+          otherPanel?.classList.add('hidden');
+          if (otherIcon) otherIcon.textContent = '+';
+          otherCard?.classList.remove('border-indigo-500/40');
+        }
+      });
+
+      if (isExpanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        panel?.classList.add('hidden');
+        if (icon) icon.textContent = '+';
+        card?.classList.remove('border-indigo-500/40');
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        panel?.classList.remove('hidden');
+        if (icon) icon.textContent = '−';
+        card?.classList.add('border-indigo-500/40');
+      }
+    });
+  });
+</script>

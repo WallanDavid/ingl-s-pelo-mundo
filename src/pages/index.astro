@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MethodPillars from '../components/MethodPillars.astro';
+import PlatformTour from '../components/PlatformTour.astro';
+import Testimonials from '../components/Testimonials.astro';
+import PricingCard from '../components/PricingCard.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+
+const pageTitle = 'Fluente no Mundo | Fale Inglês com Naturalidade com a Prof. Amanda Beatriz';
+const pageDesc = 'Aprenda inglês com a Metodologia A.U.T.E.N.T.I.C.A, aulas ao vivo semanais com a professora, suporte individual via SOS em 48h, repetição espaçada e vivência cultural. Comece por R$ 39,90/mês.';
+
+const homeSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  'name': 'Fluente no Mundo',
+  'url': 'https://fluentenomundo.com',
+  'description': pageDesc,
+  'potentialAction': {
+    '@type': 'SearchAction',
+    'target': 'https://fluentenomundo.com/?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDesc}
+  canonicalUrl="https://fluentenomundo.com/"
+  structuredData={homeSchema}
+>
+  
+  <!-- HERO SECTION -->
+  <section class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden">
+    <!-- Luzes de Fundo e Gradientes Decorativos -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-indigo-600/20 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute top-1/3 left-1/4 w-[400px] h-[300px] bg-teal-500/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Texto Principal do Hero -->
+        <div class="lg:col-span-7 flex flex-col items-start text-left">
+          
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-xs font-semibold text-slate-200">
+              Aulas ao Vivo Semanais & Acompanhamento Individual
+            </span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white tracking-tight leading-[1.1]">
+            Fale inglês com <span class="gradient-text-indigo">naturalidade</span>. <br />
+            Sem decoreba. <br class="hidden sm:inline" />
+            <span class="gradient-text-teal">Com a professora ao seu lado</span>.
+          </h1>
+
+          <p class="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+            Descubra o ecossistema educacional baseado na <strong>Metodologia A.U.T.E.N.T.I.C.A</strong>. Aulas ao vivo toda quarta-feira com a Prof. Amanda Beatriz, canal exclusivo <strong>SOS Professora em 48h</strong>, sistema inteligente de repetição espaçada (SRS) e vivência cultural real.
+          </p>
+
+          <!-- CTAs Principais -->
+          <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+            <a
+              href="/planos"
+              class="btn-primary !text-base !py-4 !px-8 !shadow-glow-indigo text-center"
+            >
+              <span>Começar por R$ 39,90/mês</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+
+            <a
+              href="/plataforma"
+              class="btn-secondary !text-base !py-4 !px-6 text-center"
+            >
+              <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Ver Tour da Plataforma</span>
+            </a>
+          </div>
+
+          <!-- Micro-benefícios de Confiança -->
+          <div class="mt-10 pt-8 border-t border-white/10 grid grid-cols-3 gap-4 w-full max-w-lg">
+            <div>
+              <span class="block font-heading font-black text-xl sm:text-2xl text-white">+10 mil</span>
+              <span class="text-xs text-slate-400">Aulas construídas</span>
+            </div>
+            <div>
+              <span class="block font-heading font-black text-xl sm:text-2xl text-white">48h</span>
+              <span class="text-xs text-slate-400">Resposta SOS Prof</span>
+            </div>
+            <div>
+              <span class="block font-heading font-black text-xl sm:text-2xl text-white">7 Dias</span>
+              <span class="text-xs text-slate-400">Garantia total</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Visual do Hero / Foto da Professora & Card de Aluno -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Moldura com Glassmorphism e Foto Real da Professora -->
+            <div class="glass-card p-3 rounded-3xl overflow-hidden border border-white/15 shadow-2xl relative group">
+              <div class="rounded-2xl overflow-hidden bg-slate-900 aspect-[4/5] relative">
+                <img
+                  src="/images/about me.png"
+                  alt="Professora Amanda Beatriz - Fundadora do Fluente no Mundo"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  fetchpriority="high"
+                />
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0a0e1a] via-transparent to-transparent opacity-80"></div>
+                
+                <!-- Informações Sobrepostas na Imagem -->
+                <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl glass-panel border border-white/10 backdrop-blur-md">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <span class="text-xs font-semibold text-indigo-300 block">Sua Mentora de Idiomas</span>
+                      <h2 class="text-lg font-heading font-bold text-white">Prof. Amanda Beatriz</h2>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-bold">
+                      Ao Vivo Quartas
+                    </span>
+                  </div>
+                  <p class="text-xs text-slate-300 mt-2">
+                    "Você não precisa de um dom especial para falar inglês. Precisa do método certo e de constância."
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Flutuante de Notificação SOS -->
+            <div class="absolute -bottom-6 -left-6 sm:-left-8 glass-panel p-3.5 rounded-2xl border border-white/15 shadow-xl hidden sm:flex items-center gap-3 max-w-xs animate-bounce-slow">
+              <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0 text-lg">
+                🎙️
+              </div>
+              <div class="text-xs">
+                <span class="font-bold text-white block">SOS Professora Respondido</span>
+                <span class="text-slate-300 text-[11px]">Áudio personalizado enviado pela Prof. Amanda</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BARRA DE DIFERENCIAIS RÁPIDOS -->
+  <section class="py-8 border-y border-white/5 bg-[#080c18]/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="flex flex-col items-center gap-1.5">
+          <span class="text-2xl">⚡</span>
+          <span class="text-sm font-heading font-bold text-white">Método A.U.T.E.N.T.I.C.A</span>
+          <span class="text-xs text-slate-400">9 pilares pedagógicos estruturados</span>
+        </div>
+        <div class="flex flex-col items-center gap-1.5">
+          <span class="text-2xl">👩‍🏫</span>
+          <span class="text-sm font-heading font-bold text-white">Presença Humana Real</span>
+          <span class="text-xs text-slate-400">Aulas ao vivo semanais com a fundadora</span>
+        </div>
+        <div class="flex flex-col items-center gap-1.5">
+          <span class="text-2xl">🧠</span>
+          <span class="text-sm font-heading font-bold text-white">SRS em 3 Etapas</span>
+          <span class="text-xs text-slate-400">Ouvir, pronunciar e traduzir com contexto</span>
+        </div>
+        <div class="flex flex-col items-center gap-1.5">
+          <span class="text-2xl">🏅</span>
+          <span class="text-sm font-heading font-bold text-white">Certificado a Cada 3 Meses</span>
+          <span class="text-xs text-slate-400">Marcos trimestrais de evolução real</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DA METODOLOGIA -->
+  <MethodPillars />
+
+  <!-- VITRINE DA PLATAFORMA DO ALUNO -->
+  <PlatformTour />
+
+  <!-- SEÇÃO DE PROVA SOCIAL E DEPOIMENTOS -->
+  <Testimonials />
+
+  <!-- SEÇÃO DE PLANOS E PREÇOS -->
+  <PricingCard />
+
+  <!-- SEÇÃO DE FAQ -->
+  <FaqAccordion />
+
+  <!-- SEÇÃO FINAL DE CTA / CONVITE DA PROFESSORA -->
+  <section class="py-20 relative overflow-hidden text-center bg-gradient-to-t from-indigo-950/40 to-transparent">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="p-8 sm:p-12 rounded-3xl glass-card border border-indigo-500/30 shadow-glow-indigo">
+        <span class="text-xs uppercase font-bold tracking-widest text-indigo-300 bg-indigo-500/20 px-3 py-1 rounded-full inline-block mb-4">
+          Sua Jornada Começa Hoje
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-white tracking-tight">
+          Pronto para virar a chave dos seus estudos?
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Entre agora para a Formação Global. Receba seu cronograma diário, tire suas dúvidas diretamente com a Prof. Amanda e fale inglês com segurança.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/planos" class="btn-primary !text-base !py-4 !px-8 w-full sm:w-auto">
+            Matricule-se Agora por R$ 39,90/mês
+          </a>
+          <a href="https://alunos.fluentenomundo.com" target="_blank" rel="noopener noreferrer" class="btn-secondary !text-base !py-4 !px-6 w-full sm:w-auto">
+            Já sou aluno (Acessar Plataforma)
+          </a>
+        </div>
+
+        <p class="text-xs text-slate-400 mt-4">
+          Acesso imediato após confirmação · Garantia incondicional de 7 dias
+        </p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

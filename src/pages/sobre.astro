@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'Sobre a Prof. Amanda Beatriz | Fluente no Mundo';
+const pageDesc = 'Conheça a história de Amanda Beatriz: professora de idiomas, pioneira em múltiplos canais educativos e criadora da Metodologia Autêntica de fluência.';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDesc}
+  canonicalUrl="https://fluentenomundo.com/sobre"
+>
+  
+  <!-- CABEÇALHO DA PÁGINA -->
+  <section class="py-16 sm:py-20 relative border-b border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>👩‍🏫 Mentora e Fundadora</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-heading font-black text-white tracking-tight leading-tight">
+        Prazer, eu sou a <span class="gradient-text-indigo">Amanda Beatriz</span>
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+        Professora, criadora de conteúdo educativo e uma das primeiras brasileiras a trilhar o caminho rumo ao <strong>hiperpoliglotismo</strong> com base em neurociência e aculturamento.
+      </p>
+    </div>
+  </section>
+
+  <!-- BIOGRAFIA E TRAJETÓRIA -->
+  <section class="py-16 bg-[#070b16]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5">
+          <div class="glass-card p-4 rounded-3xl border border-white/10 shadow-2xl relative">
+            <div class="rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900">
+              <img
+                src="/images/about me.png"
+                alt="Professora Amanda Beatriz sorrindo com livro"
+                class="w-full h-full object-cover object-top"
+                loading="eager"
+              />
+            </div>
+            <div class="mt-4 p-4 rounded-xl bg-white/5 text-center text-xs text-slate-300">
+              <strong class="text-white block font-heading text-sm">Amanda Beatriz</strong>
+              <span>Fundadora do Movimento Fluente no Mundo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 flex flex-col gap-6 text-slate-300 text-sm sm:text-base leading-relaxed">
+          <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-white">
+            Uma Missão de Alma e Visão Global
+          </h2>
+          
+          <p>
+            Durante anos, observei milhares de brasileiros inteligentes e dedicados se sentirem incapazes ou "sem o dom" para falar inglês. O problema nunca foi a capacidade do aluno, mas sim um modelo educacional arcaico que ensina línguas como matemática abstrata, focando em decoreba de regras e punição do erro.
+          </p>
+
+          <p>
+            Foi a partir dessa indignação que nasceu a <strong>Metodologia A.U.T.E.N.T.I.C.A</strong> e a escola <strong>Fluente no Mundo</strong>. Uma construção de mais de 4 anos de desenvolvimento, reunindo o que há de mais atual na neurociência da aprendizagem, psicologia do erro e imersão cultural prática.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/10">
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-lg font-bold text-white block mb-1">Impacto Educacional</span>
+              <p class="text-xs text-slate-400">Pioneira em múltiplos canais no YouTube e projetos focados em democratizar o ensino de idiomas com profundidade.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+              <span class="text-lg font-bold text-white block mb-1">Comunidade de Almas</span>
+              <p class="text-xs text-slate-400">Reunir uma tribo de pessoas que querem expandir a mente, viajar o mundo e viver novas culturas.</p>
+            </div>
+          </div>
+
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="https://youtube.com/@fluentenomundo" target="_blank" rel="noopener noreferrer" class="btn-secondary !text-xs !py-3 !px-5">
+              <span>Canal YouTube @fluentenomundo</span>
+              <span>↗</span>
+            </a>
+            <a href="https://instagram.com/fluentenomundo" target="_blank" rel="noopener noreferrer" class="btn-secondary !text-xs !py-3 !px-5">
+              <span>Instagram Oficial</span>
+              <span>↗</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
