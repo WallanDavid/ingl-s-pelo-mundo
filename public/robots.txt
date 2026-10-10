@@ -1,6 +1,5 @@
 User-agent: *
-Allow: /
-Disallow: /referencias/
-Disallow: /_legacy/
+Disallow: /
 
-Sitemap: https://fluentenomundo.com/sitemap.xml
+# Ambiente de Demonstração Técnica Independente
+# Para preservar o domínio oficial fluentenomundo.com, este ambiente não deve ser indexado.

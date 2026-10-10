@@ -5,18 +5,18 @@ const pageTitle = 'Jornada Poliglota | Exploração Cultural e Idiomas no Fluent
 const pageDesc = 'Aprender idiomas pode ser leve e sem pressão. Conheça a Jornada Poliglota: oficinas e aculturamento em inglês, espanhol, italiano, francês, mandarim e mais.';
 
 const languagesList = [
-  { name: 'Inglês Autêntico', flag: '🇺🇸', role: 'Formação Principal', desc: 'Trilhas completas com aulas ao vivo semanais e mentoria individual.' },
-  { name: 'Espanhol Autêntico', flag: '🇪🇸', role: 'Imersão Cultural', desc: 'Sons, expressões da América Latina e Espanha, e padrões fonéticos.' },
-  { name: 'Italiano Autêntico', flag: '🇮🇹', role: 'Imersão Cultural', desc: 'Música, culinária, gesticulação e sonoridade apaixonante.' },
-  { name: 'Francês Autêntico', flag: '🇫🇷', role: 'Imersão Cultural', desc: 'Trilha "Virando a Chave dos Estudos - Francês" e pronúncia nasal.' },
-  { name: 'Mandarim (Chinês)', flag: '🇨🇳', role: 'Oficina de Idiomas', desc: 'Tons, ideogramas fundamentais e desmistificação do idioma.' },
-  { name: 'Coreano Autêntico', flag: '🇰🇷', role: 'Oficina de Idiomas', desc: 'O alfabeto Hangul, cultura do K-drama e expressões do dia a dia.' },
-  { name: 'Japonês Autêntico', flag: '🇯🇵', role: 'Oficina de Idiomas', desc: 'Sistemas de escrita, fonética limpa e etiqueta cultural japonesa.' },
-  { name: 'Alemão Autêntico', flag: '🇩🇪', role: 'Oficina de Idiomas', desc: 'Lógica da formação de palavras compostas e precisão fonética.' },
-  { name: 'Russo Autêntico', flag: '🇷🇺', role: 'Oficina de Idiomas', desc: 'O alfabeto cirílico e riqueza da literatura eslava.' },
-  { name: 'Sueco Autêntico', flag: '🇸🇪', role: 'Oficina de Idiomas', desc: 'Curiosidades dos idiomas nórdicos e estilo de vida escandinavo.' },
-  { name: 'Polonês Autêntico', flag: '🇵🇱', role: 'Oficina de Idiomas', desc: 'Padrões consonantais e fonética dos idiomas do leste europeu.' },
-  { name: 'Português Autêntico', flag: '🇧🇷', role: 'Nossa Raiz', desc: 'A base comparativa essencial para entender como seu cérebro processa línguas.' },
+  { name: 'Inglês Autêntico', code: 'EN', role: 'Formação Principal', desc: 'Trilhas completas com aulas ao vivo semanais e mentoria individual.' },
+  { name: 'Espanhol Autêntico', code: 'ES', role: 'Imersão Cultural', desc: 'Sons, expressões da América Latina e Espanha, e padrões fonéticos.' },
+  { name: 'Italiano Autêntico', code: 'IT', role: 'Imersão Cultural', desc: 'Música, culinária, gesticulação e sonoridade apaixonante.' },
+  { name: 'Francês Autêntico', code: 'FR', role: 'Imersão Cultural', desc: 'Trilha "Virando a Chave dos Estudos - Francês" e pronúncia nasal.' },
+  { name: 'Mandarim (Chinês)', code: 'ZH', role: 'Oficina de Idiomas', desc: 'Tons, ideogramas fundamentais e desmistificação do idioma.' },
+  { name: 'Coreano Autêntico', code: 'KO', role: 'Oficina de Idiomas', desc: 'O alfabeto Hangul, cultura do K-drama e expressões do dia a dia.' },
+  { name: 'Japonês Autêntico', code: 'JA', role: 'Oficina de Idiomas', desc: 'Sistemas de escrita, fonética limpa e etiqueta cultural japonesa.' },
+  { name: 'Alemão Autêntico', code: 'DE', role: 'Oficina de Idiomas', desc: 'Lógica da formação de palavras compostas e precisão fonética.' },
+  { name: 'Russo Autêntico', code: 'RU', role: 'Oficina de Idiomas', desc: 'O alfabeto cirílico e riqueza da literatura eslava.' },
+  { name: 'Sueco Autêntico', code: 'SV', role: 'Oficina de Idiomas', desc: 'Curiosidades dos idiomas nórdicos e estilo de vida escandinavo.' },
+  { name: 'Polonês Autêntico', code: 'PL', role: 'Oficina de Idiomas', desc: 'Padrões consonantais e fonética dos idiomas do leste europeu.' },
+  { name: 'Português Autêntico', code: 'PT', role: 'Nossa Raiz', desc: 'A base comparativa essencial para entender como seu cérebro processa línguas.' },
 ];
 ---
 
@@ -27,46 +27,48 @@ const languagesList = [
 >
   
   <!-- CABEÇALHO DA PÁGINA -->
-  <section class="py-16 sm:py-20 relative border-b border-white/5">
+  <section class="pt-12 pb-16 bg-[#f8fafc] border-b border-slate-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-4">
-        <span>🌍 A Mente Poliglota</span>
-      </div>
-      <h1 class="text-4xl sm:text-5xl font-heading font-black text-white tracking-tight leading-tight">
-        A Jornada <span class="gradient-text-indigo">Poliglota</span>
+      <span class="badge-subtle mb-4">A Mente Poliglota</span>
+      <h1 class="text-4xl sm:text-5xl font-heading font-extrabold text-slate-900 tracking-tight leading-tight">
+        A Jornada Poliglota
       </h1>
-      <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+      <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
         <strong>Aprender pode ser leve.</strong> Aqui você conhece novos idiomas, entende diferenças culturais e participa de workshops — sem pressão de fluência imediata. Pode ser um hobby, uma descoberta pessoal ou uma oficina de habilidades.
       </p>
     </div>
   </section>
 
   <!-- TRILHAS ESPECIAIS DE ACULTURAMENTO -->
-  <section class="py-16 bg-[#070b16]">
+  <section class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         
-        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-white/10 flex items-start gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl shrink-0">
-            🧠
+        <div class="editorial-card p-6 sm:p-8 flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
           </div>
           <div>
-            <span class="text-[11px] font-bold text-indigo-400 uppercase tracking-wider block mb-1">Trilha Especial · ⏱ 23 min</span>
-            <h2 class="text-xl font-heading font-bold text-white mb-2">A Importância do Aculturamento</h2>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wider block mb-1">Trilha Especial · 23 min</span>
+            <h2 class="text-xl font-heading font-bold text-slate-900 mb-2">A Importância do Aculturamento</h2>
+            <p class="text-xs text-slate-600 leading-relaxed">
               Descubra por que aprender a cultura de um povo faz as palavras fazerem sentido instantaneamente, eliminando 80% das dificuldades de vocabulário e compreensão.
             </p>
           </div>
         </div>
 
-        <div class="glass-card p-6 sm:p-8 rounded-3xl border border-white/10 flex items-start gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-2xl shrink-0">
-            ⚡
+        <div class="editorial-card p-6 sm:p-8 flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
           </div>
           <div>
-            <span class="text-[11px] font-bold text-teal-400 uppercase tracking-wider block mb-1">Trilha Especial · ⏱ 3 min</span>
-            <h2 class="text-xl font-heading font-bold text-white mb-2">Como é o Cérebro Bilíngue?</h2>
-            <p class="text-xs text-slate-300 leading-relaxed">
+            <span class="text-[11px] font-bold text-emerald-700 uppercase tracking-wider block mb-1">Trilha Especial · 3 min</span>
+            <h2 class="text-xl font-heading font-bold text-slate-900 mb-2">Como é o Cérebro Bilíngue?</h2>
+            <p class="text-xs text-slate-600 leading-relaxed">
               Entenda os mecanismos neurobiológicos que entram em ação quando você transita entre línguas e como isso protege a sua mente contra o envelhecimento cognitivo.
             </p>
           </div>
@@ -76,28 +78,31 @@ const languagesList = [
 
       <!-- GRID DOS IDIOMAS EXPLORADOS -->
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white">
+        <span class="badge-neutral mb-3">12 Culturas e Idiomas</span>
+        <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mt-3">
           Idiomas Presentes na Experiência
         </h2>
-        <p class="text-xs sm:text-sm text-slate-300 mt-2">
+        <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
           Explore culturas ao redor do planeta através de uma visão cosmopolita e acolhedora.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {languagesList.map((lang) => (
-          <div class="glass-card p-5 rounded-2xl flex flex-col justify-between">
+          <div class="editorial-card p-5 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-3xl">{lang.flag}</span>
-                <span class="text-[10px] font-bold text-slate-300 bg-white/5 border border-white/10 px-2 py-0.5 rounded-full">
+                <span class="font-mono font-black text-xs text-white bg-slate-900 w-9 h-9 rounded-lg flex items-center justify-center">
+                  {lang.code}
+                </span>
+                <span class="text-[10px] font-semibold text-slate-500 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full">
                   {lang.role}
                 </span>
               </div>
-              <h3 class="text-base font-heading font-bold text-white mb-1">
+              <h3 class="text-sm font-heading font-bold text-slate-900 mb-1">
                 {lang.name}
               </h3>
-              <p class="text-xs text-slate-300 leading-relaxed">
+              <p class="text-xs text-slate-600 leading-relaxed">
                 {lang.desc}
               </p>
             </div>
@@ -106,11 +111,11 @@ const languagesList = [
       </div>
 
       <!-- ESCLARECIMENTO COMERCIAL TRANSPARENTE -->
-      <div class="mt-14 p-6 rounded-2xl bg-indigo-950/30 border border-indigo-500/20 max-w-3xl mx-auto text-center">
-        <span class="text-xs font-bold text-indigo-300 uppercase tracking-wider block mb-2">
+      <div class="mt-14 p-6 rounded-2xl bg-blue-50 border border-blue-200 max-w-3xl mx-auto text-center">
+        <span class="text-xs font-bold text-blue-700 uppercase tracking-wider block mb-2">
           Nota de Transparência Pedagógica
         </span>
-        <p class="text-xs text-slate-300 leading-relaxed">
+        <p class="text-xs text-slate-700 leading-relaxed">
           Nossa formação aprofundada completa, com aulas ao vivo semanais e mentoria contínua, é o <strong>Inglês Autêntico</strong>. Os demais idiomas compõem a Jornada Poliglota com oficinas culturais, curiosidades fonéticas e oficinas introdutórias para quem ama expandir a mente.
         </p>
       </div>

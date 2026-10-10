@@ -4,30 +4,36 @@ export default {
   theme: {
     extend: {
       colors: {
+        canvas: {
+          DEFAULT: '#f8fafc',
+          subtle: '#f1f5f9',
+          card: '#ffffff',
+        },
         brand: {
-          bg: '#0a0e1a',
-          surface: '#10162a',
-          elevated: '#18223f',
-          primary: '#3b82f6',
-          indigo: '#6366f1',
-          teal: '#06b6d4',
-          amber: '#f59e0b',
-          emerald: '#10b981',
-          purple: '#8b5cf6',
+          navy: '#0f172a',
+          primary: '#1d4ed8',
+          accent: '#2563eb',
+          subtle: '#eff6ff',
+          emerald: '#059669',
+          amber: '#d97706',
+        },
+        software: {
+          bg: '#090d16',
+          surface: '#111827',
+          card: '#161f33',
+          border: '#1f293d',
         },
       },
       fontFamily: {
         heading: ['Outfit', 'sans-serif'],
         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
       boxShadow: {
-        'glow-indigo': '0 0 35px -5px rgba(99, 102, 241, 0.35)',
-        'glow-teal': '0 0 35px -5px rgba(6, 182, 212, 0.35)',
-        'glow-amber': '0 0 35px -5px rgba(245, 158, 11, 0.35)',
-        glass: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
-      },
-      backdropBlur: {
-        xs: '2px',
+        sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        card: '0 1px 3px 0 rgba(15, 23, 42, 0.06), 0 1px 2px -1px rgba(15, 23, 42, 0.04)',
+        'card-hover': '0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04)',
+        software: '0 25px 50px -12px rgba(9, 13, 22, 0.35)',
       },
     },
   },

@@ -62,61 +62,57 @@ const complementaryCourses = [
 >
   
   <!-- CABEÇALHO DA PÁGINA -->
-  <section class="py-16 sm:py-20 relative border-b border-white/5">
+  <section class="pt-12 pb-16 bg-[#f8fafc] border-b border-slate-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-4">
-        <span>📚 Estrutura Pedagógica Completa</span>
-      </div>
-      <h1 class="text-4xl sm:text-5xl font-heading font-black text-white tracking-tight leading-tight">
-        A Formação <span class="gradient-text-indigo">Global</span>
+      <span class="badge-subtle mb-4">Estrutura Pedagógica Completa</span>
+      <h1 class="text-4xl sm:text-5xl font-heading font-extrabold text-slate-900 tracking-tight leading-tight">
+        A Formação Global
       </h1>
-      <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+      <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
         Todas as aulas organizadas em um <strong>cronograma semanal e mensal unificado</strong> com metas diárias. Você nunca mais fica em dúvida sobre o que estudar hoje.
       </p>
     </div>
   </section>
 
   <!-- FORMAÇÕES ESSENCIAIS (A BASE) -->
-  <section class="py-16 bg-[#070b16]">
+  <section class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="mb-12">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase mb-2">
-          ⭐ Matrículas Obrigatórias
-        </div>
-        <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white">
+        <span class="badge-subtle mb-3">Matrículas Obrigatórias</span>
+        <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mt-3">
           Formações Essenciais
         </h2>
-        <p class="text-slate-300 text-sm mt-1 max-w-2xl">
+        <p class="text-slate-600 text-sm mt-2 max-w-2xl">
           A base sólida do método para você caminhar com máxima segurança. Todos os alunos devem iniciar por aqui para construir os fundamentos fonéticos e conceituais corretos.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {essentialCourses.map((c) => (
-          <div class="glass-card p-6 rounded-2xl flex flex-col justify-between border-t-4 border-t-indigo-500">
+          <div class="editorial-card p-6 flex flex-col justify-between border-t-4 border-t-blue-700">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-[11px] font-bold text-indigo-300 bg-indigo-500/20 px-2.5 py-0.5 rounded-full">
+                <span class="text-[11px] font-bold text-blue-700 bg-blue-50 border border-blue-200 px-2.5 py-0.5 rounded-full">
                   {c.badge}
                 </span>
                 <span class="text-xs text-slate-400">{c.duration}</span>
               </div>
-              <h3 class="text-xl font-heading font-bold text-white mb-2">
+              <h3 class="text-lg font-heading font-bold text-slate-900 mb-2">
                 {c.title}
               </h3>
-              <p class="text-xs text-slate-300 mb-6 leading-relaxed">
+              <p class="text-xs text-slate-600 mb-6 leading-relaxed">
                 {c.desc}
               </p>
 
-              <div class="border-t border-white/5 pt-4">
+              <div class="border-t border-slate-100 pt-4">
                 <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block mb-2">
                   Tópicos Trabalhados:
                 </span>
-                <ul class="space-y-1.5 text-xs text-slate-300">
+                <ul class="space-y-1.5 text-xs text-slate-700">
                   {c.topics.map((t) => (
                     <li class="flex items-center gap-2">
-                      <span class="text-emerald-400">✓</span>
+                      <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                       <span>{t}</span>
                     </li>
                   ))}
@@ -131,32 +127,30 @@ const complementaryCourses = [
   </section>
 
   <!-- FORMAÇÕES COMPLEMENTARES -->
-  <section class="py-16">
+  <section class="py-16 bg-[#f8fafc] border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="mb-12">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-400 text-xs font-bold uppercase mb-2">
-          🚀 Expansão de Repertório
-        </div>
-        <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white">
+        <span class="badge-neutral mb-3">Expansão de Repertório</span>
+        <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mt-3">
           Formações Complementares
         </h2>
-        <p class="text-slate-300 text-sm mt-1 max-w-2xl">
+        <p class="text-slate-600 text-sm mt-2 max-w-2xl">
           Explore livremente conforme seus objetivos e interesses pessoais. Todas disponíveis com acesso livre para os alunos da plataforma.
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {complementaryCourses.map((c) => (
-          <div class="glass-card p-5 rounded-2xl flex flex-col justify-between">
+          <div class="editorial-card p-5 flex flex-col justify-between">
             <div>
-              <span class="text-[10px] font-bold text-teal-300 bg-teal-500/20 px-2.5 py-0.5 rounded-full inline-block mb-3">
+              <span class="text-[10px] font-bold text-slate-500 bg-slate-100 border border-slate-200 px-2.5 py-0.5 rounded-full inline-block mb-3">
                 {c.tag}
               </span>
-              <h3 class="text-base font-heading font-bold text-white mb-2">
+              <h3 class="text-base font-heading font-bold text-slate-900 mb-2">
                 {c.title}
               </h3>
-              <p class="text-xs text-slate-300 leading-relaxed">
+              <p class="text-xs text-slate-600 leading-relaxed">
                 {c.desc}
               </p>
             </div>
@@ -168,33 +162,33 @@ const complementaryCourses = [
   </section>
 
   <!-- O SISTEMA DE CERTIFICADOS TRIMESTRAIS -->
-  <section class="py-16 bg-gradient-to-r from-indigo-950/40 via-[#0a0e1a] to-slate-900/60 border-t border-white/5">
+  <section class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-card p-8 sm:p-12 rounded-3xl border border-white/10 text-center">
-        <span class="text-4xl mb-4 inline-block">🏆</span>
-        <h2 class="text-3xl font-heading font-black text-white">
+      <div class="editorial-card p-8 sm:p-12 text-center">
+        <span class="badge-subtle mb-4">Certificação Oficial</span>
+        <h2 class="text-3xl font-heading font-bold text-slate-900 mt-3">
           Certificação Modular a Cada 3 Meses
         </h2>
-        <p class="mt-4 text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+        <p class="mt-4 text-slate-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
           Sua jornada em cada formação é dividida em <strong>mini módulos de 3 meses</strong>. Ao final de cada ciclo, você recebe um certificado reconhecido pela Metodologia Autêntica — comprovando seu esforço, sua constância e a carga horária dedicada.
         </p>
-        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-xs text-slate-300">
-          <div class="p-3 rounded-xl bg-white/5 border border-white/5">
-            <strong>1. Aulas Gravadas e Ao Vivo</strong>
-            <p class="text-slate-400 mt-1">Conclua o cronograma semanal</p>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-xs">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <strong class="text-slate-900 block mb-1">1. Aulas Gravadas e Ao Vivo</strong>
+            <p class="text-slate-500">Conclua o cronograma semanal com consistência</p>
           </div>
-          <div class="p-3 rounded-xl bg-white/5 border border-white/5">
-            <strong>2. Desafios & Correções</strong>
-            <p class="text-slate-400 mt-1">Envie suas atividades e áudios</p>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <strong class="text-slate-900 block mb-1">2. Desafios e Correções</strong>
+            <p class="text-slate-500">Envie suas atividades e áudios para a professora</p>
           </div>
-          <div class="p-3 rounded-xl bg-white/5 border border-white/5">
-            <strong>3. Avaliação Prática</strong>
-            <p class="text-slate-400 mt-1">Valide seu progresso real</p>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <strong class="text-slate-900 block mb-1">3. Avaliação Prática</strong>
+            <p class="text-slate-500">Valide seu progresso real com a Prof. Amanda</p>
           </div>
         </div>
 
         <div class="mt-10">
-          <a href="/planos" class="btn-primary !py-3.5 !px-8 text-sm">
+          <a href="/planos" class="btn-editorial-primary !py-3.5 !px-8 text-sm">
             Garantir Minha Vaga na Formação Global
           </a>
         </div>
