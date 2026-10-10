@@ -23,8 +23,18 @@ export default {
           card: '#161f33',
           border: '#1f293d',
         },
+        luxury: {
+          bg: '#06060c',
+          surface: '#0d0e18',
+          card: '#121422',
+          border: 'rgba(255, 255, 255, 0.08)',
+          accent: '#9b8fff',
+          accent2: '#6c5fff',
+          glow: 'rgba(155, 143, 255, 0.35)',
+        },
       },
       fontFamily: {
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
         heading: ['Outfit', 'sans-serif'],
         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],

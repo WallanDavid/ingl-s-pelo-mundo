@@ -1,0 +1,469 @@
+---
+// src/components/ProductsCatalog.astro
+// Apresenta com clareza comercial os 15 produtos e módulos reais da plataforma Fluente no Mundo
+
+interface ProductItem {
+  id: string;
+  name: string;
+  category: 'core' | 'practice' | 'resources' | 'community';
+  categoryLabel: string;
+  badge: string;
+  summary: string;
+  description: string;
+  features: string[];
+  realImage?: string;
+  iconSvg: string;
+}
+
+const products: ProductItem[] = [
+  {
+    id: 'formacao-global',
+    name: 'Formação Global',
+    category: 'core',
+    categoryLabel: 'Núcleo Central',
+    badge: 'Curso Principal',
+    summary: 'A espinha dorsal da sua jornada, do nível básico até a segurança avançada.',
+    description: 'Trilha curricular estruturada que cobre desde a fundação dos sons e padrões da fala até a comunicação complexa em reuniões de negócios, negociações globais, viagens internacionais e apresentações de alto impacto.',
+    features: [
+      'Trilhas passo a passo para iniciantes e intermediários',
+      'Foco direto em Business English e conversação do mundo real',
+      'Exercícios de aplicação prática imediata sem listas infinitas de gramática',
+      'Certificados de conclusão ao final de cada marco da formação'
+    ],
+    realImage: '/images/original/bizz class (1).jpeg',
+    iconSvg: `<path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7"/>`
+  },
+  {
+    id: 'autentica',
+    name: 'Método A.U.T.E.N.T.I.C.A',
+    category: 'core',
+    categoryLabel: 'Núcleo Central',
+    badge: 'Metodologia Própria',
+    summary: 'Os 9 pilares da neuroaprendizagem para falar sem traduzir mentalmente.',
+    description: 'Desenvolvido pela Prof. Amanda Beatriz após mais de 10.000 aulas, o método A.U.T.E.N.T.I.C.A reprograma a sua relação com a fala eliminando o bloqueio emocional, a síndrome da tradução literal e o medo de cometer erros em público.',
+    features: [
+      'Aquisição natural de estruturas através de contextos reais',
+      'Desbloqueio da fala espontânea com técnicas fonéticas descomplicadas',
+      'Treino do ouvido para entender sotaques de diferentes partes do mundo',
+      'Consistência sustentável sem sobrecarga mental'
+    ],
+    realImage: '/images/platform/autentica.png',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>`
+  },
+  {
+    id: 'jornada-poliglota',
+    name: 'Jornada Poliglota',
+    category: 'core',
+    categoryLabel: 'Núcleo Central',
+    badge: '12 Idiomas Inclusos',
+    summary: 'Aprenda múltiplos idiomas com o mesmo método e a mesma assinatura.',
+    description: 'Você não fica restrito ao inglês. Tenha acesso a trilhas de aceleração para Espanhol, Francês, Italiano, Alemão e outros idiomas, aproveitando conexões cognitivas e transferências linguísticas naturais.',
+    features: [
+      'Inglês, Espanhol, Italiano, Francês, Alemão e mais',
+      'Matrizes de comparação lexical para aprender mais rápido',
+      'Módulos práticos para viagens e vivências internacionais',
+      'Incluso sem mensalidades adicionais em todos os planos'
+    ],
+    realImage: '/images/platform/poliglota.png',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>`
+  },
+  {
+    id: 'imersao-com-a-prof',
+    name: 'Imersão com a Prof',
+    category: 'practice',
+    categoryLabel: 'Prática & Vivência',
+    badge: 'Ao Vivo Semanal',
+    summary: 'Aulas ao vivo e masterclasses semanais exclusivas com a Amanda Beatriz.',
+    description: 'Encontros interativos diretamente com a mentora para tirar o inglês do papel. Treino de conversação com temas reais da semana, correção de fonética em tempo real e resolução de bloqueios práticos.',
+    features: [
+      'Encontros ao vivo todas as semanas com a Prof. Amanda',
+      'Gravações completas disponibilizadas na plataforma em até 24h',
+      'Simulações de conversação de viagens, negócios e rotina',
+      'Espaço aberto para dúvidas ao vivo'
+    ],
+    realImage: '/images/original/class (1).jpeg',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/>`
+  },
+  {
+    id: 'minuto-fluente',
+    name: 'Minuto Fluente',
+    category: 'practice',
+    categoryLabel: 'Prática & Vivência',
+    badge: 'Microlearning Diário',
+    summary: 'Pílulas audiovisuais de 60 segundos para quem tem rotina corrida.',
+    description: 'Aprenda expressões autênticas, phrasal verbs essenciais e nuances culturais em doses ultra-rápidas. O formato ideal para assistir no café da manhã, no trânsito ou no intervalo do trabalho.',
+    features: [
+      'Vídeos curtos e objetivos com pronúncia nativa contextualizada',
+      'Explicação prática do uso correto e situações para evitar gafes',
+      'Cards rápidos para memorização imediata',
+      'Novo conteúdo frequente no feed de estudos'
+    ],
+    realImage: '/images/platform/courses.png',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`
+  },
+  {
+    id: 'edufeed',
+    name: 'EduFeed',
+    category: 'practice',
+    categoryLabel: 'Prática & Vivência',
+    badge: 'Atualização Constante',
+    summary: 'Feed de imersão com notícias globais e artigos em linguagem acessível.',
+    description: 'Transforme seu consumo diário de conteúdo em horas de treino involuntário. O EduFeed reúne manchetes mundiais, análises de tendências e textos culturais acompanhados de vocabulário comentado.',
+    features: [
+      'Artigos do mundo real com glossário interativo de termos',
+      'Áudio em velocidade adaptada para leitura acompanhada',
+      'Notícias e tendências de inovação, negócios e estilo de vida',
+      'Substitui a rolagem vazia de redes por aprendizado ativo'
+    ],
+    realImage: '/images/platform/dashboard.png',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"/>`
+  },
+  {
+    id: 'vocabulario',
+    name: 'Vocabulário Ativo',
+    category: 'practice',
+    categoryLabel: 'Prática & Vivência',
+    badge: 'Banco de Expressões',
+    summary: 'Construa repertório real com gírias, phrasal verbs e termos do dia a dia.',
+    description: 'Mais de 1.200 expressões cotidianas catalogadas por temas: reuniões de trabalho, restaurantes internacionais, aeroporto, imigração e encontros casuais. Chega de falar aquele inglês engessado de livro didático dos anos 90.',
+    features: [
+      'Áudio de pronúncia autêntica em velocidade normal e lenta',
+      'Exemplos contextualizados em frases reais e gírias modernas',
+      'Classificação por níveis e temas práticos de rotina',
+      'Filtros por idioma na Jornada Poliglota'
+    ],
+    realImage: '/images/platform/vocabulary.png',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>`
+  },
+  {
+    id: 'revisao-autentica',
+    name: 'Revisão Autêntica (SRS)',
+    category: 'practice',
+    categoryLabel: 'Prática & Vivência',
+    badge: 'Memória de Longo Prazo',
+    summary: 'Repetição espaçada inteligente com áudio para você nunca mais esquecer.',
+    description: 'Sistema baseado na Curva do Esquecimento de Ebbinghaus. A plataforma reapresenta expressões e conteúdos no momento exato antes de você esquecer, transferindo o vocabulário para a sua memória de longo prazo.',
+    features: [
+      'Algoritmo inteligente de repetição espaçada sem sobrecarga',
+      'Treino ativo de evocação fonética e semântica',
+      'Feedback imediato com áudio nativo integrado',
+      'Acompanhamento do índice de retenção cognitiva'
+    ],
+    realImage: '/images/platform/revisao.png',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>`
+  },
+  {
+    id: 'sua-biblioteca',
+    name: 'Sua Biblioteca',
+    category: 'resources',
+    categoryLabel: 'Recursos & Materiais',
+    badge: 'Acervo de Downloads',
+    summary: 'Cadernos de estudo diagramados, planners e materiais para baixar.',
+    description: 'Acesso ilimitado ao acervo de mais de 100 cadernos em PDF, esquemas mentais, planners semanais de imersão e o Ebook oficial "Resetei Meu Inglês". Materiais elegantes para você imprimir ou usar no tablet.',
+    features: [
+      'Mais de 100 materiais editoriais e cadernos de estudo em PDF',
+      'Ebook oficial "Resetei Meu Inglês" incluso gratuitamente',
+      'Mapas conceituais dos 4Ps (Pronúncia, Padrões, Prática e Presença)',
+      'Planners de rotina diária para 15, 30 e 60 minutos de estudo'
+    ],
+    realImage: '/images/original/my books (1).jpeg',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>`
+  },
+  {
+    id: 'mundo-fluente-kids',
+    name: 'Mundo Fluente Kids',
+    category: 'resources',
+    categoryLabel: 'Recursos & Materiais',
+    badge: 'Para Filhos e Família',
+    summary: 'Pedagogia lúdica, visual e natural para ensinar inglês às crianças.',
+    description: 'Módulo desenvolvido para que pais possam introduzir um segundo idioma na vida dos filhos desde cedo, sem pressão ou decoreba. Atividades ilustradas, historinhas e sons para uma aquisição bilíngue alegre.',
+    features: [
+      'Metodologia visual intuitiva e histórias infantis em áudio',
+      'Desenho fonético lúdico para crianças absorverem a pronúncia correta',
+      'Atividades em família para transformar o aprendizado em brincadeira',
+      'Incluso no mesmo plano familiar sem custo extra'
+    ],
+    realImage: '/images/original/mund kids soon.png',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`
+  },
+  {
+    id: 'comunidade',
+    name: 'Comunidade Exclusiva',
+    category: 'community',
+    categoryLabel: 'Tribo & Conexões',
+    badge: 'Ambiente Seguro',
+    summary: 'Uma rede ativa de alunos que apoiam o seu crescimento sem julgamentos.',
+    description: 'O maior obstáculo para a fluência é a vergonha de falar e errar. Na nossa comunidade oficial, você encontra alunos no mesmo propósito, com respeito mútuo, troca diária de áudios e motivação contínua.',
+    features: [
+      'Espaço moderado para tirar dúvidas e praticar áudios',
+      'Formação de duplas de conversação (Language Buddies)',
+      'Desafios semanais com feedback colaborativo',
+      'Apoio constante para vencer a timidez e o desânimo'
+    ],
+    realImage: '/images/original/students with coffee (1).jpeg',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>`
+  },
+  {
+    id: 'conquista-constancia',
+    name: 'Conquista & Constância',
+    category: 'practice',
+    categoryLabel: 'Prática & Vivência',
+    badge: 'Gamificação Pedagógica',
+    summary: 'Metas diárias, streaks de rotina e conquistas para você não parar.',
+    description: 'Fluência não exige horas por dia; exige constância. Nosso sistema de check-in gamificado monitora sua sequência diária, gera recompensas de estudo e mantém o seu ritmo ativo mesmo nos dias cansativos.',
+    features: [
+      'Contador de sequência (streak) para consolidar o hábito diário',
+      'Metas flexíveis ajustadas para a sua disponibilidade (15 a 45 min)',
+      'Painel de progresso com estatísticas de horas de imersão',
+      'Badges de conquista que reconhecem a sua evolução real'
+    ],
+    realImage: '/images/original/studiess (1).jpeg',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>`
+  },
+  {
+    id: 'vivencia-global',
+    name: 'Vivência Global',
+    category: 'practice',
+    categoryLabel: 'Prática & Vivência',
+    badge: 'Cultura & Realidade',
+    summary: 'Aprenda inglês com séries, filmes, podcasts e situações reais do mundo.',
+    description: 'Imersão cultural que treina seus ouvidos para a velocidade dos falantes nativos. Análises de diálogos reais de filmes, entrevistas e podcasts internacionais, preparando você para viagens, alfândega e conversas casuais.',
+    features: [
+      'Estudos práticos sobre trechos de séries e filmes famosos',
+      'Desmistificação de contrações e gírias da vida real (gonna, wanna, gotta)',
+      'Treino de imersão em situações de aeroporto, hotel e restaurantes',
+      'Compreensão profunda das diferenças entre inglês americano e britânico'
+    ],
+    realImage: '/images/platform/vivencia.png',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`
+  },
+  {
+    id: 'conexoes-autenticas',
+    name: 'Conexões Autênticas',
+    category: 'community',
+    categoryLabel: 'Tribo & Conexões',
+    badge: 'Networking Global',
+    summary: 'Dinâmicas guiadas de conversação e encontros temáticos entre alunos.',
+    description: 'Espaço estruturado para conectar alunos em duplas e grupos pequenos para conversas guiadas quinzenais sobre temas do mundo (tecnologia, viagens, gastronomia e carreira), com roteiros preparados pela equipe pedagógica.',
+    features: [
+      'Encontros quinzenais com temas e roteiros de conversação pré-definidos',
+      'Prática leve e espontânea com quem está no mesmo nível que você',
+      'Oportunidades de networking profissional e amizades globais',
+      'Ambiente guiado com facilitadores para apoiar a dinâmica'
+    ],
+    realImage: '/images/original/embaixadores.png',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>`
+  },
+  {
+    id: 'sos-professora',
+    name: 'SOS Professora',
+    category: 'resources',
+    categoryLabel: 'Recursos & Materiais',
+    badge: 'Suporte Direto',
+    summary: 'Canal de apoio pedagógico para destravar suas dúvidas a qualquer momento.',
+    description: 'Travou em uma frase? Não entendeu uma pronúncia específica ou a construção de um email em inglês? Envie sua dúvida no SOS Professora e receba orientação da equipe pedagógica e da Prof. Amanda Beatriz.',
+    features: [
+      'Canal direto na plataforma para envio de dúvidas',
+      'Respostas claras com foco na aplicação prática real',
+      'Suporte para emails de trabalho, apresentações e viagens',
+      'Você nunca estuda sozinho nem fica sem resposta'
+    ],
+    realImage: '/images/platform/sos.png',
+    iconSvg: `<path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>`
+  }
+];
+---
+
+<section id="produtos" class="py-24 bg-[#07080e] relative overflow-hidden border-t border-b border-white/5">
+  <!-- Subtle ambient glow inspired by fluentenomundo.com -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[radial-gradient(ellipse,rgba(155,143,255,0.08)_0%,transparent_70%)] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Header Section -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#9b8fff] mb-6">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+        </svg>
+        O Ecossistema Completo Fluente no Mundo
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-white tracking-tight leading-tight">
+        Conheça os <em class="italic font-normal text-[#c8c2ff]">15 Produtos & Módulos</em> que Você Recebe ao Entrar
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed font-sans">
+        Ao se matricular no Fluente no Mundo, você não adquire apenas um curso de regras gramaticais: você desbloqueia uma escola viva com 15 frentes de aprendizado, materiais e acompanhamento.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap justify-center gap-2 mt-8" id="product-filters">
+        <button type="button" data-filter="all" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-white text-slate-950 shadow-lg">
+          Todos os 15 Módulos
+        </button>
+        <button type="button" data-filter="core" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10">
+          Núcleo Central
+        </button>
+        <button type="button" data-filter="practice" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10">
+          Prática & Vivência
+        </button>
+        <button type="button" data-filter="resources" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10">
+          Recursos & Materiais
+        </button>
+        <button type="button" data-filter="community" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10">
+          Tribo & Comunidade
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Showcase Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="products-grid">
+      {products.map((item) => (
+        <article 
+          class="product-card group bg-[#0e101a] border border-white/10 hover:border-[#9b8fff]/40 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#6c5fff]/10 flex flex-col justify-between"
+          data-category={item.category}
+          id={`item-${item.id}`}
+        >
+          <!-- Card Header & Image -->
+          <div>
+            {item.realImage && (
+              <div class="relative h-48 w-full overflow-hidden bg-slate-900 border-b border-white/10">
+                <img 
+                  src={item.realImage} 
+                  alt={item.name} 
+                  loading="lazy"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0e101a] via-transparent to-transparent opacity-80"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-950/80 backdrop-blur border border-white/10 text-white">
+                    {item.badge}
+                  </span>
+                </div>
+                <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-950/80 backdrop-blur border border-white/10 flex items-center justify-center text-[#9b8fff]">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" set:html={item.iconSvg} />
+                </div>
+              </div>
+            )}
+
+            {!item.realImage && (
+              <div class="p-6 pb-0 flex items-center justify-between">
+                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold bg-white/5 border border-white/10 text-slate-300">
+                  {item.badge}
+                </span>
+                <div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#9b8fff]">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" set:html={item.iconSvg} />
+                </div>
+              </div>
+            )}
+
+            <!-- Body Details -->
+            <div class="p-6">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#9b8fff]">
+                {item.categoryLabel}
+              </span>
+              <h3 class="text-xl font-bold text-white mt-1 group-hover:text-[#c8c2ff] transition-colors">
+                {item.name}
+              </h3>
+              <p class="text-sm text-slate-400 font-medium mt-1 leading-snug">
+                {item.summary}
+              </p>
+
+              <p class="text-xs text-slate-300 mt-3 leading-relaxed border-t border-white/5 pt-3">
+                {item.description}
+              </p>
+
+              <!-- Feature List -->
+              <ul class="mt-4 space-y-2">
+                {item.features.map((feat) => (
+                  <li class="flex items-start gap-2 text-xs text-slate-300">
+                    <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card Footer CTA -->
+          <div class="px-6 pb-6 pt-2 border-t border-white/5 flex items-center justify-between mt-4">
+            <span class="text-[11px] font-medium text-emerald-400 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Acesso Completo Incluso
+            </span>
+            <a 
+              href="#planos" 
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-white group-hover:text-[#9b8fff] transition-colors"
+            >
+              Garantir Acesso
+              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Bottom Conversion Banner -->
+    <div class="mt-16 p-8 sm:p-10 rounded-2xl bg-gradient-to-r from-slate-900 via-[#101224] to-slate-900 border border-white/10 text-center max-w-4xl mx-auto shadow-2xl">
+      <h3 class="text-2xl sm:text-3xl font-serif text-white">
+        Todos os 15 produtos integrados em <span class="italic text-[#c8c2ff]">uma única assinatura</span>
+      </h3>
+      <p class="mt-3 text-slate-300 text-sm sm:text-base max-w-2xl mx-auto">
+        Sem taxas ocultas, sem compras separadas para cada idioma ou material. Você entra no ecossistema e tem acesso total a todas as frentes de aprendizado.
+      </p>
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
+        <a 
+          href="#planos" 
+          class="px-8 py-3.5 rounded-full text-sm font-bold tracking-wider uppercase bg-white text-slate-950 hover:bg-slate-100 transition-all shadow-lg hover:scale-105"
+        >
+          Ver Planos & Matricular Agora
+        </a>
+        <a 
+          href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20os%2015%20produtos%20do%20Fluente%20no%20Mundo." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="px-6 py-3.5 rounded-full text-sm font-semibold tracking-wide bg-white/5 border border-white/20 text-white hover:bg-white/10 transition-all flex items-center gap-2"
+        >
+          <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          Falar com Consultor Pedagógico
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Filter interactive tabs for 15 products
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.product-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-filter');
+
+        // Update active class
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-white', 'text-slate-950');
+          b.classList.add('bg-white/5', 'text-slate-300');
+        });
+        btn.classList.add('active', 'bg-white', 'text-slate-950');
+        btn.classList.remove('bg-white/5', 'text-slate-300');
+
+        // Filter cards
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (target === 'all' || category === target) {
+            (card as HTMLElement).style.display = 'flex';
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>

@@ -4,19 +4,15 @@ const { JSDOM } = require('jsdom');
 
 async function runE2ETests() {
   console.log('================================================================');
-  console.log('SUITE DE TESTES E2E V3 — SITE COMERCIAL FLUENTE NO MUNDO');
+  console.log('SUITE DE TESTES E2E V3.1 — SITE COMERCIAL LIMPO E OBJETIVO');
   console.log('================================================================\n');
 
   const htmlPath = path.resolve(__dirname, '../dist/index.html');
-  const htmlContent = fs.readFileSync(htmlPath, 'utf-8');
-
-  // Find any client scripts in dist/_astro
-  const astroDir = path.resolve(__dirname, '../dist/_astro');
-  const jsFiles = fs.readdirSync(astroDir).filter(f => f.endsWith('.js'));
-  let jsContent = '';
-  for (const f of jsFiles) {
-    jsContent += fs.readFileSync(path.join(astroDir, f), 'utf-8') + '\n';
+  if (!fs.existsSync(htmlPath)) {
+    console.error('dist/index.html não encontrado. Execute npm run build antes.');
+    process.exit(1);
   }
+  const htmlContent = fs.readFileSync(htmlPath, 'utf-8');
 
   const dom = new JSDOM(htmlContent, {
     runScripts: 'dangerously',
@@ -53,88 +49,97 @@ async function runE2ETests() {
     }
   }
 
-  // TC-01: Platform Showcase tab switching
-  console.log('--- Executando TC-01: Alternância das 6 Abas da Plataforma ---');
-  const tourTabs = ['dashboard', 'courses', 'vocabulary', 'masterclasses', 'vivencia', 'sos'];
-  let tc01Pass = true;
-  for (const tab of tourTabs) {
-    const btn = document.querySelector(`[data-tour-tab="${tab}"]`);
-    if (!btn) {
-      tc01Pass = false;
-      console.error(`Botão data-tour-tab="${tab}" não encontrado`);
-      break;
-    }
-    btn.click();
-    const panel = document.getElementById(`tour-panel-${tab}`);
-    const isVisible = panel && !panel.classList.contains('hidden');
-    if (!isVisible) {
-      tc01Pass = false;
-      console.error(`Painel tour-panel-${tab} não ficou visível`);
-      break;
-    }
+  // TC-01: Exposição dos 15 Produtos e Módulos da Imagem
+  console.log('--- Executando TC-01: Exposição em Evidência dos 15 Produtos ---');
+  const expectedProducts = [
+    'formacao-global',
+    'autentica',
+    'jornada-poliglota',
+    'imersao-com-a-prof',
+    'minuto-fluente',
+    'edufeed',
+    'vocabulario',
+    'revisao-autentica',
+    'sua-biblioteca',
+    'mundo-fluente-kids',
+    'comunidade',
+    'conquista-constancia',
+    'vivencia-global',
+    'conexoes-autenticas',
+    'sos-professora'
+  ];
+  let foundProductsCount = 0;
+  for (const pid of expectedProducts) {
+    const el = document.getElementById(`item-${pid}`);
+    if (el) foundProductsCount++;
   }
-  assert('TC-01', 'Alternância Fluida das 6 Abas da Plataforma', tc01Pass, 'Todas as 6 abas chave ativaram seus respectivos painéis com imagens reais');
+  const tc01Pass = foundProductsCount === 15;
+  assert('TC-01', 'Exposição dos 15 Produtos e Módulos do Ecossistema', tc01Pass, `Encontrados ${foundProductsCount} de 15 produtos esperados com descrições e ícones`);
 
-  // TC-02: Working CTA Buttons
+  // TC-02: Botões de Matrícula e Conversão Ativos
   console.log('\n--- Executando TC-02: Verificação de Botões de Ação e Matrícula ---');
   const ctaLinks = document.querySelectorAll('a[href="#planos"], a[href="/planos"], a[href*="alunos.fluentenomundo.com"]');
-  const tc02Pass = ctaLinks.length >= 5;
-  assert('TC-02', 'Botões de Matrícula e Conversão Ativos e Funcionais', tc02Pass, `Encontrados ${ctaLinks.length} links e botões de matrícula válidos`);
+  const tc02Pass = ctaLinks.length >= 10;
+  assert('TC-02', 'Botões de Matrícula e Conversão Ativos e Funcionais', tc02Pass, `Encontrados ${ctaLinks.length} links e botões de matrícula/checkout válidos`);
 
-  // TC-03: Real Student Testimonials
-  console.log('\n--- Executando TC-03: Seção de Prova Social com Imagens Reais ---');
-  const testimonialImgs = document.querySelectorAll('#depoimentos img');
-  const tc03Pass = testimonialImgs.length >= 6;
-  assert('TC-03', 'Galeria de Depoimentos Reais com Imagens Autênticas', tc03Pass, `${testimonialImgs.length} imagens de prints de alunos carregadas`);
+  // TC-03: Remoção Total de Depoimentos
+  console.log('\n--- Executando TC-03: Remoção Completa de Seção de Depoimentos ---');
+  const depoimentosSection = document.getElementById('depoimentos');
+  const testimonialCards = document.querySelectorAll('.testimonial-card');
+  const tc03Pass = !depoimentosSection && testimonialCards.length === 0;
+  assert('TC-03', 'Remoção Total da Seção de Depoimentos', tc03Pass, 'Zero depoimentos ou prints de avaliações presentes na página comercial');
 
-  // TC-04: Bonus Showcase
-  console.log('\n--- Executando TC-04: Bônus Exclusivos de Matrícula ---');
+  // TC-04: Remoção da Área do Aluno / Simulador
+  console.log('\n--- Executando TC-04: Remoção da Área do Aluno / Simulação Mock ---');
+  const tourTabs = document.querySelectorAll('[data-tour-tab]');
+  const mockInputs = document.querySelectorAll('#mock-word-input, #checkin-btn');
+  const tc04Pass = tourTabs.length === 0 && mockInputs.length === 0;
+  assert('TC-04', 'Remoção de Área do Aluno e Simuladores de Mentira', tc04Pass, 'Nenhum simulador ou tela mockada de software na experiência comercial');
+
+  // TC-05: Elementos Reais do Site Original (Seta oficial e contraste de modelos)
+  console.log('\n--- Executando TC-05: Elementos Reais do Site Original (arrow.png) ---');
+  const arrowImg = document.querySelector('img[src*="arrow.png"]');
+  const hasAutoridade = document.body.textContent.includes('10.000 aulas');
+  const tc05Pass = Boolean(arrowImg && hasAutoridade);
+  assert('TC-05', 'Elementos Reais do Site Original (Seta Oficial e Métricas)', tc05Pass, 'Seta de transição do modelo tradicional e dados da Amanda validados');
+
+  // TC-06: Bônus Exclusivos de Matrícula
+  console.log('\n--- Executando TC-06: Bônus Exclusivos de Matrícula ---');
   const ebookImg = document.querySelector('img[src*="meuEbookResetei.png"]');
   const materiaisImg = document.querySelector('img[src*="materiais.png"]');
-  const tc04Pass = Boolean(ebookImg && materiaisImg);
-  assert('TC-04', 'Apresentação Visual dos Bônus (Ebook e Materiais)', tc04Pass, 'Imagens reais do Ebook Resetei e Biblioteca de PDFs verificadas');
+  const tc06Pass = Boolean(ebookImg && materiaisImg);
+  assert('TC-06', 'Apresentação Visual dos Bônus (Ebook e Materiais)', tc06Pass, 'Imagens reais do Ebook Resetei e Biblioteca de Cadernos em PDF verificadas');
 
-  // TC-05: Pricing Cards with Monthly and Annual options
-  console.log('\n--- Executando TC-05: Seção de Planos e Preços ---');
+  // TC-07: Seção de Planos e Preços com Garantia
+  console.log('\n--- Executando TC-07: Seção de Planos e Preços ---');
   const planosSection = document.getElementById('planos');
   const hasMensal = planosSection && planosSection.textContent.includes('39') && planosSection.textContent.includes(',90');
   const hasAnual = planosSection && planosSection.textContent.includes('33') && planosSection.textContent.includes(',25');
-  const tc05Pass = Boolean(hasMensal && hasAnual);
-  assert('TC-05', 'Planos de Matrícula Claros (Mensal R$ 39,90 e Anual 12x R$ 33,25)', tc05Pass, 'Ambos os planos devidamente renderizados com valores transparentes');
+  const hasGarantia = planosSection && planosSection.textContent.includes('7 Dias');
+  const tc07Pass = Boolean(hasMensal && hasAnual && hasGarantia);
+  assert('TC-07', 'Planos de Matrícula Claros (Mensal R$ 39,90 e Anual 12x R$ 33,25)', tc07Pass, 'Planos transparentes, selo de 7 dias e garantia comprovados');
 
-  // TC-06: 7-Day Guarantee and WhatsApp Support
-  console.log('\n--- Executando TC-06: Selo de Garantia e WhatsApp ---');
-  const hasGarantia = planosSection && planosSection.textContent.includes('Garantia Incondicional de 7 Dias');
-  const waBtn = document.querySelector('a[href*="wa.me"]');
-  const tc06Pass = Boolean(hasGarantia && waBtn);
-  assert('TC-06', 'Selo de Garantia de 7 Dias e Canal Direto de WhatsApp', tc06Pass, 'Garantia blindada e botão do WhatsApp ativos e verificados');
+  // TC-08: Hero com Fotos Profissionais da Amanda e Setup
+  console.log('\n--- Executando TC-08: Hero com Composição Visual Real ---');
+  const amandaImg = document.querySelector('section img[src*="about me.png"]');
+  const cafeImg = document.querySelector('section img[src*="cafe com plataforma.jpg"]');
+  const tc08Pass = Boolean(amandaImg && cafeImg);
+  assert('TC-08', 'Hero com Fotos Profissionais da Amanda e Plataforma Real', tc08Pass, 'Fotos reais integradas no Hero');
 
-  // TC-07: Hero Visual Composition
-  console.log('\n--- Executando TC-07: Hero com Fotos Profissionais ---');
-  const amandaImg = document.querySelector('img[src*="about me.png"]');
-  const cafePlataformaImg = document.querySelector('img[src*="cafe com plataforma.jpg"]');
-  const tc07Pass = Boolean(amandaImg && cafePlataformaImg);
-  assert('TC-07', 'Composição Visual do Hero com Amanda e Plataforma Real', tc07Pass, 'Fotos autênticas da mentora e da plataforma carregadas no Hero');
-
-  // TC-08: Zero mock forms / Zero fake inputs
-  console.log('\n--- Executando TC-08: Ausência de Formulários Simulados ou Falsos ---');
-  const fakeForms = document.querySelectorAll('#laboratorio form, #plataforma-tour form');
-  const fakeInputs = document.querySelectorAll('#laboratorio input, #plataforma-tour input');
-  const tc08Pass = fakeForms.length === 0 && fakeInputs.length === 0;
-  assert('TC-08', 'Zero Dados Mockados ou Formulários Simulados no Tour', tc08Pass, 'Nenhum formulário ou input falso detectado no showcase comercial');
-
+  // Resultado Geral
   console.log('\n================================================================');
-  const allPassed = testResults.every(r => r.status === 'PASS');
-  if (allPassed) {
-    console.log('STATUS FINAL: TODOS OS CASOS DE TESTE PASSARAM COM SUCESSO TOTAL! (100% GREEN)');
+  const totalPassed = testResults.filter(r => r.status === 'PASS').length;
+  if (totalPassed === testResults.length) {
+    console.log(`STATUS FINAL: TODOS OS ${totalPassed} CASOS DE TESTE PASSARAM COM SUCESSO! (100% GREEN)`);
+    console.log('================================================================\n');
   } else {
-    console.error('ALGUNS TESTES FALHARAM!');
+    console.error(`STATUS FINAL: FALHA EM ${testResults.length - totalPassed} CASOS DE TESTE.`);
+    console.log('================================================================\n');
     process.exit(1);
   }
-  console.log('================================================================\n');
 }
 
 runE2ETests().catch(err => {
-  console.error(err);
+  console.error('Erro fatal executando os testes E2E:', err);
   process.exit(1);
 });

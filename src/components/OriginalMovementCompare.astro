@@ -1,0 +1,105 @@
+---
+// src/components/OriginalMovementCompare.astro
+// Comparativo visual direto entre o modelo tradicional e o Movimento Fluente no Mundo com a seta oficial
+---
+
+<section class="py-20 bg-[#06060c] relative overflow-hidden border-b border-white/5">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-semibold uppercase tracking-widest text-[#9b8fff]">
+        Por que o método tradicional falha
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-serif text-white mt-3">
+        Existe um mundo completamente <em class="italic font-normal text-[#c8c2ff]">diferente desse modelo</em>
+      </h2>
+      <p class="mt-4 text-slate-300 text-base leading-relaxed">
+        Você não precisa passar anos travado na gramática para conseguir falar. Veja a diferença prática entre o ensino antigo e o ecossistema Fluente no Mundo.
+      </p>
+    </div>
+
+    <!-- Comparative Grid with Center Arrow -->
+    <div class="grid grid-cols-1 lg:grid-cols-11 gap-6 items-center">
+      <!-- Left: Modelo Tradicional (Negative) -->
+      <div class="lg:col-span-5 p-8 rounded-2xl bg-white/[0.02] border border-red-500/20 backdrop-blur-sm relative">
+        <div class="flex items-center justify-between mb-6">
+          <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-red-500/10 text-red-400 border border-red-500/20">
+            Escola Tradicional
+          </span>
+          <span class="text-2xl text-red-400">✕</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">
+          O ciclo de frustração e insegurança
+        </h3>
+        <ul class="space-y-3.5 text-sm text-slate-400">
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 shrink-0"></span>
+            <span><strong>5 a 7 anos</strong> decorando tabelas de verbos sem conseguir manter um diálogo espontâneo.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 shrink-0"></span>
+            <span><strong>Tradução mental constante:</strong> você pensa em português, tenta traduzir e trava antes de falar.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 shrink-0"></span>
+            <span><strong>Medo de julgamento:</strong> vergonha do próprio sotaque e receio de cometer erros bobos.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 shrink-0"></span>
+            <span><strong>Mensalidades abusivas</strong> e livros didáticos caros com conteúdos desatualizados.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Center: Hand-Drawn Arrow from fluentenomundo.com -->
+      <div class="lg:col-span-1 flex flex-col items-center justify-center py-4 lg:py-0">
+        <img 
+          src="/images/original/arrow.png" 
+          alt="Transição de modelo" 
+          class="w-20 lg:w-28 h-auto object-contain rotate-90 lg:rotate-0 opacity-80"
+        />
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#9b8fff] mt-2 text-center hidden lg:block">
+          Sua Virada
+        </span>
+      </div>
+
+      <!-- Right: Fluente no Mundo (Positive) -->
+      <div class="lg:col-span-5 p-8 rounded-2xl bg-gradient-to-br from-[#101224] to-[#0c0d18] border border-[#9b8fff]/30 shadow-xl shadow-[#6c5fff]/5 relative">
+        <div class="flex items-center justify-between mb-6">
+          <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#9b8fff]/15 text-[#c8c2ff] border border-[#9b8fff]/30">
+            Fluente no Mundo
+          </span>
+          <span class="text-2xl text-emerald-400">✓</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">
+          A liberdade da fala autêntica e natural
+        </h3>
+        <ul class="space-y-3.5 text-sm text-slate-200">
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span><strong>Destrave desde as primeiras semanas:</strong> foco em estruturas conversacionais do dia a dia.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span><strong>Imersão real no seu tempo:</strong> 15 produtos interativos, microlearning e treinos de escuta.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span><strong>Comunidade sem julgamento:</strong> treine conversação com duplas de alunos no mesmo objetivo.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span><strong>Tudo incluso em uma assinatura justa:</strong> 12 idiomas, livros em PDF e encontros semanais ao vivo.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

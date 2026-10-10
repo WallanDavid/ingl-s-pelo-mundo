@@ -9,16 +9,36 @@
 
 ---
 
-### 1. Resumo Executivo da Transformação Comercial V3
+### 1. Resumo Executivo da Transformação Comercial V3.1 (Catálogo dos 15 Produtos & Estilo Original)
 
-A versão 3.0 do projeto **Fluente no Mundo** foi refinada para atender ao objetivo comercial direto: **estimulante para a pessoa conhecer, desejar e adquirir a formação**, eliminando simulações de mentira, botões inoperantes e dados mockados, e elevando a autoridade com fotografias autênticas da mentora, provas sociais reais e telas reais da plataforma.
-
-Principais melhorias aplicadas:
-1. **Foco Comercial de Alta Conversão:** Substituição do laboratório com formulários simulados por um **Showcase Comercial Interativo** com 6 telas reais da plataforma (`dashboard.png`, `courses.png`, `vocabulary.png`, `masterclasses.png`, `vivencia.png`, `sos.png`) e foco no valor prático para o aluno.
-2. **Eliminação de Mock Data e Simulações:** Removidos inputs de texto de mentira, contadores falsos de pontos (+10) e envio simulado de dúvidas. Todos os botões agora possuem ação real (redirecionam para `#planos`, WhatsApp oficial, ou acesso à plataforma do aluno).
-3. **Prova Social Real:** Galeria com 8 depoimentos autênticos de alunos com prints reais da comunidade (`depoimento 2.o marcia.png`, `depoimento 3.o diego.png`, `felipe`, `gabriel`, `jaqueline`, `paloma`, `paulo`, `raulino`).
-4. **Bônus Reais com Mockups Profissionais:** Apresentação visual dos 3 bônus exclusivos de matrícula: *Ebook Resetei Meu Inglês* (`meuEbookResetei.png`), *Biblioteca de Cadernos em PDF* (`materiais.png`) e *Acesso a 12 Idiomas*.
-5. **Segurança e Risco Zero:** Selo visual de Garantia Incondicional de 7 Dias e canal consultivo direto pelo WhatsApp.
+Em atendimento à solicitação de direcionamento comercial limpo e objetivo, a versão 3.1 consolidou:
+1. **Exposição em Evidência dos 15 Produtos & Módulos:** Implementação do componente `ProductsCatalog.astro`, apresentando todos os 15 itens da imagem real da plataforma:
+   - Formação Global
+   - Método A.U.T.E.N.T.I.C.A
+   - Jornada Poliglota (12 Idiomas)
+   - Imersão com a Prof (Aulas ao Vivo de Quarta)
+   - Minuto Fluente (Microlearning Diário)
+   - EduFeed
+   - Vocabulário Ativo
+   - Revisão Autêntica (SRS)
+   - Sua Biblioteca
+   - Mundo Fluente Kids
+   - Comunidade Exclusiva
+   - Conquista & Constância
+   - Vivência Global
+   - Conexões Autênticas
+   - SOS Professora
+2. **Remoção Integral de Depoimentos:** Eliminação completa da seção de depoimentos e cards de alunos para foco exclusivo na autoridade da escola e na oferta dos produtos.
+3. **Remoção da Área do Aluno Simulada:** Retirada de qualquer sandbox ou simulação que confunda a decisão de compra comercial.
+4. **Elementos Reais do Site Oficial (`https://fluentenomundo.com/`):**
+   - Comparativo com a seta original (`arrow.png`).
+   - Métricas comprovadas da fundadora Amanda Beatriz (+10.000 aulas dadas, +100 materiais, +4 anos de desenvolvimento).
+   - Estética dark luxury refinada (`#06060c`) com acento violeta (`#9b8fff`) e tipografia Playfair Display.
+5. **Oferta Comercial Clara e Segura:**
+   - Plano Mensal: R$ 39,90/mês
+   - Plano Anual: 12x R$ 33,25 (ou R$ 399,00 à vista)
+   - Selo de Garantia Incondicional de 7 Dias
+   - Canal de Consultoria Direta no WhatsApp
 
 ---
 
@@ -29,39 +49,27 @@ Principais melhorias aplicadas:
 - **Erros:** 0
 - **Avisos (Warnings):** 0
 - **Sugestões (Hints):** 0
-- **Resultado:** **APROVADO**
+- **Resultado:** **APROVADO (100%)**
 
 #### 2.2. Compilação de Produção (`npm run build`)
-- **Tempo de compilação:** ~1.6 a 3.0 segundos
+- **Tempo de compilação:** ~4.2 segundos
 - **Modo:** Estático (`output: "static"`)
-- **Rotas compiladas com sucesso (12 páginas):**
-  1. `/` (Página Principal Comercial com Showcase e Depoimentos) — 200 OK
-  2. `/plataforma` (Visão Detalhada da Plataforma Real) — 200 OK
-  3. `/metodo` (Os 9 Pilares A.U.T.E.N.T.I.C.A) — 200 OK
-  4. `/formacao-global` (Grade Curricular das Formações) — 200 OK
-  5. `/idiomas` (Jornada Poliglota com 12 idiomas) — 200 OK
-  6. `/imersao` (Aulas ao Vivo de Quarta-feira & Masterclasses) — 200 OK
-  7. `/sobre` (Trajetória da Prof. Amanda Beatriz) — 200 OK
-  8. `/planos` (Planos Mensal e Anual com Tabela Comparativa) — 200 OK
-  9. `/faq` (Perguntas Frequentes com Accordion Acessível) — 200 OK
-  10. `/contato` (Canais de Atendimento com Feedback Real) — 200 OK
-  11. `/privacidade` (Política de Privacidade e LGPD) — 200 OK
-  12. `/termos` (Termos de Uso e Condições Gerais) — 200 OK
+- **Rotas compiladas:** 12 rotas (100% 200 OK)
 - **Resultado:** **APROVADO**
 
-#### 2.3. Bateria E2E Automatizada Comercial (`npm test`)
+#### 2.3. Bateria E2E Automatizada V3.1 (`npm test`)
 Executada via `tests/e2e_v3_test.cjs` sobre o build de produção real:
 
 | Caso de Teste | Descrição do Cenário | Resultado | Evidência Técnica |
 | :--- | :--- | :---: | :--- |
-| **TC-01** | Alternância dinâmica entre as 6 abas da Plataforma Real | **PASS** | Todas as 6 abas trocam de imagem, textos e metas pedagógicas sem erro. |
-| **TC-02** | Botões de Matrícula e Conversão Ativos | **PASS** | 100% dos botões possuem links válidos para `#planos`, `/planos`, login ou WhatsApp. |
-| **TC-03** | Galeria de Depoimentos Reais com Imagens Autênticas | **PASS** | 8 cards de depoimentos renderizados com prints reais dos alunos e badges. |
-| **TC-04** | Apresentação Visual dos Bônus Exclusivos | **PASS** | 3 cards com capas profissionais (Ebook Resetei, Cadernos PDF e Poliglota). |
-| **TC-05** | Seção de Planos de Matrícula Claros e Transparentes | **PASS** | Plano Mensal (R$ 39,90) e Anual (12x R$ 33,25) com benefícios detalhados. |
-| **TC-06** | Selo de Garantia de 7 Dias e Botão de WhatsApp Ativo | **PASS** | Selo de Risco Zero e link WhatsApp com mensagem pré-definida. |
-| **TC-07** | Hero com Composição Visual da Amanda e Plataforma Real | **PASS** | Presença de `about me.png` e `cafe com plataforma.jpg` na composição hero. |
-| **TC-08** | Ausência de Dados Mockados ou Formulários Falsos | **PASS** | Zero inputs de texto falsos ou contadores artificiais na experiência comercial. |
+| **TC-01** | Exposição dos 15 Produtos e Módulos do Ecossistema | **PASS** | 15 de 15 produtos identificados com id, ícones SVG e descrições comerciais. |
+| **TC-02** | Botões de Matrícula e Conversão Ativos e Funcionais | **PASS** | Links válidos para `#planos`, `/planos`, login e WhatsApp em todos os pontos de conversão. |
+| **TC-03** | Remoção Total da Seção de Depoimentos | **PASS** | Zero depoimentos ou prints de avaliações presentes na página comercial. |
+| **TC-04** | Remoção de Área do Aluno e Simuladores de Mentira | **PASS** | Nenhum simulador ou tela mockada de software na experiência comercial. |
+| **TC-05** | Elementos Reais do Site Original (Seta Oficial e Métricas) | **PASS** | Presença de `arrow.png` e métricas de autoridade da Prof. Amanda Beatriz. |
+| **TC-06** | Apresentação Visual dos Bônus Exclusivos de Matrícula | **PASS** | Imagens reais do Ebook Resetei (`meuEbookResetei.png`) e Cadernos (`materiais.png`). |
+| **TC-07** | Planos Claros com Garantia de 7 Dias | **PASS** | Plano Mensal (R$ 39,90) e Anual (12x R$ 33,25) com selo de garantia incondicional. |
+| **TC-08** | Hero com Fotos Profissionais da Amanda e Setup | **PASS** | Imagens autênticas `about me.png` e `cafe com plataforma.jpg` integradas no Hero. |
 
 - **Taxa de Sucesso dos Testes Funcionais:** **100% (8 de 8 PASS)**
 

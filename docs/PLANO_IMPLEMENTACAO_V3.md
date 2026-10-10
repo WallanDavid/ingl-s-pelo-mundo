@@ -44,13 +44,14 @@
 - [x] Envio para `origin main` via `git push`.
 - [x] Verificação do status de publicação no Netlify.
 
-#### Fase 7: Refatoração Comercial de Alta Conversão (CONCLUÍDA)
-- [x] Eliminação de funcionalidades simuladas, formulários fictícios e dados mockados que desviavam o foco da venda.
-- [x] Substituição de simuladores por Showcase Comercial com 6 telas reais da plataforma (`dashboard.png`, `courses.png`, `vocabulary.png`, `masterclasses.png`, `vivencia.png`, `sos.png`).
-- [x] Incorporação de Prova Social com 8 depoimentos autênticos da comunidade (`depoimento *.png`) com badges de validação profissional.
-- [x] Criação da seção de Bônus Exclusivos de Matrícula (`meuEbookResetei.png`, `materiais.png`, Jornada Poliglota).
-- [x] Correção de todos os botões de ação: 100% funcionais apontando para planos (`#planos` / `/planos`), login de alunos ou consultoria via WhatsApp.
-- [x] Inclusão de Selo de Garantia Incondicional de 7 Dias (Risco Zero).
-- [x] Atualização da suíte de testes E2E (`tests/e2e_v3_test.cjs`) com 100% de aprovação (TC-01 a TC-08).
-- [x] Validação visual via browser subagent com screenshots e gravação de sessão.
+#### Fase 8: Redesign Comercial Limpo, Objetivo e Vitrine dos 15 Produtos (CONCLUÍDA)
+- [x] Download e incorporação dos elementos autênticos de `https://fluentenomundo.com/` (seta oficial `arrow.png`, dados da mentora).
+- [x] Criação do componente `ProductsCatalog.astro` detalhando e evidenciando os 15 produtos e módulos da imagem real da plataforma: Formação Global, Método A.U.T.E.N.T.I.C.A, Jornada Poliglota, Imersão com a Prof, Minuto Fluente, EduFeed, Vocabulário, Revisão Autêntica, Sua Biblioteca, Mundo Fluente Kids, Comunidade, Conquista & Constância, Vivência Global, Conexões Autênticas e SOS Professora.
+- [x] Remoção integral da seção de depoimentos e prints de avaliações conforme solicitação expressa do usuário.
+- [x] Remoção integral da área do aluno e simuladores mockados.
+- [x] Criação do componente `OriginalMovementCompare.astro` com a transição visual entre o ensino tradicional e o Fluente no Mundo.
+- [x] Atualização de `src/pages/index.astro` e `src/pages/plataforma.astro` com design dark luxury objetivo e clean.
+- [x] Bateria de testes E2E automatizada (`tests/e2e_v3_test.cjs`) 100% aprovada (8 de 8 testes PASS).
+- [x] Validação visual via browser subagent com capturas de tela e vídeo.
+
 
