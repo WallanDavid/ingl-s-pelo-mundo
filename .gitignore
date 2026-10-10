@@ -13,7 +13,7 @@ media/
 *.mp4
 *.mov
 *.avi
-images/
+!public/images/
 
 # Environment and secrets
 .env

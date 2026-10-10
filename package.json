@@ -10,7 +10,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "test": "node tests/e2e_v3_test.cjs"
+    "test": "node tests/e2e_voyage_test.cjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

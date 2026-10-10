@@ -1,44 +1,11 @@
 ---
+// src/pages/faq.astro
+// Central de Perguntas Frequentes — Fluente no Mundo
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FaqAccordion from '../components/FaqAccordion.astro';
+import FaqOfficial from '../components/FaqOfficial.astro';
 
 const pageTitle = 'Perguntas Frequentes (FAQ) | Fluente no Mundo';
-const pageDesc = 'Tire todas as suas dúvidas sobre a metodologia, aulas ao vivo, plataforma, SOS Professora, certificados e cancelamento.';
-
-const allFaqs = [
-  {
-    question: 'Nunca estudei inglês ou tenho trauma de métodos tradicionais. O curso funciona para mim?',
-    answer: 'Sim! A Metodologia A.U.T.E.N.T.I.C.A foi criada exatamente para pessoas que se sentem travadas ou que nunca tiveram contato formal com a língua. Começamos do zero com explicações didáticas em português, ensinando primeiro a reconhecer e pronunciar os sons antes de exigir regras complexas.',
-  },
-  {
-    question: 'Como funcionam as aulas ao vivo com a Prof. Amanda?',
-    answer: 'As aulas acontecem toda quarta-feira ao vivo. Nelas, a professora trabalha tópicos práticos de conversação, fonética e desmistificação de regras. Todas as aulas são gravadas e ficam salvas na plataforma para revisão a qualquer momento.',
-  },
-  {
-    question: 'O que é o SOS Professora e como utilizá-lo?',
-    answer: 'O SOS Professora é o nosso canal de suporte individualizado. Sempre que travar em uma aula, você pode gravar um áudio falando, enviar um print ou mandar uma mensagem de texto. A Prof. Amanda responde pessoalmente em até 48 horas úteis (com o limite saudável de 1 envio por semana por aluno).',
-  },
-  {
-    question: 'Quanto tempo por dia preciso me dedicar?',
-    answer: 'Recomendamos entre 20 a 30 minutos diários de estudo com nosso mapa de foco semanal. A constância diária com repetição espaçada é infinitamente mais eficaz do que estudar 3 horas seguidas uma vez na semana.',
-  },
-  {
-    question: 'Como recebo meu certificado?',
-    answer: 'Ao concluir as aulas, atividades e avaliações práticas de cada módulo trimestral (3 meses), você emite seu certificado reconhecido pela Metodologia Autêntica diretamente na plataforma, com carga horária comprovada para seu currículo.',
-  },
-  {
-    question: 'Qual a diferença entre a Formação Global em Inglês e a Jornada Poliglota?',
-    answer: 'O Inglês Autêntico é nossa formação aprofundada completa, com aulas ao vivo e cronograma rigoroso. A Jornada Poliglota é um espaço de exploração cultural leve onde você tem contato com outros idiomas (Espanhol, Italiano, Mandarim, Francês, etc.) através de oficinas de aculturamento e curiosidades linguísticas sem pressão de fluência.',
-  },
-  {
-    question: 'Como funciona a garantia de 7 dias?',
-    answer: 'Você pode testar a plataforma por 7 dias inteiros. Caso não goste do método, da didática ou do conteúdo, devolvemos 100% do seu dinheiro sem perguntas e sem complicações.',
-  },
-  {
-    question: 'Como cancelo minha assinatura mensal de R$ 39,90?',
-    answer: 'A qualquer momento! Não há fidelidade nem multas contratuais. O cancelamento pode ser feito com poucos cliques no seu painel ou através do suporte.',
-  },
-];
+const pageDesc = 'Tire todas as suas dúvidas sobre os 15 produtos, aulas ao vivo, metodologia A.U.T.E.N.T.I.C.A, SOS Professora, cancelamento e garantia.';
 ---
 
 <BaseLayout
@@ -47,33 +14,31 @@ const allFaqs = [
   canonicalUrl="https://fluentenomundo.com/faq"
 >
   
-  <section class="pt-12 pb-16 bg-[#f8fafc] border-b border-slate-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="badge-subtle mb-4">Central de Respostas</span>
-      <h1 class="text-4xl sm:text-5xl font-heading font-extrabold text-slate-900 tracking-tight leading-tight mt-3">
+  <section class="pt-16 pb-8 text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-[#9b8fff]">
+        <span>Central de Respostas</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-serif text-white tracking-tight leading-tight">
         Perguntas Frequentes
       </h1>
-      <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-        Respostas transparentes e objetivas para todas as dúvidas de futuros e atuais alunos.
+      <p class="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
+        Respostas transparentes e objetivas para você embarcar com total segurança.
       </p>
     </div>
   </section>
 
-  <FaqAccordion
-    items={allFaqs}
-    title="Todas as Dúvidas Respondidas"
-    subtitle="Se não encontrar o que procura, nosso suporte humano está sempre pronto para ajudar."
-  />
+  <FaqOfficial />
 
-  <section class="py-16 bg-white text-center border-t border-slate-100">
+  <section class="py-16 text-center border-t border-white/10 bg-[#05050a]">
     <div class="max-w-xl mx-auto px-4 space-y-4">
-      <a href="/planos" class="btn-editorial-primary !py-3.5 !px-8 text-xs inline-flex items-center gap-2">
-        <span>Pronto para Começar? Ver Planos e Matrícula &rarr;</span>
+      <a href="/planos" class="btn-white-luxury px-8 py-3.5 text-xs uppercase tracking-wider inline-flex items-center gap-2 shadow-lg">
+        <span>Garantir Matrícula Agora &rarr;</span>
       </a>
-      <p class="text-xs text-slate-500">
+      <p class="text-xs text-slate-400">
         Ainda tem dúvidas? Fale conosco pelo 
-        <a href="/contato" class="text-blue-700 hover:text-blue-800 font-semibold underline ml-1">
-          nosso canal de atendimento ou WhatsApp
+        <a href="/contato" class="text-[#c8c2ff] hover:underline font-semibold ml-1">
+          nosso canal de atendimento
         </a>.
       </p>
     </div>

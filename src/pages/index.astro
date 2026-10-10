@@ -1,42 +1,17 @@
 ---
 // src/pages/index.astro
-// Página Comercial Principal — Fluente no Mundo (Versão 3.1 Clean, Objetivo e Focado no Ecossistema de Produtos)
+// Fluente no Mundo — Recriação Oficial Completa (Product-Led, Interativo, Estilo Viagem do Lead)
 import BaseLayout from '../layouts/BaseLayout.astro';
-import OriginalMovementCompare from '../components/OriginalMovementCompare.astro';
-import ProductsCatalog from '../components/ProductsCatalog.astro';
-import BonusShowcase from '../components/BonusShowcase.astro';
-import PricingCard from '../components/PricingCard.astro';
-import FaqAccordion from '../components/FaqAccordion.astro';
+import HeroVoyage from '../components/HeroVoyage.astro';
+import InteractiveComparison from '../components/InteractiveComparison.astro';
+import MethodAuthentic from '../components/MethodAuthentic.astro';
+import PlatformSimulator from '../components/PlatformSimulator.astro';
+import LeadJourneySimulator from '../components/LeadJourneySimulator.astro';
+import OfficialPricing from '../components/OfficialPricing.astro';
+import FaqOfficial from '../components/FaqOfficial.astro';
 
-const pageTitle = 'Fluente no Mundo | Fale um Novo Idioma com a Prof. Amanda Beatriz';
-const pageDesc = 'Destrave sua fala com naturalidade e autonomia. Conheça os 15 produtos e módulos exclusivos do ecossistema Fluente no Mundo, metodologia autêntica e aulas ao vivo semanais com a Prof. Amanda Beatriz.';
-
-const homeFaqs = [
-  {
-    question: 'Como funciona o acesso aos 15 produtos do ecossistema?',
-    answer: 'Assim que a sua matrícula for confirmada, você recebe imediatamente no seu e-mail as credenciais de acesso completo. Todos os 15 produtos e módulos do ecossistema (Formação Global, A.U.T.E.N.T.I.C.A, Jornada Poliglota, Imersão ao Vivo, Sua Biblioteca, Minuto Fluente, etc.) ficam disponíveis instantaneamente no seu computador, tablet ou celular.'
-  },
-  {
-    question: 'Eu estou começando do absoluto zero. O curso serve para mim?',
-    answer: 'Com certeza! O Método A.U.T.E.N.T.I.C.A e a Formação Global foram estruturados para acolher desde quem nunca estudou inglês até quem já tem vocabulário mas trava na hora de falar em público. As trilhas são progressivas, respeitam o seu ritmo e focam na fala espontânea.'
-  },
-  {
-    question: 'Quanto tempo por dia preciso dedicar para ter resultados?',
-    answer: 'Apenas 15 a 30 minutos diários de estudo com o Minuto Fluente, Vocabulário Ativo e as aulas gravadas. Além disso, você tem a aula ao vivo semanal de quarta-feira com a Prof. Amanda para consolidar a prática.'
-  },
-  {
-    question: 'Como funcionam os 12 idiomas da Jornada Poliglota?',
-    answer: 'Diferente de cursos tradicionais que cobram uma mensalidade para cada língua, no Fluente no Mundo a sua assinatura inclui trilhas estruturadas para Espanhol, Francês, Italiano, Alemão e outros idiomas sem custo adicional.'
-  },
-  {
-    question: 'Como funciona a garantia incondicional de 7 dias?',
-    answer: 'Você tem 7 dias corridos a partir da matrícula para navegar por todos os módulos, baixar os materiais da sua biblioteca e participar da aula ao vivo. Se por qualquer motivo você decidir que o método não é para você, basta solicitar o reembolso e devolvemos 100% do seu valor integralmente sem burocracia.'
-  },
-  {
-    question: 'Posso cancelar a assinatura mensal quando quiser?',
-    answer: 'Sim! O Plano Mensal (R$ 39,90/mês) não possui fidelidade nem multas de cancelamento. Você tem liberdade total para continuar enquanto estiver aproveitando as aulas.'
-  }
-];
+const pageTitle = 'Fluente no Mundo | Fale Inglês com a Prof. Amanda Beatriz';
+const pageDesc = 'Sua viagem para falar inglês com naturalidade e liberdade. Conheça a Metodologia Autêntica, os 4Ps da pronúncia e explore os 15 produtos integrados da plataforma oficial.';
 ---
 
 <BaseLayout
@@ -44,260 +19,88 @@ const homeFaqs = [
   description={pageDesc}
   canonicalUrl="https://fluentenomundo.com/"
 >
-  
-  <!-- HERO COMERCIAL ELEGANTE INSPIRADO NO SITE OFICIAL -->
-  <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 bg-[#06060c] text-white overflow-hidden border-b border-white/5">
-    
-    <!-- Ambient Glow & Subtle Background Elements -->
-    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-[radial-gradient(ellipse,rgba(155,143,255,0.12)_0%,transparent_65%)] pointer-events-none"></div>
-    <div class="absolute inset-0 bg-[linear-gradient(rgba(155,143,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(155,143,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px] pointer-events-none"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        
-        <!-- Coluna de Texto Persuasivo -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#9b8fff]">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Matrículas Abertas · Acesso Imediato</span>
-          </div>
+  <!-- HERO INTERATIVO: A VIAGEM DO LEAD + PASSAPORTE DINÂMICO -->
+  <HeroVoyage />
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-white tracking-tight leading-[1.12]">
-            Fale um novo idioma. <br class="hidden sm:inline" />
-            Destrave o inglês que você <em class="italic font-normal text-[#c8c2ff]">sempre quis falar.</em>
-          </h1>
+  <!-- ESTAÇÃO 1: COMPARATIVO DE ROTAS + GRÁFICO DE MEMÓRIA + CALCULADORA DE ECONOMIA -->
+  <InteractiveComparison />
 
-          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-sans">
-            Esqueça a decoreba de regras e anos de frustração. No <strong>Fluente no Mundo</strong> você tem acesso a um ecossistema completo com mais de <strong>15 produtos pedagógicos integrados</strong>, metodologia autêntica de neuroaprendizagem e aulas ao vivo semanais diretamente com a <strong>Prof. Amanda Beatriz</strong>.
-          </p>
+  <!-- ESTAÇÃO 2: OS MÉTODOS DA PROF. AMANDA BEATRIZ (4Ps + MATRIZ A.U.T.E.N.T.I.C.A INTERATIVA) -->
+  <MethodAuthentic />
 
-          <!-- Badges de Autoridade -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-xl mx-auto lg:mx-0">
-            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center">
-              <span class="text-xl sm:text-2xl font-serif font-bold text-white block">+10.000</span>
-              <span class="text-[11px] text-slate-400 uppercase tracking-wider block mt-0.5">Aulas Dadas</span>
-            </div>
-            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center">
-              <span class="text-xl sm:text-2xl font-serif font-bold text-[#c8c2ff] block">12 Idiomas</span>
-              <span class="text-[11px] text-slate-400 uppercase tracking-wider block mt-0.5">Inclusos</span>
-            </div>
-            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center">
-              <span class="text-xl sm:text-2xl font-serif font-bold text-emerald-400 block">Toda 4ª</span>
-              <span class="text-[11px] text-slate-400 uppercase tracking-wider block mt-0.5">Ao Vivo às 20h</span>
-            </div>
-            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10 text-center">
-              <span class="text-xl sm:text-2xl font-serif font-bold text-amber-300 block">7 Dias</span>
-              <span class="text-[11px] text-slate-400 uppercase tracking-wider block mt-0.5">Garantia Total</span>
-            </div>
-          </div>
+  <!-- ESTAÇÃO 3: A PLATAFORMA REAL DOS ALUNOS (COM O PRINT ANEXADO E PREVIEW DOS 15 PRODUTOS) -->
+  <PlatformSimulator />
 
-          <!-- CTAs Primários -->
-          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <a
-              href="#planos"
-              class="w-full sm:w-auto px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase bg-white text-slate-950 hover:bg-slate-100 hover:scale-105 transition-all shadow-xl shadow-white/10 flex items-center justify-center gap-2"
-            >
-              <span>Garantir Minha Vaga</span>
-              <svg class="w-4 h-4 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
+  <!-- ESTAÇÃO 4: SIMULADOR DE PLANO DE VOO DO LEAD (ROTEIRO PERSONALIZADO) -->
+  <LeadJourneySimulator />
 
-            <a
-              href="#produtos"
-              class="w-full sm:w-auto px-8 py-4 rounded-full text-sm font-semibold tracking-wide bg-white/5 border border-white/15 text-white hover:bg-white/10 hover:border-white/30 transition-all text-center"
-            >
-              <span>Ver os 15 Produtos &rarr;</span>
-            </a>
-          </div>
+  <!-- ESTAÇÃO 5: PLANOS OFICIAIS (R$ 39,90 & R$ 179,40) + MODAL DE PAGAMENTO FUNCIONAL (CARTÃO / PIX) -->
+  <OfficialPricing />
 
-          <p class="text-xs text-slate-400 pt-1">
-            Planos a partir de <strong>R$ 39,90/mês</strong> · Sem taxa de matrícula · Cancele quando quiser
-          </p>
+  <!-- PERGUNTAS FREQUENTES OFICIAIS (SEM DEPOIMENTOS) -->
+  <FaqOfficial />
 
-        </div>
-
-        <!-- Coluna Visual com Fotos Reais da Mentora e da Plataforma -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-md lg:max-w-none">
-            
-            <!-- Foto Principal: Amanda Beatriz -->
-            <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-slate-900 group">
-              <img
-                src="/images/about me.png"
-                alt="Professora Amanda Beatriz - Fluente no Mundo"
-                class="w-full h-auto aspect-[4/5] object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                loading="eager"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#06060c] via-transparent to-transparent opacity-75"></div>
-              
-              <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-white">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <h2 class="font-serif text-lg font-bold">Prof. Amanda Beatriz</h2>
-                    <span class="text-xs text-[#c8c2ff]">Fundadora do Movimento Fluente no Mundo</span>
-                  </div>
-                  <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                    Ao Vivo Toda 4ª
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card Flutuante com Setup Real de Estudo -->
-            <div class="hidden sm:block absolute -bottom-8 -left-8 w-60 rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-black/90 p-2 backdrop-blur-md">
-              <img
-                src="/images/cafe com plataforma.jpg"
-                alt="Ambiente de estudos com café e plataforma Fluente no Mundo"
-                class="w-full h-32 object-cover rounded-xl"
-                loading="lazy"
-              />
-              <div class="p-2 text-left">
-                <span class="text-[10px] uppercase tracking-wider text-slate-400 block font-semibold">Estude onde quiser</span>
-                <span class="text-xs font-bold text-white block mt-0.5">20 min de imersão diária</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- O MOVIMENTO: COMPARATIVO DIRETO COM A SETA OFICIAL -->
-  <OriginalMovementCompare />
-
-  <!-- A GRANDE VITRINE DOS 15 PRODUTOS E MÓDULOS REAIS -->
-  <ProductsCatalog />
-
-  <!-- QUEM É A PROF. AMANDA BEATRIZ (AUTORIDADE DO SITE ORIGINAL) -->
-  <section id="mentora" class="py-24 bg-[#080912] relative overflow-hidden border-b border-white/5 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        
-        <div class="lg:col-span-5">
-          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-slate-900">
-            <img
-              src="/images/about me.png"
-              alt="Professora Amanda Beatriz"
-              class="w-full h-full object-cover object-top"
-              loading="lazy"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080912] via-transparent to-transparent opacity-60"></div>
-          </div>
-        </div>
-
-        <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#9b8fff]">
-            <span>Quem Estará com Você</span>
-          </div>
-
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-white tracking-tight leading-tight">
-            "Eu também já travei. E descobri que o problema <em class="italic font-normal text-[#c8c2ff]">nunca foi você."</em>
-          </h2>
-
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Durante anos, o ensino de idiomas no Brasil fez milhares de pessoas acreditarem que não tinham o "dom" para falar inglês. Mas a verdade é outra: métodos ultrapassados ensinam gramática mecânica e cobram perfeição imediata, gerando ansiedade, vergonha e paralisia.
-          </p>
-
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Após mais de <strong>10.000 aulas ministradas</strong>, mais de <strong>4 anos de desenvolvimento contínuo</strong> e a criação de mais de <strong>100 materiais exclusivos</strong>, criei o <strong>Fluente no Mundo</strong>: um ecossistema seguro onde você fala com naturalidade, constrói vocabulário com os 4Ps e conta comigo semanalmente nas aulas ao vivo.
-          </p>
-
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
-            <div class="p-4 rounded-xl bg-white/[0.02] border border-white/10">
-              <strong class="text-white block font-serif text-2xl font-bold">+10k</strong>
-              <span class="text-xs text-slate-400 mt-1 block">Aulas ministradas</span>
-            </div>
-            <div class="p-4 rounded-xl bg-white/[0.02] border border-white/10">
-              <strong class="text-[#c8c2ff] block font-serif text-2xl font-bold">+100</strong>
-              <span class="text-xs text-slate-400 mt-1 block">Materiais e PDFs criados</span>
-            </div>
-            <div class="p-4 rounded-xl bg-white/[0.02] border border-white/10">
-              <strong class="text-emerald-400 block font-serif text-2xl font-bold">Hiperpoliglota</strong>
-              <span class="text-xs text-slate-400 mt-1 block">Em constante evolução</span>
-            </div>
-          </div>
-
-          <div class="pt-4 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
-            <a href="#planos" class="px-8 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase bg-white text-slate-950 hover:bg-slate-100 transition-all text-center">
-              Quero Estudar com a Amanda &rarr;
-            </a>
-            <a href="/sobre" class="text-xs font-semibold text-slate-300 hover:text-white underline text-center sm:text-left">
-              Conhecer a biografia e trajetória completa
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- BÔNUS EXCLUSIVOS DE MATRÍCULA COM CAPAS REAIS -->
-  <BonusShowcase />
-
-  <!-- PLANOS E MATRÍCULA COMERCIAL -->
-  <PricingCard />
-
-  <!-- PERGUNTAS FREQUENTES COMERCIAIS -->
-  <FaqAccordion
-    items={homeFaqs}
-    title="Dúvidas Frequentes sobre a Matrícula"
-    subtitle="Tudo o que você precisa saber para tomar a sua decisão com tranquilidade e transparência."
-  />
-
-  <!-- CTA FINAL DE FECHAMENTO COMERCIAL -->
-  <section class="py-24 bg-gradient-to-b from-[#080912] via-[#0e1022] to-[#06060c] text-white text-center relative overflow-hidden border-t border-white/5">
+  <!-- CTA DE FECHAMENTO COMERCIAL DA VIAGEM -->
+  <section class="py-20 lg:py-24 bg-gradient-to-b from-[#070812] via-[#0d0f24] to-[#040408] text-center relative overflow-hidden border-t border-white/5">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
       
-      <span class="inline-block px-3.5 py-1 rounded-full bg-white/5 text-[#c8c2ff] text-xs font-semibold uppercase tracking-widest border border-white/10">
-        Sua Transformação Começa Agora
-      </span>
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-[#9b8fff]">
+        <span>Pronto para Decolar?</span>
+      </div>
 
-      <h2 class="text-4xl sm:text-5xl font-serif text-white tracking-tight leading-tight">
-        O próximo passo para a sua fluência está a <em class="italic font-normal text-[#c8c2ff]">um clique de distância.</em>
+      <h2 class="text-3xl sm:text-5xl font-serif text-white tracking-tight leading-tight">
+        Seu passaporte para a fluência está a <br />
+        <em class="italic font-normal text-[#c8c2ff]">um clique de distância.</em>
       </h2>
 
-      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-        Não adie mais o seu sonho de viajar com segurança, conduzir reuniões em inglês e se comunicar com o mundo sem travar. Entre hoje, aproveite os 15 produtos e teste por 7 dias sem qualquer risco.
+      <p class="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed font-sans">
+        Viaje com segurança, participe de reuniões em inglês e converse com nativos sem medo. Teste por 7 dias com risco zero e tenha acesso a todos os 15 produtos.
       </p>
 
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
           href="#planos"
-          class="w-full sm:w-auto px-10 py-4 rounded-full text-sm font-bold tracking-wider uppercase bg-white text-slate-950 hover:bg-slate-100 hover:scale-105 transition-all shadow-2xl shadow-white/10 flex items-center justify-center gap-2"
+          class="btn-white-luxury w-full sm:w-auto px-9 py-4 text-xs uppercase tracking-wider shadow-2xl flex items-center justify-center gap-2"
         >
-          <span>Garantir Minha Vaga nos Planos</span>
-          <svg class="w-4 h-4 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+          <span>Garantir Matrícula Agora</span>
+          <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
           </svg>
         </a>
 
         <a
-          href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20os%20produtos%20do%20Fluente%20no%20Mundo."
+          href="https://alunos.fluentenomundo.com/"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-white text-xs font-semibold tracking-wide transition-all w-full sm:w-auto"
+          class="btn-ghost-cosmic w-full sm:w-auto px-7 py-4 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2"
         >
-          <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.941-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/>
-          </svg>
-          <span>Falar no WhatsApp com Consultor</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Acessar Plataforma de Alunos</span>
         </a>
       </div>
 
-      <div class="pt-6 text-xs text-slate-400">
-        <span>Garantia de 7 dias · Pagamento seguro com PIX ou Cartão · Acesso imediato</span>
-      </div>
+      <p class="text-xs text-slate-400 pt-2 font-sans">
+        Garantia total de 7 dias · Cancele quando quiser · Sem contratos abusivos
+      </p>
 
     </div>
   </section>
+
+  <!-- BARRA FIXA MOBILE DE CONVERSÃO (EXPERIÊNCIA MOBILE PRIMÁRIA) -->
+  <aside class="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#090a16]/95 backdrop-blur-xl border-t border-white/15 p-3 px-4 flex items-center justify-between shadow-2xl" aria-label="Ação rápida de matrícula">
+    <div class="space-y-0.5">
+      <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Fluente no Mundo</span>
+      <div class="text-xs font-bold text-white">
+        A partir de <span class="text-emerald-400 font-extrabold">R$ 39,90/mês</span>
+      </div>
+    </div>
+    <a
+      href="#planos"
+      class="btn-white-luxury px-5 py-2.5 text-[11px] uppercase tracking-wider shadow-md"
+    >
+      Embarcar
+    </a>
+  </aside>
 
 </BaseLayout>

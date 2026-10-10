@@ -1,0 +1,126 @@
+---
+// src/components/FaqOfficial.astro
+// Dúvidas Frequentes Oficiais com Accordions Interativos
+const faqs = [
+  {
+    q: 'Como recebo o acesso à plataforma dos alunos?',
+    a: 'Assim que sua matrícula for confirmada pelo cartão de crédito ou PIX, você recebe imediatamente no seu e-mail os dados de login e senha para acessar alunos.fluentenomundo.com. Todas as trilhas, os 15 produtos e os materiais em PDF ficam liberados na mesma hora.'
+  },
+  {
+    q: 'O método funciona para quem está começando do absoluto zero?',
+    a: 'Com certeza! O Método A.U.T.E.N.T.I.C.A e a Formação Global foram criados exatamente para acolher quem nunca estudou ou quem já tentou vários cursos e travou. Começamos pelos sons e padrões da fala, sem exigir que você decore regras gramaticais chatas.'
+  },
+  {
+    q: 'Como funcionam os 12 idiomas inclusos na Jornada Poliglota?',
+    a: 'Diferente de cursos tradicionais que cobram uma mensalidade nova para cada língua, na Fluente no Mundo sua assinatura dá acesso a trilhas de Inglês, Espanhol, Italiano, Francês, Mandarim, Alemão e outros sem pagar nenhum centavo extra.'
+  },
+  {
+    q: 'Como participo da aula ao vivo semanal com a Prof. Amanda Beatriz?',
+    a: 'Toda quarta-feira às 20h realizamos um encontro ao vivo e interativo. Você recebe o link direto na plataforma e pelo grupo oficial. Se não puder participar ao vivo, todas as aulas ficam gravadas e disponíveis na plataforma em até 24 horas.'
+  },
+  {
+    q: 'Como funciona a garantia incondicional de 7 dias?',
+    a: 'Você tem 7 dias inteiros para explorar todos os módulos, assistir às aulas gravadas, baixar os materiais da sua biblioteca e participar da aula ao vivo. Se por qualquer motivo não quiser continuar, basta solicitar o reembolso e devolvemos 100% do seu dinheiro sem burocracia.'
+  },
+  {
+    q: 'Posso cancelar o Plano Mensal (R$ 39,90) a qualquer momento?',
+    a: 'Sim! O plano mensal não tem contrato de fidelidade nem multas rescisórias. Você tem liberdade total para estudar no seu ritmo e cancelar quando quiser.'
+  }
+];
+---
+
+<section id="faq" class="py-20 lg:py-28 bg-[#05050a] relative overflow-hidden">
+  
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Cabeçalho -->
+    <div class="text-center mb-16 space-y-3">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-[#9b8fff]">
+        <span>Perguntas Frequentes</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-white tracking-tight leading-tight">
+        Tudo o que você precisa saber <br />
+        <em class="italic font-normal text-[#c8c2ff]">antes de embarcar.</em>
+      </h2>
+      <p class="text-sm sm:text-base text-slate-300 font-sans max-w-xl mx-auto">
+        Transparência absoluta para você tomar sua decisão com total confiança e tranquilidade.
+      </p>
+    </div>
+
+    <!-- Lista de Accordions Interativos -->
+    <div class="space-y-4" id="faq-accordion-list">
+      {faqs.map((item, idx) => (
+        <div class="glass-card overflow-hidden border border-white/10 transition-colors">
+          <button
+            type="button"
+            class="faq-trigger w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+            aria-expanded={idx === 0 ? 'true' : 'false'}
+          >
+            <span class="text-sm sm:text-base font-bold text-white leading-snug">
+              {item.q}
+            </span>
+            <span class="faq-icon w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 shrink-0 transition-transform duration-300 text-sm">
+              {idx === 0 ? '−' : '+'}
+            </span>
+          </button>
+          <div class={`faq-content px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed font-sans ${idx === 0 ? 'block' : 'hidden'}`}>
+            <p>{item.a}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Dúvidas Específicas: Canal com Equipe -->
+    <div class="mt-12 text-center p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-left">
+        <span class="text-xs font-bold text-white block">Ainda tem alguma pergunta sobre a sua matrícula?</span>
+        <span class="text-[11px] text-slate-400 block mt-0.5">Nossa equipe de suporte pedagógico está pronta para ajudar.</span>
+      </div>
+      <a
+        href="https://alunos.fluentenomundo.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-ghost-cosmic px-5 py-2.5 text-xs font-semibold uppercase tracking-wider shrink-0"
+      >
+        Acessar Área do Aluno &rarr;
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const triggers = document.querySelectorAll('.faq-trigger');
+
+    triggers.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling as HTMLElement;
+        const icon = btn.querySelector('.faq-icon');
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+        // Fecha todos os outros accordions
+        triggers.forEach((other) => {
+          if (other !== btn) {
+            other.setAttribute('aria-expanded', 'false');
+            const otherContent = other.nextElementSibling as HTMLElement;
+            const otherIcon = other.querySelector('.faq-icon');
+            if (otherContent) otherContent.classList.add('hidden');
+            if (otherIcon) otherIcon.textContent = '+';
+          }
+        });
+
+        // Alterna o atual
+        if (isExpanded) {
+          btn.setAttribute('aria-expanded', 'false');
+          if (content) content.classList.add('hidden');
+          if (icon) icon.textContent = '+';
+        } else {
+          btn.setAttribute('aria-expanded', 'true');
+          if (content) content.classList.remove('hidden');
+          if (icon) icon.textContent = '−';
+        }
+      });
+    });
+  });
+</script>

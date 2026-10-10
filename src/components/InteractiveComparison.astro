@@ -1,0 +1,304 @@
+---
+// src/components/InteractiveComparison.astro
+// Seção Visual: Gráficos, Blocos e Comparativo de Rotas da Viagem
+---
+
+<section id="comparativo" class="py-20 lg:py-28 bg-[#070812] relative overflow-hidden border-t border-b border-white/5">
+  
+  <!-- Ambient background glow -->
+  <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[400px] bg-[radial-gradient(ellipse,rgba(108,95,255,0.08)_0%,transparent_70%)] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Cabeçalho da Seção -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-[#9b8fff] mb-4">
+        <span>Estação 1 · O Choque de Realidade</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-white tracking-tight leading-tight">
+        A rota que te travou vs. <em class="italic font-normal text-[#c8c2ff]">A viagem que te liberta.</em>
+      </h2>
+      <p class="mt-4 text-sm sm:text-base text-slate-300 font-sans leading-relaxed">
+        Se você já passou anos em cursos e ainda trava para falar, o problema nunca foi sua capacidade: foi o mapa que te deram. Veja os números.
+      </p>
+    </div>
+
+    <!-- BLOCO 1: O COMPARATIVO COM A SETA OFICIAL (Inspirado no site original) -->
+    <div class="max-w-4xl mx-auto mb-20 p-6 sm:p-10 rounded-3xl bg-[#0c0d1a] border border-white/10 shadow-2xl">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4 text-center md:text-left">
+        
+        <!-- Lado Negativo / Tradicional -->
+        <div class="flex-1 p-6 rounded-2xl bg-red-500/5 border border-red-500/20 w-full space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-bold uppercase tracking-wider">
+            <span>✕ Curso Tradicional</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">Prisão das Regras</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold shrink-0">✕</span>
+              <span>5 anos decorando listas de gramática sem falar</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold shrink-0">✕</span>
+              <span>Vergonha constante de cometer erros na frente da turma</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold shrink-0">✕</span>
+              <span>R$ 400 a R$ 600/mês + material caríssimo (R$ 1.200)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold shrink-0">✕</span>
+              <span>Tradução mental obrigatória que causa bloqueio</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Seta Oficial Real -->
+        <div class="flex flex-col items-center justify-center py-2 shrink-0">
+          <img 
+            src="/images/arrow.png" 
+            alt="Para" 
+            class="w-24 sm:w-32 h-auto object-contain filter invert opacity-80"
+          />
+          <span class="text-[10px] font-bold uppercase tracking-widest text-[#9b8fff] mt-1">Transformação</span>
+        </div>
+
+        <!-- Lado Positivo / Fluente no Mundo -->
+        <div class="flex-1 p-6 rounded-2xl bg-emerald-500/5 border border-emerald-500/30 w-full space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+            <span>✓ Fluente no Mundo</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">Movimento Autêntico</h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold shrink-0">✓</span>
+              <span>Destrave da fala em 90 dias com os 4Ps da pronúncia</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold shrink-0">✓</span>
+              <span>Aulas ao vivo semanais com a Prof. Amanda Beatriz</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold shrink-0">✓</span>
+              <span>Apenas R$ 39,90/mês sem taxa de matrícula ou multas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold shrink-0">✓</span>
+              <span>15 produtos inclusos + 12 idiomas na Jornada Poliglota</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BLOCO 2: GRÁFICO INTERATIVO DE RETENÇÃO (Neurociência 4D & SRS) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-20">
+      
+      <div class="lg:col-span-5 space-y-5 text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6c5fff]/10 text-[#c8c2ff] text-xs font-bold uppercase tracking-wider border border-[#6c5fff]/20">
+          <span>Ciência da Memória</span>
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-serif text-white leading-tight">
+          Por que a repetição comum falha e a <em class="italic text-[#c8c2ff]">Revisão Autêntica (SRS)</em> funciona?
+        </h3>
+        <p class="text-sm text-slate-300 leading-relaxed font-sans">
+          Segundo a Curva do Esquecimento de Hermann Ebbinghaus, o cérebro descarta 80% do vocabulário em 48 horas se não houver um gatilho de evocação ativa.
+        </p>
+        <p class="text-sm text-slate-300 leading-relaxed font-sans">
+          No Fluente no Mundo, o algoritmo reapresenta a expressão em 3 etapas integradas: <strong>Ouvir &rarr; Pronunciar &rarr; Traduzir</strong>, transferindo as frases diretamente para a memória de longo prazo.
+        </p>
+        
+        <div class="pt-2 flex items-center gap-4">
+          <div class="flex items-center gap-2 text-xs font-bold text-slate-300">
+            <span class="w-3 h-3 rounded-full bg-red-400"></span>
+            <span>Sem SRS (Tradicional)</span>
+          </div>
+          <div class="flex items-center gap-2 text-xs font-bold text-slate-300">
+            <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+            <span>Com SRS Autêntica</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gráfico Visual de Barras de Retenção -->
+      <div class="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-[#0c0d1a] border border-white/10 shadow-xl space-y-6">
+        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-300">
+            Retenção de Vocabulário após 30 Dias
+          </span>
+          <span class="text-[11px] font-semibold text-[#9b8fff] bg-white/5 px-2.5 py-1 rounded-full">
+            Neurociência Aplicada
+          </span>
+        </div>
+
+        <!-- Linha 1: 24 Horas -->
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs font-semibold text-slate-300">
+            <span>24 Horas depois da aula</span>
+            <span class="text-emerald-400 font-bold">95% retido vs 50%</span>
+          </div>
+          <div class="h-3 w-full rounded-full bg-white/5 overflow-hidden flex">
+            <div class="h-full bg-emerald-400 rounded-full transition-all duration-1000" style="width: 95%"></div>
+          </div>
+          <div class="h-2 w-full rounded-full bg-white/5 overflow-hidden flex">
+            <div class="h-full bg-red-400/80 rounded-full transition-all duration-1000" style="width: 50%"></div>
+          </div>
+        </div>
+
+        <!-- Linha 2: 7 Dias -->
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs font-semibold text-slate-300">
+            <span>7 Dias depois (Ponto de Esquecimento Crítico)</span>
+            <span class="text-emerald-400 font-bold">90% retido vs 20%</span>
+          </div>
+          <div class="h-3 w-full rounded-full bg-white/5 overflow-hidden flex">
+            <div class="h-full bg-emerald-400 rounded-full transition-all duration-1000" style="width: 90%"></div>
+          </div>
+          <div class="h-2 w-full rounded-full bg-white/5 overflow-hidden flex">
+            <div class="h-full bg-red-400/80 rounded-full transition-all duration-1000" style="width: 20%"></div>
+          </div>
+        </div>
+
+        <!-- Linha 3: 30 Dias -->
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs font-semibold text-slate-300">
+            <span>30 Dias depois (Memória Permanente)</span>
+            <span class="text-emerald-400 font-bold">88% retido vs 5%</span>
+          </div>
+          <div class="h-3 w-full rounded-full bg-white/5 overflow-hidden flex">
+            <div class="h-full bg-emerald-400 rounded-full transition-all duration-1000" style="width: 88%"></div>
+          </div>
+          <div class="h-2 w-full rounded-full bg-white/5 overflow-hidden flex">
+            <div class="h-full bg-red-400/80 rounded-full transition-all duration-1000" style="width: 5%"></div>
+          </div>
+        </div>
+
+        <div class="pt-2 p-3 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-slate-400 flex items-center justify-between">
+          <span>Resultado prático:</span>
+          <strong class="text-white">Você fala sem traduzir palavra por palavra</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BLOCO 3: CALCULADORA INTERATIVA DE ECONOMIA E TEMPO -->
+    <div class="p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-[#0c0d1a] to-[#121429] border border-white/10 shadow-2xl max-w-4xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-8 space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-[#9b8fff]">Calculadora de Viagem</span>
+        <h3 class="text-2xl sm:text-3xl font-serif text-white">Quanto você economiza ao escolher o Fluente no Mundo?</h3>
+        <p class="text-xs sm:text-sm text-slate-300 font-sans">
+          Selecione o período de estudos e compare o valor gasto em uma franquia com o valor da nossa assinatura:
+        </p>
+      </div>
+
+      <!-- Controles da Calculadora -->
+      <div class="flex justify-center gap-2 sm:gap-4 mb-8" id="calc-controls">
+        <button
+          type="button"
+          data-months="6"
+          class="calc-btn px-4 sm:px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-slate-300 hover:border-white/30 transition-all"
+        >
+          6 Meses de Estudo
+        </button>
+        <button
+          type="button"
+          data-months="12"
+          class="calc-btn active px-4 sm:px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-black shadow-lg transition-all"
+        >
+          1 Ano (12 Meses)
+        </button>
+        <button
+          type="button"
+          data-months="24"
+          class="calc-btn px-4 sm:px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-slate-300 hover:border-white/30 transition-all"
+        >
+          2 Anos de Estudo
+        </button>
+      </div>
+
+      <!-- Resultados em 3 Cartões -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+        <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/10 space-y-1">
+          <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Escola Tradicional</span>
+          <div id="calc-trad-cost" class="text-2xl sm:text-3xl font-serif font-black text-red-400">R$ 5.400</div>
+          <span class="text-[10px] text-slate-400 block">Mensalidades + Livros</span>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 space-y-1">
+          <span class="text-[11px] font-semibold text-emerald-400 uppercase tracking-wider">Fluente no Mundo</span>
+          <div id="calc-fm-cost" class="text-2xl sm:text-3xl font-serif font-black text-white">R$ 358,80</div>
+          <span class="text-[10px] text-emerald-300 block">15 Produtos Inclusos</span>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white/10 border border-[#9b8fff]/40 space-y-1">
+          <span class="text-[11px] font-semibold text-[#c8c2ff] uppercase tracking-wider">Sua Economia</span>
+          <div id="calc-saved-cost" class="text-2xl sm:text-3xl font-serif font-black text-amber-300">R$ 5.041</div>
+          <span class="text-[10px] text-slate-300 block">Dinheiro que fica no seu bolso</span>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a
+          href="#planos"
+          class="btn-primary-glow inline-flex items-center gap-2 px-8 py-3.5 text-xs font-bold uppercase tracking-wider shadow-xl"
+        >
+          <span>Aproveitar Valores Oficiais</span>
+          <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Lógica da Calculadora de Economia
+  const calcData: Record<number, { trad: string; fm: string; saved: string }> = {
+    6: {
+      trad: 'R$ 2.900',
+      fm: 'R$ 179,40',
+      saved: 'R$ 2.720'
+    },
+    12: {
+      trad: 'R$ 5.400',
+      fm: 'R$ 358,80',
+      saved: 'R$ 5.041'
+    },
+    24: {
+      trad: 'R$ 10.800',
+      fm: 'R$ 717,60',
+      saved: 'R$ 10.082'
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const calcBtns = document.querySelectorAll('.calc-btn');
+    const tradEl = document.getElementById('calc-trad-cost');
+    const fmEl = document.getElementById('calc-fm-cost');
+    const savedEl = document.getElementById('calc-saved-cost');
+
+    calcBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const months = Number(btn.getAttribute('data-months'));
+        if (!months || !calcData[months]) return;
+
+        calcBtns.forEach((b) => {
+          b.classList.remove('active', 'bg-white', 'text-black', 'shadow-lg');
+          b.classList.add('bg-white/5', 'text-slate-300');
+        });
+
+        btn.classList.add('active', 'bg-white', 'text-black', 'shadow-lg');
+        btn.classList.remove('bg-white/5', 'text-slate-300');
+
+        if (tradEl) tradEl.textContent = calcData[months].trad;
+        if (fmEl) fmEl.textContent = calcData[months].fm;
+        if (savedEl) savedEl.textContent = calcData[months].saved;
+      });
+    });
+  });
+</script>

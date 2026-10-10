@@ -1,102 +1,12 @@
 ---
+// src/pages/metodo.astro
+// Metodologia A.U.T.E.N.T.I.C.A & Os 4Ps da Pronúncia
 import BaseLayout from '../layouts/BaseLayout.astro';
+import MethodAuthentic from '../components/MethodAuthentic.astro';
+import InteractiveComparison from '../components/InteractiveComparison.astro';
 
-const pageTitle = 'Metodologia A.U.T.E.N.T.I.C.A | Os 9 Pilares da Fluência Real';
-const pageDesc = 'Conheça em detalhes os 9 pilares da Metodologia Autêntica: Neurociência 4D, Treinamento 4P, Aquisição 3R, Metacognição e Aculturamento para falar inglês sem medo.';
-
-const pillarsDetail = [
-  {
-    letter: 'A',
-    name: 'Assimilação e Aculturamento',
-    lead: 'O idioma é inseparável da cultura de quem o fala.',
-    bullets: [
-      'Superação da tradução literal que gera falas robóticas.',
-      'Compreensão de referências culturais, humor e nuances de comunicação nativa.',
-      'Integração de conteúdos audiovisuais da vida real desde a primeira semana.',
-    ],
-  },
-  {
-    letter: 'U',
-    name: 'União, Equilíbrio e Constância',
-    lead: 'Harmonia entre ouvir, falar, ler e escrever.',
-    bullets: [
-      'Eliminação do desequilíbrio comum de quem "entende tudo, mas trava na hora de falar".',
-      'Doses diárias de 15 a 30 minutos de estudo sustentável que cabem em qualquer rotina.',
-      'Prevenção do esgotamento e da desistência típica de cursinhos extensos.',
-    ],
-  },
-  {
-    letter: 'T',
-    name: 'Treine os 4P',
-    lead: 'O treinamento focado para a mecânica da fala.',
-    bullets: [
-      'Padrões: Reconhecimento imediato de conexões sonoras comuns (connected speech).',
-      'Pronúncia: Exercícios musculares para sons inexistentes no português (como o "th" e vogais curtas).',
-      'Psicológico: Técnicas para controlar o julgamento interno e a vergonha de errar.',
-      'Prática: Treino oral ativo com repetição e gravação da própria voz.',
-    ],
-  },
-  {
-    letter: 'E',
-    name: 'Emoções',
-    lead: 'A segurança emocional como pré-requisito da memória.',
-    bullets: [
-      'Ambiente acolhedor onde o erro é compreendido como dado essencial de aprendizagem.',
-      'Estratégias de relaxamento e confiança para situações de pressão (entrevistas, viagens, reuniões).',
-      'Estudo associado a sensações positivas de conquista e evolução contínua.',
-    ],
-  },
-  {
-    letter: 'N',
-    name: 'Neurociência 4D',
-    lead: 'Como o cérebro humano consolida uma nova língua.',
-    bullets: [
-      'Aproveitamento da neuroplasticidade através de estímulos multissensoriais.',
-      'Foco na consolidação sináptica durante os intervalos de descanso.',
-      'Estratégias de atenção plena para focar nos padrões que realmente importam.',
-    ],
-  },
-  {
-    letter: 'T',
-    name: 'Técnicas de Metacognição',
-    lead: 'Aprender a aprender e dominar seus próprios processos mentais.',
-    bullets: [
-      'Diagnóstico autônomo dos seus pontos fortes e fracos na língua.',
-      'Personalização das estratégias de revisão para seu estilo cognitivo predominante.',
-      'Independência permanente de métodos prontos.',
-    ],
-  },
-  {
-    letter: 'I',
-    name: 'Input Massivo e Imersão',
-    lead: 'Ouvido treinado antes de uma fala forçada.',
-    bullets: [
-      'Exposição contextualizada a podcasts, trechos de filmes e conversas naturais.',
-      'Construção de um repertório sonoro intuitivo que antecede a análise gramatical.',
-      'Masterclasses imersivas semanais com condução prática da professora.',
-    ],
-  },
-  {
-    letter: 'C',
-    name: 'Conexões Autênticas',
-    lead: 'Vocabulário ancorado na sua identidade.',
-    bullets: [
-      'Aplicação de novas expressões aos seus interesses reais, profissão e projetos pessoais.',
-      'Conversas contextualizadas que substituem diálogos artificiais de livros escolares.',
-      'Conexão com a comunidade de alunos para prática colaborativa.',
-    ],
-  },
-  {
-    letter: 'A',
-    name: 'Aquisição 3R',
-    lead: 'Revisão · Repetição · Reapresentação.',
-    bullets: [
-      'Revisão: Intervalos matematicamente programados pela curva do esquecimento (SRS).',
-      'Repetição: Uso repetido de expressões em novos contextos de frase.',
-      'Reapresentação: O mesmo conceito reintroduzido em formatos variados (áudio, texto, vídeo e quiz).',
-    ],
-  },
-];
+const pageTitle = 'Metodologia A.U.T.E.N.T.I.C.A | Os 9 Pilares da Fluência';
+const pageDesc = 'Conheça em detalhes a Metodologia Autêntica e os 4Ps da pronúncia criados pela Prof. Amanda Beatriz para destravar a fala sem medo.';
 ---
 
 <BaseLayout
@@ -104,126 +14,39 @@ const pillarsDetail = [
   description={pageDesc}
   canonicalUrl="https://fluentenomundo.com/metodo"
 >
-  
-  <!-- CABEÇALHO DA PÁGINA -->
-  <section class="pt-12 pb-16 bg-[#f8fafc] border-b border-slate-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="badge-subtle mb-4">Fundamento Pedagógico</span>
-      <h1 class="text-4xl sm:text-5xl font-heading font-extrabold text-slate-900 tracking-tight leading-tight">
-        A Metodologia A.U.T.E.N.T.I.C.A
+  <!-- CABEÇALHO -->
+  <section class="pt-16 pb-12 text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-[#9b8fff]">
+        <span>Neurociência & Fonética</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-serif text-white tracking-tight leading-tight">
+        A ciência por trás da sua <em class="italic font-normal text-[#c8c2ff]">fala espontânea.</em>
       </h1>
-      <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-        Criada pela <strong>Prof. Amanda Beatriz</strong>, esta abordagem integra neurociência cognitiva, segurança emocional e aculturamento real para transformar qualquer pessoa em um falante confiante de inglês.
+      <p class="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
+        Elimine o bloqueio emocional, a tradução mental e a ansiedade através dos 4Ps e dos 9 pilares A.U.T.E.N.T.I.C.A.
       </p>
     </div>
   </section>
 
-  <!-- OS 4P E OS 3R EM DETALHE -->
-  <section class="py-16 bg-white border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <div class="editorial-card p-8">
-          <span class="badge-subtle mb-4 inline-block">Pilares da Fala</span>
-          <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mb-3">
-            O Treinamento 4P
-          </h2>
-          <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-            Por que você trava mesmo sabendo a regra de cabeça? Porque a fala não é um processo apenas intelectual — é neuro-muscular.
-          </p>
-          <div class="space-y-3">
-            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-              <strong class="text-blue-700 block text-sm">1. Padrões Sonoros</strong>
-              <span class="text-xs text-slate-600">Como as palavras se conectam na fala rápida nativa (ex.: "wanna", "gonna", elisões e linkings).</span>
-            </div>
-            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-              <strong class="text-blue-700 block text-sm">2. Pronúncia Física</strong>
-              <span class="text-xs text-slate-600">Treinamento específico de língua, lábios e palato para os sons característicos do inglês.</span>
-            </div>
-            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-              <strong class="text-blue-700 block text-sm">3. Psicológico Blindado</strong>
-              <span class="text-xs text-slate-600">Desarmar a autocobrança excessiva que bloqueia sua fala quando você precisa se comunicar.</span>
-            </div>
-            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-              <strong class="text-blue-700 block text-sm">4. Prática Direcionada</strong>
-              <span class="text-xs text-slate-600">Falar em voz alta, gravar sua voz e comparar diretamente com a professora.</span>
-            </div>
-          </div>
-        </div>
+  <!-- SEÇÃO PRINCIPAL DO MÉTODO -->
+  <MethodAuthentic />
 
-        <div class="editorial-card p-8">
-          <span class="badge-neutral mb-4 inline-block">Retenção de Longo Prazo</span>
-          <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mb-3">
-            O Ciclo de Aquisição 3R
-          </h2>
-          <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-            O cérebro descarta informações que não parecem vitais. O ciclo 3R engana a curva do esquecimento de Ebbinghaus.
-          </p>
-          <div class="space-y-3">
-            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-              <strong class="text-emerald-700 block text-sm">1. Revisão Espaçada (SRS)</strong>
-              <span class="text-xs text-slate-600">Intervalos matemáticos (1 dia, 3 dias, 7 dias, 21 dias) acionados automaticamente na plataforma.</span>
-            </div>
-            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-              <strong class="text-emerald-700 block text-sm">2. Repetição Contextual</strong>
-              <span class="text-xs text-slate-600">Nunca repetir como papagaio, mas sim usar a expressão em frases da sua própria vida.</span>
-            </div>
-            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-              <strong class="text-emerald-700 block text-sm">3. Reapresentação Multissensorial</strong>
-              <span class="text-xs text-slate-600">A mesma palavra vista em áudio, em cena de série, na aula ao vivo e no desafio escrito.</span>
-            </div>
-          </div>
-        </div>
+  <!-- COMPARATIVO VISUAL -->
+  <InteractiveComparison />
 
-      </div>
-    </div>
-  </section>
-
-  <!-- OS 9 PILARES EM PROFUNDIDADE -->
-  <section class="py-20 bg-[#f8fafc] border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-center mb-16">
-        <span class="badge-subtle mb-3">Arquitetura Pedagógica</span>
-        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
-          Os 9 Pilares Passo a Passo
-        </h2>
-        <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
-          Cada letra do acrônimo A.U.T.E.N.T.I.C.A representa um alicerce do seu desenvolvimento na plataforma.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {pillarsDetail.map((p) => (
-          <div class="editorial-card p-6 sm:p-7 flex flex-col justify-between">
-            <div>
-              <div class="w-11 h-11 rounded-xl bg-slate-900 text-white flex items-center justify-center font-heading font-black text-xl shadow-sm mb-4">
-                {p.letter}
-              </div>
-              <h3 class="text-lg font-heading font-bold text-slate-900 mb-1">
-                {p.name}
-              </h3>
-              <p class="text-xs font-semibold text-blue-700 mb-4">
-                {p.lead}
-              </p>
-              <ul class="space-y-2.5 text-xs text-slate-600">
-                {p.bullets.map((b) => (
-                  <li class="flex items-start gap-2">
-                    <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div class="mt-16 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="/planos" class="btn-editorial-primary !text-sm !py-3.5 !px-8">
-          <span>Garantir Minha Vaga no Método Autêntico &rarr;</span>
+  <!-- CTA -->
+  <section class="py-16 text-center border-t border-white/10 bg-[#05050a]">
+    <div class="max-w-3xl mx-auto px-4 space-y-6">
+      <h3 class="text-2xl sm:text-3xl font-serif text-white">
+        Pronto para experimentar o Método Autêntico na prática?
+      </h3>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/planos" class="btn-white-luxury px-8 py-3.5 text-xs uppercase tracking-wider shadow-lg">
+          Ver Planos & Matricular
         </a>
-        <a href="/plataforma" class="btn-editorial-secondary !text-sm !py-3.5 !px-6">
-          <span>Conhecer a Plataforma do Aluno</span>
+        <a href="/#produtos" class="btn-ghost-cosmic px-6 py-3.5 text-xs uppercase tracking-wider">
+          Explorar os 15 Produtos
         </a>
       </div>
     </div>

@@ -1,0 +1,247 @@
+---
+// src/components/HeroVoyage.astro
+// Hero Interativo — A Viagem do Lead para a Fluência Real
+---
+
+<section id="viagem" class="relative pt-8 pb-16 lg:pt-16 lg:pb-28 overflow-hidden">
+  
+  <!-- Ambient Spotlight & Cosmic Glow -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-[radial-gradient(ellipse,rgba(155,143,255,0.14)_0%,transparent_68%)] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      
+      <!-- Coluna da Esquerda: A Promessa da Viagem + Interatividade -->
+      <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        
+        <!-- Badge Oficial de Embarque -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-[#9b8fff]">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Embarque Imediato · Aulas ao Vivo Toda 4ª às 20h</span>
+        </div>
+
+        <!-- Headline com Tipografia Serif Editorial Magnífica -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-white tracking-tight leading-[1.12]">
+          Sua viagem para falar inglês <br class="hidden sm:inline" />
+          com <em class="italic font-normal text-[#c8c2ff]">naturalidade e liberdade.</em>
+        </h1>
+
+        <!-- Subtítulo Enxuto (Menos texto, mais impacto) -->
+        <p class="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-sans">
+          Chega de decoreba e anos de frustração. Conheça a <strong>Metodologia Autêntica</strong> da <strong>Prof. Amanda Beatriz</strong> e desbloqueie um ecossistema com <strong>15 produtos integrados</strong> para falar sem medo.
+        </p>
+
+        <!-- WIDGET INTERATIVO: PASSAPORTE DO VIAJANTE (A Viagem do Lead) -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-[#0d0e1c] border border-white/10 shadow-2xl text-left space-y-4">
+          <div class="flex items-center justify-between border-b border-white/10 pb-3">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">✈️</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-200">
+                Simulador de Embarque: Escolha seu Momento
+              </span>
+            </div>
+            <span class="text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">
+              Interativo
+            </span>
+          </div>
+
+          <!-- Seletores Interativos de Perfil do Lead -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2" id="passport-selectors">
+            <button
+              type="button"
+              data-profile="travado"
+              class="passport-btn active p-3 rounded-xl border border-[#9b8fff] bg-white/10 text-left transition-all"
+            >
+              <div class="text-[11px] font-bold text-[#c8c2ff]">Perfil 1</div>
+              <div class="text-xs font-extrabold text-white mt-0.5">Travado / Medo de Falar</div>
+              <div class="text-[10px] text-slate-400 mt-1">Travo ao abrir a boca</div>
+            </button>
+
+            <button
+              type="button"
+              data-profile="compreende"
+              class="passport-btn p-3 rounded-xl border border-white/10 bg-white/[0.02] text-left hover:border-white/30 transition-all"
+            >
+              <div class="text-[11px] font-bold text-slate-400">Perfil 2</div>
+              <div class="text-xs font-extrabold text-white mt-0.5">Entendo mas Não Falo</div>
+              <div class="text-[10px] text-slate-400 mt-1">Traduzo mentalmente</div>
+            </button>
+
+            <button
+              type="button"
+              data-profile="avancar"
+              class="passport-btn p-3 rounded-xl border border-white/10 bg-white/[0.02] text-left hover:border-white/30 transition-all"
+            >
+              <div class="text-[11px] font-bold text-slate-400">Perfil 3</div>
+              <div class="text-xs font-extrabold text-white mt-0.5">Carreira & Poliglota</div>
+              <div class="text-[10px] text-slate-400 mt-1">Quero múltiplos idiomas</div>
+            </button>
+          </div>
+
+          <!-- Bilhete de Embarque Dinâmico -->
+          <div id="boarding-pass-display" class="p-4 rounded-xl bg-[#14162b] border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-[#9b8fff]">Diagnóstico da Viagem:</span>
+                <span id="pass-tag" class="text-xs font-bold text-white">Desbloqueio Fonético & Emocional</span>
+              </div>
+              <p id="pass-desc" class="text-xs text-slate-300 leading-snug">
+                Você vai desativar o crítico interno com os <strong>4Ps</strong> e treinar sons reais sem vergonha.
+              </p>
+            </div>
+            <div class="sm:text-right shrink-0">
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 block font-semibold">Meta de Destrave:</span>
+              <span id="pass-timeline" class="text-xs font-extrabold text-emerald-400 block">30 a 60 dias</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Métricas Oficiais em Blocos Rápidos -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 text-center">
+            <span class="text-xl sm:text-2xl font-serif font-black text-white block">+10.000</span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold block mt-0.5">Aulas Dadas</span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 text-center">
+            <span class="text-xl sm:text-2xl font-serif font-black text-[#c8c2ff] block">12 Idiomas</span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold block mt-0.5">Jornada Poliglota</span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 text-center">
+            <span class="text-xl sm:text-2xl font-serif font-black text-emerald-400 block">15 Produtos</span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold block mt-0.5">Tudo Incluso</span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 text-center">
+            <span class="text-xl sm:text-2xl font-serif font-black text-amber-300 block">R$ 39,90</span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold block mt-0.5">Sem Fidelidade</span>
+          </div>
+        </div>
+
+        <!-- Botões de Ação Imediata -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+          <a
+            href="#planos"
+            class="btn-white-luxury w-full sm:w-auto px-8 py-4 text-xs uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-xl"
+          >
+            <span>Garantir Meu Lugar na Viagem</span>
+            <svg class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+
+          <a
+            href="#produtos"
+            class="btn-ghost-cosmic w-full sm:w-auto px-7 py-4 text-xs font-bold uppercase tracking-wider text-center"
+          >
+            <span>Explorar os 15 Produtos &darr;</span>
+          </a>
+        </div>
+
+        <p class="text-xs text-slate-400">
+          Acesso instantâneo a todas as trilhas · Garantia incondicional de 7 dias · Cancele quando quiser
+        </p>
+
+      </div>
+
+      <!-- Coluna da Direita: Imagem Real da Mentora + Card de Experiência -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative mx-auto max-w-sm lg:max-w-none">
+          
+          <!-- Foto Principal Autêntica de Amanda Beatriz -->
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-[#0d0e1c] group">
+            <img
+              src="/images/about-me.png"
+              alt="Professora Amanda Beatriz — Fluente no Mundo"
+              class="w-full h-auto aspect-[3/4] object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              loading="eager"
+            />
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-[#05050a] via-transparent to-transparent opacity-80"></div>
+            
+            <!-- Etiqueta Flutuante de Autoridade -->
+            <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-[#090a14]/85 backdrop-blur-md border border-white/15 text-white">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h2 class="font-serif text-lg font-bold">Prof. Amanda Beatriz</h2>
+                  <span class="text-xs text-[#c8c2ff]">Criadora da Metodologia Autêntica</span>
+                </div>
+                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  Ao Vivo Toda 4ª
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Flutuante de Estudo Real -->
+          <div class="hidden sm:flex items-center gap-3 absolute -bottom-6 -left-6 rounded-2xl bg-[#090a14]/95 p-3 pr-5 border border-white/20 shadow-2xl backdrop-blur-md">
+            <img
+              src="/images/cafe-com-plataforma.jpg"
+              alt="Plataforma Fluente no Mundo"
+              class="w-14 h-14 object-cover rounded-xl border border-white/10"
+              loading="lazy"
+            />
+            <div class="text-left">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 block">Metodologia 4D</span>
+              <span class="text-xs font-extrabold text-white block">Estudo leve de 20 min/dia</span>
+              <span class="text-[10px] text-emerald-400 font-semibold block">Funciona no celular & PC</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Dados dinâmicos do bilhete de embarque
+  const profilesData: Record<string, { tag: string; desc: string; timeline: string }> = {
+    travado: {
+      tag: 'Desbloqueio Fonético & Emocional',
+      desc: 'Você vai desativar o medo com os 4Ps (Padrões, Pronúncia, Psicológico e Prática) e treinar sons sem julgamentos.',
+      timeline: 'Primeiras frases em 30 dias'
+    },
+    compreende: {
+      tag: 'Fim da Tradução Mental (Curva SRS)',
+      desc: 'Treino de evocação rápida através da Revisão Autêntica e Minuto Fluente para falar sem passar pelo português.',
+      timeline: 'Fala espontânea em 45 dias'
+    },
+    avancar: {
+      tag: 'Jornada Poliglota & Business English',
+      desc: 'Imersão em 12 idiomas inclusos, simulações de reuniões globais, viagens e networking internacional.',
+      timeline: 'Segurança global contínua'
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.passport-btn');
+    const tagEl = document.getElementById('pass-tag');
+    const descEl = document.getElementById('pass-desc');
+    const timeEl = document.getElementById('pass-timeline');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const profile = btn.getAttribute('data-profile');
+        if (!profile || !profilesData[profile]) return;
+
+        buttons.forEach((b) => {
+          b.classList.remove('active', 'border-[#9b8fff]', 'bg-white/10');
+          b.classList.add('border-white/10', 'bg-white/[0.02]');
+          const badge = b.querySelector('div:first-child');
+          if (badge) badge.className = 'text-[11px] font-bold text-slate-400';
+        });
+
+        btn.classList.add('active', 'border-[#9b8fff]', 'bg-white/10');
+        btn.classList.remove('border-white/10', 'bg-white/[0.02]');
+        const activeBadge = btn.querySelector('div:first-child');
+        if (activeBadge) activeBadge.className = 'text-[11px] font-bold text-[#c8c2ff]';
+
+        if (tagEl) tagEl.textContent = profilesData[profile].tag;
+        if (descEl) descEl.innerHTML = profilesData[profile].desc;
+        if (timeEl) timeEl.textContent = profilesData[profile].timeline;
+      });
+    });
+  });
+</script>

@@ -1,0 +1,330 @@
+---
+// src/components/LeadJourneySimulator.astro
+// Estação 4: Simulador da Viagem do Lead — Roteiro Personalizado
+---
+
+<section id="roteiro" class="py-20 lg:py-28 bg-[#05050a] relative overflow-hidden">
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Cabeçalho -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-[#9b8fff] mb-4">
+        <span>Estação 4 · Seu Plano de Voo</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-white tracking-tight leading-tight">
+        Monte o roteiro personalizado da <em class="italic font-normal text-[#c8c2ff]">sua viagem.</em>
+      </h2>
+      <p class="mt-4 text-sm sm:text-base text-slate-300 font-sans leading-relaxed">
+        Cada pessoa viaja em um ritmo e com um destino diferente. Diga para onde você quer ir e receba o cronograma ideal de estudos:
+      </p>
+    </div>
+
+    <!-- WIDGET PRINCIPAL: O SIMULADOR -->
+    <div class="max-w-4xl mx-auto p-6 sm:p-10 rounded-3xl bg-[#0c0d1b] border border-white/15 shadow-2xl space-y-8">
+      
+      <!-- Passo 1: Objetivo Principal -->
+      <div class="space-y-3">
+        <label class="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+          <span class="w-5 h-5 rounded-full bg-[#9b8fff]/20 text-[#c8c2ff] flex items-center justify-center text-[11px]">1</span>
+          <span>Qual é o destino principal da sua viagem?</span>
+        </label>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="journey-goals">
+          <button
+            type="button"
+            data-goal="viagens"
+            class="goal-btn active p-3.5 rounded-xl border border-[#9b8fff] bg-white/10 text-left transition-all"
+          >
+            <span class="text-xl block">✈️</span>
+            <span class="text-xs font-bold text-white block mt-1.5">Viagens & Turismo</span>
+            <span class="text-[10px] text-slate-400 block">Aeroportos, hotéis e lazer</span>
+          </button>
+
+          <button
+            type="button"
+            data-goal="carreira"
+            class="goal-btn p-3.5 rounded-xl border border-white/10 bg-white/[0.02] text-left hover:border-white/30 transition-all"
+          >
+            <span class="text-xl block">💼</span>
+            <span class="text-xs font-bold text-white block mt-1.5">Carreira & Negócios</span>
+            <span class="text-[10px] text-slate-400 block">Reuniões e apresentações</span>
+          </button>
+
+          <button
+            type="button"
+            data-goal="poliglota"
+            class="goal-btn p-3.5 rounded-xl border border-white/10 bg-white/[0.02] text-left hover:border-white/30 transition-all"
+          >
+            <span class="text-xl block">🌍</span>
+            <span class="text-xs font-bold text-white block mt-1.5">Jornada Poliglota</span>
+            <span class="text-[10px] text-slate-400 block">Inglês + Espanhol e outros</span>
+          </button>
+
+          <button
+            type="button"
+            data-goal="timidez"
+            class="goal-btn p-3.5 rounded-xl border border-white/10 bg-white/[0.02] text-left hover:border-white/30 transition-all"
+          >
+            <span class="text-xl block">🗣️</span>
+            <span class="text-xs font-bold text-white block mt-1.5">Destravar Timidez</span>
+            <span class="text-[10px] text-slate-400 block">Falar sem travar ou tremer</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Passo 2: Tempo Disponível -->
+      <div class="space-y-3">
+        <label class="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+          <span class="w-5 h-5 rounded-full bg-[#9b8fff]/20 text-[#c8c2ff] flex items-center justify-center text-[11px]">2</span>
+          <span>Quantos minutos por dia você tem para dedicar?</span>
+        </label>
+        <div class="grid grid-cols-3 gap-2.5" id="journey-time">
+          <button
+            type="button"
+            data-time="15"
+            class="time-btn p-3.5 rounded-xl border border-white/10 bg-white/[0.02] text-left hover:border-white/30 transition-all"
+          >
+            <span class="text-xs font-bold text-white block">15 min / dia</span>
+            <span class="text-[10px] text-slate-400 block mt-0.5">Modo Ágil (Minuto Fluente + SRS)</span>
+          </button>
+
+          <button
+            type="button"
+            data-time="30"
+            class="time-btn active p-3.5 rounded-xl border border-[#9b8fff] bg-white/10 text-left transition-all"
+          >
+            <span class="text-xs font-bold text-white block">30 min / dia</span>
+            <span class="text-[10px] text-emerald-400 font-semibold block mt-0.5">Recomendado (Melhor ritmo)</span>
+          </button>
+
+          <button
+            type="button"
+            data-time="60"
+            class="time-btn p-3.5 rounded-xl border border-white/10 bg-white/[0.02] text-left hover:border-white/30 transition-all"
+          >
+            <span class="text-xs font-bold text-white block">60 min / dia</span>
+            <span class="text-[10px] text-slate-400 block mt-0.5">Imersão Total (Acelerado)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- PAINEL RESULTANTE: CARTÃO DO PLANO DE VOO -->
+      <div class="p-6 rounded-2xl bg-[#14162e] border border-white/15 space-y-5" id="flight-plan-result">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-[#9b8fff]">Roteiro Personalizado Gerado:</span>
+            <h4 class="text-xl font-bold text-white mt-0.5" id="plan-title">Viagens Sem Perrengue & Liberdade Global</h4>
+          </div>
+          <div class="text-left sm:text-right shrink-0">
+            <span class="text-[10px] uppercase text-slate-400 block font-semibold">Estimativa para Falar:</span>
+            <span class="text-sm font-extrabold text-emerald-400 block" id="plan-time-est">90 dias com constância</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 space-y-1">
+            <span class="text-[10px] uppercase font-bold text-slate-400">Trilha Principal:</span>
+            <div class="text-xs font-bold text-white" id="plan-track">Vivência Global + Vocabulário SRS</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 space-y-1">
+            <span class="text-[10px] uppercase font-bold text-slate-400">Encontro Semanal:</span>
+            <div class="text-xs font-bold text-white">Toda 4ª ao Vivo às 20h com a Prof.</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/5 space-y-1">
+            <span class="text-[10px] uppercase font-bold text-slate-400">Meta de Vocabulário:</span>
+            <div class="text-xs font-bold text-emerald-400" id="plan-words">1.500 expressões essenciais</div>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-slate-300 flex items-center justify-between">
+          <span id="plan-summary">
+            Perfeito para quem quer viajar sem travar na imigração, pedir pratos com segurança e puxar papo no exterior.
+          </span>
+        </div>
+
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span class="text-xs text-slate-400">
+            Tudo incluso por <strong>R$ 39,90/mês</strong> sem contrato de fidelidade
+          </span>
+          <a
+            href="#planos"
+            class="btn-white-luxury w-full sm:w-auto px-7 py-3 text-xs uppercase tracking-wider shadow-lg text-center"
+          >
+            Ativar Este Roteiro nos Planos &rarr;
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Lógica do simulador de roteiro
+  interface PlanDetail {
+    title: string;
+    est: string;
+    track: string;
+    words: string;
+    summary: string;
+  }
+
+  const plansCatalog: Record<string, Record<string, PlanDetail>> = {
+    viagens: {
+      '15': {
+        title: 'Roteiro Express: Viagens Sem Perrengue',
+        est: '90 dias para segurança básica',
+        track: 'Vocabulário Ativo + Minuto Fluente',
+        words: '800 expressões práticas',
+        summary: 'Ideal para quem tem viagem marcada e precisa destravar aeroporto, hotel, alfândega e restaurante.'
+      },
+      '30': {
+        title: 'Roteiro Completo: Viajante Independente',
+        est: '60 dias para conversação leve',
+        track: 'Vivência Global + Formação Global',
+        words: '1.500 expressões autênticas',
+        summary: 'Comunicação fluida para passear, fazer compras, resolver imprevistos e conversar com locais no exterior.'
+      },
+      '60': {
+        title: 'Roteiro Imersivo: Cidadão do Mundo',
+        est: '30 a 45 dias para falar sem filtro',
+        track: 'Imersão ao Vivo + Vivência Global',
+        words: '2.500 expressões completas',
+        summary: 'Fluência segura para viagens longas, intercâmbios e total autonomia em qualquer país de língua inglesa.'
+      }
+    },
+    carreira: {
+      '15': {
+        title: 'Roteiro Express: Business English Essencial',
+        est: '90 dias para e-mails e termos',
+        track: 'Conexões Autênticas + Vocabulário',
+        words: '1.000 termos de mercado',
+        summary: 'Foco em e-mails profissionais, vocabulário corporativo e respostas rápidas no trabalho.'
+      },
+      '30': {
+        title: 'Roteiro Estratégico: Reuniões e Negócios',
+        est: '60 dias para conduzir reuniões',
+        track: 'Formação Global + Masterclasses',
+        words: '2.000 expressões de negócios',
+        summary: 'Segurança para participar de reuniões internacionais, defender ideias e conduzir apresentações.'
+      },
+      '60': {
+        title: 'Roteiro Liderança Global & Executivo',
+        est: '45 dias para negociações de alto impacto',
+        track: 'Formação Internacional + Conexões',
+        words: '3.500 expressões corporativas',
+        summary: 'Fluência executiva para processos seletivos globais, negociações internacionais e liderança de times remotos.'
+      }
+    },
+    poliglota: {
+      '15': {
+        title: 'Roteiro Poliglota Ágil (Inglês + Espanhol)',
+        est: '120 dias com 2 idiomas',
+        track: 'Jornada Poliglota + Minuto Fluente',
+        words: '1.200 expressões comparadas',
+        summary: 'Aproveita semelhanças cognitivas para aprender múltiplos idiomas sem sobrecarga.'
+      },
+      '30': {
+        title: 'Roteiro Poliglota Estruturado',
+        est: '90 dias para destravar o 2º idioma',
+        track: 'Jornada Poliglota (12 Idiomas)',
+        words: '2.400 expressões multiculturais',
+        summary: 'Estudo paralelo inteligente com workshops de aculturamento e matrizes de comparação fonética.'
+      },
+      '60': {
+        title: 'Roteiro Hiperpoliglota da Amanda Beatriz',
+        est: '60 dias para base em múltiplos idiomas',
+        track: 'Imersão Global Multilíngue',
+        words: '4.000 vocábulos integrados',
+        summary: 'O mesmo método que Amanda Beatriz usa para falar múltiplos idiomas e se tornar hiperpoliglota.'
+      }
+    },
+    timidez: {
+      '15': {
+        title: 'Roteiro Anti-Trava: Vencendo o Medo',
+        est: '60 dias para as primeiras falas',
+        track: 'Método A.U.T.E.N.T.I.C.A + 4Ps',
+        words: '600 expressões automáticas',
+        summary: 'Desativa o crítico interno com exercícios solo em ambiente seguro antes de falar com outras pessoas.'
+      },
+      '30': {
+        title: 'Roteiro Coragem & Conversação Segura',
+        est: '45 dias para falar em público',
+        track: 'Comunidade Nós + Revisão SRS',
+        words: '1.500 frases sem bloqueio',
+        summary: 'Troca de áudios diários com alunos acolhedores e feedback afetuoso sem qualquer julgamento.'
+      },
+      '60': {
+        title: 'Roteiro Desbloqueio Total da Comunicação',
+        est: '30 dias para destravar de vez',
+        track: 'Aulas ao Vivo com a Amanda Beatriz',
+        words: '2.500 expressões espontâneas',
+        summary: 'Mentorias semanais ao vivo com a mentora para transformar a vergonha em confiança inabalável.'
+      }
+    }
+  };
+
+  let currentGoal = 'viagens';
+  let currentTime = '30';
+
+  function updateFlightPlan() {
+    const data = plansCatalog[currentGoal]?.[currentTime];
+    if (!data) return;
+
+    const titleEl = document.getElementById('plan-title');
+    const timeEstEl = document.getElementById('plan-time-est');
+    const trackEl = document.getElementById('plan-track');
+    const wordsEl = document.getElementById('plan-words');
+    const summaryEl = document.getElementById('plan-summary');
+
+    if (titleEl) titleEl.textContent = data.title;
+    if (timeEstEl) timeEstEl.textContent = data.est;
+    if (trackEl) trackEl.textContent = data.track;
+    if (wordsEl) wordsEl.textContent = data.words;
+    if (summaryEl) summaryEl.textContent = data.summary;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const goalBtns = document.querySelectorAll('.goal-btn');
+    const timeBtns = document.querySelectorAll('.time-btn');
+
+    goalBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const goal = btn.getAttribute('data-goal');
+        if (!goal) return;
+        currentGoal = goal;
+
+        goalBtns.forEach((b) => {
+          b.classList.remove('active', 'border-[#9b8fff]', 'bg-white/10');
+          b.classList.add('border-white/10', 'bg-white/[0.02]');
+        });
+        btn.classList.add('active', 'border-[#9b8fff]', 'bg-white/10');
+        btn.classList.remove('border-white/10', 'bg-white/[0.02]');
+
+        updateFlightPlan();
+      });
+    });
+
+    timeBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const time = btn.getAttribute('data-time');
+        if (!time) return;
+        currentTime = time;
+
+        timeBtns.forEach((b) => {
+          b.classList.remove('active', 'border-[#9b8fff]', 'bg-white/10');
+          b.classList.add('border-white/10', 'bg-white/[0.02]');
+        });
+        btn.classList.add('active', 'border-[#9b8fff]', 'bg-white/10');
+        btn.classList.remove('border-white/10', 'bg-white/[0.02]');
+
+        updateFlightPlan();
+      });
+    });
+
+    updateFlightPlan();
+  });
+</script>

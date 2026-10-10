@@ -1,8 +1,10 @@
 ---
+// src/pages/sobre.astro
+// Biografia e Autoridade da Prof. Amanda Beatriz
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const pageTitle = 'Sobre a Prof. Amanda Beatriz | Fluente no Mundo';
-const pageDesc = 'Conheça a história de Amanda Beatriz: professora de idiomas, pioneira em múltiplos canais educativos e criadora da Metodologia Autêntica de fluência.';
+const pageTitle = 'Amanda Beatriz | Fundadora do Fluente no Mundo';
+const pageDesc = 'Conheça a história de Amanda Beatriz: professora poliglota, pesquisadora da neurociência aplicada a idiomas e criadora da Metodologia Autêntica.';
 ---
 
 <BaseLayout
@@ -11,107 +13,86 @@ const pageDesc = 'Conheça a história de Amanda Beatriz: professora de idiomas,
   canonicalUrl="https://fluentenomundo.com/sobre"
 >
   
-  <!-- CABEÇALHO DA PÁGINA -->
-  <section class="pt-12 pb-16 bg-[#f8fafc] border-b border-slate-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="badge-subtle mb-4">Mentora e Fundadora</span>
-      <h1 class="text-4xl sm:text-5xl font-heading font-extrabold text-slate-900 tracking-tight leading-tight">
-        Prazer, eu sou a Amanda Beatriz
+  <!-- CABEÇALHO -->
+  <section class="pt-16 pb-12 text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-[#9b8fff]">
+        <span>Mentora & Fundadora</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-serif text-white tracking-tight leading-tight">
+        Prazer, eu sou a <em class="italic font-normal text-[#c8c2ff]">Amanda Beatriz.</em>
       </h1>
-      <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-        Professora, criadora de conteúdo educativo e uma das primeiras brasileiras a trilhar o caminho rumo ao <strong>hiperpoliglotismo</strong> com base em neurociência e aculturamento.
+      <p class="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
+        Professora poliglota de idiomas há mais de 5 anos, pesquisadora de neuroaprendizagem e criadora do movimento Fluente no Mundo.
       </p>
     </div>
   </section>
 
-  <!-- BIOGRAFIA E TRAJETÓRIA -->
-  <section class="py-16 bg-white border-b border-slate-200">
+  <!-- BIOGRAFIA E FOTOS REAIS -->
+  <section class="py-16 bg-[#070812] border-t border-b border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <div class="lg:col-span-5">
-          <div class="p-3 bg-slate-100 rounded-2xl border border-slate-200 shadow-sm">
-            <div class="rounded-xl overflow-hidden aspect-[4/5] bg-slate-200">
-              <img
-                src="/images/about me.png"
-                alt="Professora Amanda Beatriz sorrindo"
-                class="w-full h-full object-cover object-top"
-                loading="eager"
-              />
+        <!-- Fotos Autênticas -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-[#0c0d1b] relative group">
+            <img
+              src="/images/about-me.png"
+              alt="Professora Amanda Beatriz"
+              class="w-full h-auto aspect-[3/4] object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              loading="eager"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#05050a] via-transparent to-transparent opacity-80"></div>
+            
+            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#070812]/90 backdrop-blur border border-white/10 text-white">
+              <strong class="font-serif text-base block font-bold">Amanda Beatriz</strong>
+              <span class="text-xs text-[#c8c2ff] block">+10.000 aulas dadas · Hiperpoliglota em Construção</span>
             </div>
-            <div class="mt-3 p-3 text-center">
-              <strong class="text-slate-900 block font-heading text-base">Amanda Beatriz</strong>
-              <span class="text-xs text-slate-500">Fundadora do Movimento Fluente no Mundo</span>
-            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <img src="/images/class-live.jpeg" alt="Aula com a Amanda" class="w-full h-32 object-cover rounded-2xl border border-white/10" />
+            <img src="/images/cafe-com-plataforma.jpg" alt="Setup de Estudo" class="w-full h-32 object-cover rounded-2xl border border-white/10" />
           </div>
         </div>
 
-        <div class="lg:col-span-7 flex flex-col gap-6 text-slate-600 text-sm sm:text-base leading-relaxed">
-          <div>
-            <span class="badge-neutral mb-3">Uma Missão de Alma e Visão Global</span>
-            <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900 mt-3 mb-4 leading-tight">
-              Do problema educacional à metodologia própria
-            </h2>
-          </div>
+        <!-- Texto de Apresentação -->
+        <div class="lg:col-span-7 space-y-6 text-slate-300 text-sm sm:text-base leading-relaxed">
           
+          <h2 class="text-2xl sm:text-3xl font-serif text-white leading-tight">
+            "A vida é grande demais para caber em uma única categoria."
+          </h2>
+
           <p>
-            Durante anos, observei milhares de brasileiros inteligentes e dedicados se sentirem incapazes ou "sem o dom" para falar inglês. O problema nunca foi a capacidade do aluno, mas sim um modelo educacional arcaico que ensina línguas como matemática abstrata, focando em decoreba de regras e punição do erro.
+            Alma mestre, professora poliglota de idiomas há mais de 5 anos, fundadora do Fluente no Mundo e criadora da Metodologia Autêntica. Uma mulher que se recusa a ser definida por uma única habilidade e vive para explorar e expressar todo o potencial que pulsa dentro de si.
           </p>
 
           <p>
-            Foi a partir dessa indignação que nasceu a <strong class="text-slate-900">Metodologia A.U.T.E.N.T.I.C.A</strong> e a escola <strong class="text-slate-900">Fluente no Mundo</strong>. Uma construção de mais de 4 anos de desenvolvimento, reunindo o que há de mais atual na neurociência da aprendizagem, psicologia do erro e imersão cultural prática.
+            Durante anos, observei milhares de brasileiros inteligentes se sentirem incapazes de falar inglês por conta de um sistema educacional arcaico que ensina idiomas através de regras abstratas e punição do erro. Foi nesse caminho que criei um novo modelo de educação baseado em neurociência, acolhimento emocional e aculturamento da vida real.
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
-              <span class="text-base font-heading font-bold text-slate-900 block mb-1">Impacto Educacional</span>
-              <p class="text-xs text-slate-600">Pioneira em múltiplos canais no YouTube e projetos focados em democratizar o ensino de idiomas com profundidade e rigor pedagógico.</p>
+            <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 space-y-1">
+              <strong class="text-white block font-serif text-lg">+10 Anos de Impacto</strong>
+              <p class="text-xs text-slate-400">Uma década de estudo diário, leitura científica e pesquisa aplicada.</p>
             </div>
-            <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
-              <span class="text-base font-heading font-bold text-slate-900 block mb-1">Comunidade de Almas</span>
-              <p class="text-xs text-slate-600">Reunir uma tribo de pessoas que querem expandir a mente, viajar o mundo e viver novas culturas com profundidade real.</p>
+            <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 space-y-1">
+              <strong class="text-[#c8c2ff] block font-serif text-lg">Comunidade Global</strong>
+              <p class="text-xs text-slate-400">Alunos no Brasil e no exterior aprendendo juntos sem julgamentos.</p>
             </div>
           </div>
 
-          <div class="pt-2 flex flex-wrap gap-3">
-            <a href="https://youtube.com/@fluentenomundo" target="_blank" rel="noopener noreferrer" class="btn-editorial-secondary !text-xs !py-3 !px-5">
-              <svg class="w-3.5 h-3.5 text-slate-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-              </svg>
-              <span>Canal YouTube</span>
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="/planos" class="btn-white-luxury px-8 py-3.5 text-xs uppercase tracking-wider shadow-xl">
+              Estudar com a Amanda
             </a>
-            <a href="https://instagram.com/fluentenomundo" target="_blank" rel="noopener noreferrer" class="btn-editorial-secondary !text-xs !py-3 !px-5 flex items-center gap-2">
-              <svg class="w-3.5 h-3.5 text-slate-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-              </svg>
-              <span>Instagram Oficial</span>
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            <a href="/metodo" class="btn-ghost-cosmic px-6 py-3.5 text-xs uppercase tracking-wider">
+              Conhecer a Metodologia &rarr;
             </a>
           </div>
 
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="py-16 bg-[#f8fafc] text-center">
-    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900 mb-3">
-        Estude diretamente com Amanda Beatriz
-      </h2>
-      <p class="text-slate-600 text-sm leading-relaxed mb-6">
-        Aulas ao vivo semanais, acompanhamento pelo canal SOS e método com 7 dias de garantia incondicional.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="/planos" class="btn-editorial-primary !py-3.5 !px-8 !text-xs">
-          <span>Garantir Vaga no Curso &rarr;</span>
-        </a>
-        <a href="/metodo" class="btn-editorial-secondary !py-3.5 !px-6 !text-xs">
-          <span>Ver os 9 Pilares do Método</span>
-        </a>
       </div>
     </div>
   </section>

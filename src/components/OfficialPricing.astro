@@ -1,0 +1,405 @@
+---
+// src/components/OfficialPricing.astro
+// Preços Oficiais Extraídos Diretamente de fluentenomundo.com + Modal 100% Funcional
+---
+
+<section id="planos" class="py-20 lg:py-28 bg-[#070812] relative overflow-hidden border-t border-b border-white/5">
+  
+  <!-- Ambient glow -->
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-[radial-gradient(ellipse,rgba(155,143,255,0.1)_0%,transparent_68%)] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Cabeçalho Oficial -->
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-[#9b8fff]">
+        <span>Estação 5 · O Destino & Investimento</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-serif text-white tracking-tight leading-tight">
+        Investimento na sua <em class="italic font-normal text-[#c8c2ff]">transformação.</em>
+      </h2>
+      <p class="text-base sm:text-lg text-slate-300 font-sans italic max-w-xl mx-auto">
+        Dois caminhos. Um destino: a sua fluência.
+      </p>
+    </div>
+
+    <!-- CARDS DE PLANOS OFICIAIS -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch mb-16">
+      
+      <!-- PLANO 1: MENSAL (R$ 39,90) -->
+      <div class="glass-card p-8 sm:p-10 flex flex-col justify-between border border-white/10 relative group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-300 bg-white/5 border border-white/10 px-3.5 py-1 rounded-full">
+              Plano Mensal
+            </span>
+            <span class="text-xs text-slate-400 font-medium">Flexível</span>
+          </div>
+
+          <div class="flex items-baseline gap-1 my-6 pb-6 border-b border-white/10">
+            <span class="text-2xl font-serif text-slate-400">R$</span>
+            <span class="text-5xl sm:text-6xl font-serif font-black text-white">39</span>
+            <span class="text-2xl font-bold text-slate-300">,90</span>
+            <span class="text-xs sm:text-sm text-slate-400 font-medium">/mês</span>
+          </div>
+
+          <p class="text-xs text-slate-400 font-semibold mb-6">
+            R$ 39,90/mês no plano flexível sem fidelidade
+          </p>
+
+          <ul class="space-y-3.5 text-xs sm:text-sm text-slate-200 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Acesso à <strong>Formação Global completa</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Condição especial da <strong>Bolsa Global</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong>Aulas novas toda semana</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Cancele quando quiser sem multas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Suporte completo da comunidade</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-amber-300 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-[#c8c2ff]">Os primeiros 60 alunos garantem mentoria exclusiva ao vivo com a professora</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <button
+            type="button"
+            data-plano="mensal"
+            class="open-checkout-btn btn-ghost-cosmic w-full py-4 text-xs font-bold uppercase tracking-wider text-center"
+          >
+            Começar por R$ 39,90/mês
+          </button>
+          <p class="text-[11px] text-slate-500 text-center mt-3 font-sans">
+            Vire a chave dos estudos · Liberdade total
+          </p>
+        </div>
+      </div>
+
+      <!-- PLANO 2: SEMESTRAL (MAIS POPULAR - R$ 179,40 = R$ 29,90/mês) -->
+      <div class="glass-card p-8 sm:p-10 flex flex-col justify-between glow-card-featured relative">
+        
+        <!-- Selo de Mais Popular Oficial -->
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#9b8fff] to-[#6c5fff] text-white text-[10px] font-black uppercase tracking-widest shadow-xl">
+          Mais Popular · Go Semestral
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#c8c2ff] bg-[#9b8fff]/15 border border-[#9b8fff]/30 px-3.5 py-1 rounded-full">
+              6 Meses (Go Plano)
+            </span>
+            <span class="text-xs text-emerald-400 font-bold">Equivalente a R$ 29,90/mês</span>
+          </div>
+
+          <div class="flex items-baseline gap-1 my-6 pb-6 border-b border-white/10">
+            <span class="text-2xl font-serif text-slate-400">R$</span>
+            <span class="text-5xl sm:text-6xl font-serif font-black text-white">179</span>
+            <span class="text-2xl font-bold text-slate-300">,40</span>
+            <span class="text-xs sm:text-sm text-slate-400 font-medium">/semestre</span>
+          </div>
+
+          <p class="text-xs text-emerald-300 font-semibold mb-6">
+            Go Plano semestral: compromisso real com desconto de 25%
+          </p>
+
+          <ul class="space-y-3.5 text-xs sm:text-sm text-slate-200 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Acesso à <strong>Formação Global completa</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Condição especial da <strong>Bolsa Global</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong>Aulas novas toda semana</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong>Desconto exclusivo</strong> no plano de 6 meses</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><strong>Garantia incondicional de 7 dias</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-amber-300 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-[#c8c2ff]">Os primeiros 60 alunos garantem mentoria exclusiva ao vivo com a professora</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <button
+            type="button"
+            data-plano="semestral"
+            class="open-checkout-btn btn-white-luxury w-full py-4 text-xs font-bold uppercase tracking-wider text-center shadow-2xl"
+          >
+            Garantir 6 Meses por R$ 29,90/mês
+          </button>
+          <p class="text-[11px] text-slate-400 text-center mt-3 font-sans">
+            Incentivo à constância, compromisso e evolução real dentro da Formação Global
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GARANTIA BLINDADA DE 7 DIAS (SEM RISCO) -->
+    <div class="max-w-2xl mx-auto p-5 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+      <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center shrink-0 text-2xl">
+        🛡️
+      </div>
+      <div>
+        <strong class="text-sm font-bold text-white block">Garantia Incondicional de 7 Dias (Risco Zero)</strong>
+        <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">
+          Entre na plataforma, acesse as trilhas e participe da aula ao vivo de quarta. Se por qualquer motivo achar que não é o momento certo, basta solicitar o reembolso e você recebe 100% do seu dinheiro de volta sem perguntas.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     MODAL FUNCIONAL DE CHECKOUT (CARTÃO DE CRÉDITO OU PIX)
+     ============================================================ -->
+<div id="paymentModal" class="hidden fixed inset-0 z-[9000] bg-black/85 backdrop-blur-xl items-center justify-center p-4">
+  <div class="bg-[#0e1022] text-white border border-white/15 rounded-3xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl">
+    
+    <!-- Botão Fechar -->
+    <button
+      id="closePaymentModal"
+      class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl w-8 h-8 rounded-full bg-white/5 flex items-center justify-center transition-colors"
+      aria-label="Fechar"
+    >
+      ✕
+    </button>
+
+    <div class="space-y-4">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-[#9b8fff]">Forma de Pagamento Oficial</span>
+        <h3 class="text-xl sm:text-2xl font-serif text-white mt-1" id="modalPlanTitle">
+          Plano Mensal — R$ 39,90/mês
+        </h3>
+        <p class="text-xs text-slate-400 mt-1">
+          Escolha como prefere realizar sua matrícula com total segurança:
+        </p>
+      </div>
+
+      <div class="space-y-3 pt-2">
+        <!-- Opção 1: Cartão de Crédito -->
+        <button
+          type="button"
+          id="btnChooseCard"
+          class="w-full flex items-center gap-4 p-4 rounded-2xl bg-white/[0.04] hover:bg-white/10 border border-white/10 hover:border-white/30 text-left transition-all group"
+        >
+          <span class="text-2xl p-2 rounded-xl bg-white/5">💳</span>
+          <div>
+            <div class="text-sm font-bold text-white group-hover:text-[#c8c2ff] transition-colors">
+              Cartão de Crédito
+            </div>
+            <div class="text-xs text-slate-400">
+              Débito automático · Acesso liberado no mesmo segundo
+            </div>
+          </div>
+        </button>
+
+        <!-- Opção 2: PIX Automático -->
+        <button
+          type="button"
+          id="btnChoosePix"
+          class="w-full flex items-center gap-4 p-4 rounded-2xl bg-white/[0.04] hover:bg-white/10 border border-white/10 hover:border-white/30 text-left transition-all group"
+        >
+          <span class="text-2xl p-2 rounded-xl bg-white/5">⚡</span>
+          <div>
+            <div class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">
+              PIX Automático / Instantâneo
+            </div>
+            <div class="text-xs text-slate-400">
+              Aprovação imediata via QR Code ou Copia-e-Cola
+            </div>
+          </div>
+        </button>
+      </div>
+
+      <!-- Área de Detalhes do PIX (quando selecionado) -->
+      <div id="pixDetailsArea" class="hidden pt-4 border-t border-white/10 space-y-3 text-center">
+        <span class="text-xs font-bold text-emerald-400 block">QR Code para Pagamento Instantâneo</span>
+        
+        <!-- Ilustração / Simulação de QR Code Elegante -->
+        <div class="w-40 h-40 mx-auto p-2 bg-white rounded-2xl flex items-center justify-center shadow-lg">
+          <svg viewBox="0 0 100 100" class="w-full h-full text-black" fill="currentColor">
+            <rect x="5" y="5" width="25" height="25" rx="3"/>
+            <rect x="10" y="10" width="15" height="15" fill="white"/>
+            <rect x="13" y="13" width="9" height="9"/>
+            <rect x="70" y="5" width="25" height="25" rx="3"/>
+            <rect x="75" y="10" width="15" height="15" fill="white"/>
+            <rect x="78" y="78" width="9" height="9"/>
+            <rect x="5" y="70" width="25" height="25" rx="3"/>
+            <rect x="10" y="75" width="15" height="15" fill="white"/>
+            <rect x="13" y="78" width="9" height="9"/>
+            <rect x="35" y="10" width="10" height="10"/>
+            <rect x="50" y="15" width="15" height="8"/>
+            <rect x="40" y="35" width="20" height="20"/>
+            <rect x="70" y="45" width="12" height="12"/>
+            <rect x="45" y="70" width="10" height="15"/>
+            <rect x="65" y="75" width="15" height="10"/>
+          </svg>
+        </div>
+
+        <div class="space-y-1">
+          <span class="text-[11px] text-slate-400 block font-semibold">Código Pix Copia e Cola:</span>
+          <div class="flex items-center gap-2">
+            <input
+              type="text"
+              readonly
+              id="pixCodeInput"
+              value="00020101021226840014br.gov.bcb.pix2562fluentenomundo.com/checkout/pix520400005303986540539.905802BR5920FLUENTE NO MUNDO6009SAO PAULO62070503***6304"
+              class="w-full text-xs font-mono p-2.5 rounded-xl bg-black/50 border border-white/10 text-slate-300"
+            />
+            <button
+              type="button"
+              id="btnCopyPix"
+              class="btn-white-luxury px-3.5 py-2.5 text-xs uppercase tracking-wider shrink-0"
+            >
+              Copiar
+            </button>
+          </div>
+        </div>
+
+        <p class="text-[10px] text-emerald-400 font-semibold pt-1">
+          ✓ Após a confirmação, o acesso da plataforma é enviado imediatamente no seu e-mail.
+        </p>
+      </div>
+
+      <div class="pt-2 text-center text-[10px] text-slate-400">
+        🔒 Ambiente Criptografado SSL · Conexão Segura
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Modal de pagamento e checkout
+  let currentPlan = 'mensal';
+  const planTitles: Record<string, string> = {
+    mensal: 'Plano Mensal — R$ 39,90/mês',
+    semestral: 'Plano Semestral — R$ 179,40 (R$ 29,90/mês)'
+  };
+
+  const modal = document.getElementById('paymentModal');
+  const modalTitle = document.getElementById('modalPlanTitle');
+  const closeBtn = document.getElementById('closePaymentModal');
+  const openBtns = document.querySelectorAll('.open-checkout-btn');
+  const btnCard = document.getElementById('btnChooseCard');
+  const btnPix = document.getElementById('btnChoosePix');
+  const pixArea = document.getElementById('pixDetailsArea');
+  const btnCopyPix = document.getElementById('btnCopyPix');
+  const pixCodeInput = document.getElementById('pixCodeInput') as HTMLInputElement;
+
+  function openModal(plan: string) {
+    currentPlan = plan;
+    if (modalTitle) modalTitle.textContent = planTitles[plan] || 'Seu Plano';
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+    if (pixArea) pixArea.classList.add('hidden');
+  }
+
+  function closeModal() {
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+
+  openBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const p = btn.getAttribute('data-plano') || 'mensal';
+      openModal(p);
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  if (btnPix && pixArea) {
+    btnPix.addEventListener('click', () => {
+      pixArea.classList.toggle('hidden');
+    });
+  }
+
+  if (btnCard) {
+    btnCard.addEventListener('click', () => {
+      alert(`Redirecionando com segurança para o checkout do ${planTitles[currentPlan]}...`);
+      window.open('https://alunos.fluentenomundo.com/', '_blank');
+      closeModal();
+    });
+  }
+
+  if (btnCopyPix && pixCodeInput) {
+    btnCopyPix.addEventListener('click', () => {
+      pixCodeInput.select();
+      navigator.clipboard.writeText(pixCodeInput.value).then(() => {
+        btnCopyPix.textContent = '✓ Copiado!';
+        setTimeout(() => {
+          btnCopyPix.textContent = 'Copiar';
+        }, 2000);
+      });
+    });
+  }
+</script>

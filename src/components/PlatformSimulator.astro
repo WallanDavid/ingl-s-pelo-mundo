@@ -1,0 +1,534 @@
+---
+// src/components/PlatformSimulator.astro
+// Estação 3: A Plataforma Real dos Alunos — Baseada na Imagem Anexada
+const modulesList = [
+  { id: 'formacao', name: 'Formação Global', icon: '🎓', badge: 'Curso Principal', desc: 'Trilhas organizadas do básico à fluência avançada com cronograma semanal e módulos trimestrais certificados.' },
+  { id: 'autentica', name: 'A.U.T.E.N.T.I.C.A', icon: '✨', badge: 'Metodologia', desc: 'Os 9 pilares de neuroaprendizagem para falar sem tradução mental e eliminar o bloqueio emocional.' },
+  { id: 'poliglota', name: 'Jornada Poliglota', icon: '🌍', badge: '12 Idiomas', desc: 'Inglês, Espanhol, Italiano, Francês, Mandarim, Alemão e outros inclusos na mesma assinatura sem custo extra.' },
+  { id: 'imersao', name: 'Imersão com a Prof', icon: '🎬', badge: 'Toda 4ª ao Vivo', desc: 'Aulas ao vivo semanais diretamente com a Prof. Amanda Beatriz para treinar conversação e tirar dúvidas.' },
+  { id: 'minuto', name: 'Minuto Fluente', icon: '▶️', badge: 'Microlearning', desc: 'Vídeos rápidos de 60 segundos com gírias, expressões e pronúncia para você estudar no café ou trânsito.' },
+  { id: 'edufeed', name: 'EduFeed', icon: '📡', badge: 'Feed de Estudos', desc: 'Notícias mundiais, artigos e curiosidades culturais em inglês com vocabulário comentado.' },
+  { id: 'vocabulario', name: 'Vocabulário Ativo', icon: '📖', badge: 'Banco SRS', desc: 'Mais de 1.200 expressões cotidianas classificadas para viagens, reuniões, restaurantes e encontros.' },
+  { id: 'revisao', name: 'Revisão Autêntica', icon: '🔁', badge: 'SRS 3 Etapas', desc: 'Sistema inteligente de repetição espaçada em 3 etapas: Ouvir &rarr; Pronunciar &rarr; Traduzir.' },
+  { id: 'biblioteca', name: 'Sua Biblioteca', icon: '📁', badge: '+100 PDFs', desc: 'Ebooks, planners de rotina e cadernos em PDF para baixar, além do livro oficial Resetei Meu Inglês.' },
+  { id: 'kids', name: 'Mundo Fluente Kids', icon: '🧒', badge: 'Família', desc: 'Pedagogia lúdica e histórias em áudio para introduzir o inglês aos filhos de forma divertida.' },
+  { id: 'comunidade', name: 'Comunidade Nós', icon: '💬', badge: 'Tribo Oficial', desc: 'Rede exclusiva de alunos sem julgamentos: troque áudios, tire dúvidas e encontre duplas de estudo.' },
+  { id: 'conquista', name: 'Conquista & Constância', icon: '🏆', badge: 'Gamificação', desc: 'Contador de sequência diária (streak), metas flexíveis e badges para manter o hábito vivo.' },
+  { id: 'vivencia', name: 'Vivência Global', icon: '🌐', badge: 'Filmes & Séries', desc: 'Aprenda inglês com séries de TV, podcasts e músicas com análises de conversação da vida real.' },
+  { id: 'conexoes', name: 'Conexões Autênticas', icon: '🔗', badge: 'Networking', desc: 'Encontros de conversação guiada entre alunos com roteiros preparados pela equipe pedagógica.' },
+  { id: 'sos', name: 'SOS Professora', icon: '🆘', badge: 'Resposta Direta', desc: 'Canal de suporte direto onde a Prof. Amanda Beatriz responde suas dúvidas pessoais de pronúncia e frases.' }
+];
+---
+
+<section id="produtos" class="py-20 lg:py-28 bg-[#070812] relative overflow-hidden border-t border-b border-white/5">
+  
+  <!-- Glow central -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[radial-gradient(ellipse,rgba(155,143,255,0.08)_0%,transparent_70%)] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Cabeçalho -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-[#9b8fff] mb-4">
+        <span>Estação 3 · A Plataforma dos Alunos</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-white tracking-tight leading-tight">
+        Explore a cabine de comando: <br class="hidden sm:inline" />
+        <em class="italic font-normal text-[#c8c2ff]">15 produtos reais</em> em um só lugar.
+      </h2>
+      <p class="mt-4 text-sm sm:text-base text-slate-300 font-sans leading-relaxed">
+        Isto não é um curso estático com vídeos gravados há 5 anos. É um ecossistema vivo de aprendizagem. Veja os módulos que você desbloqueia imediatamente:
+      </p>
+    </div>
+
+    <!-- MOCKUP INTERATIVO DA PLATAFORMA (COM A SIDEBAR ANEXADA) -->
+    <div class="rounded-3xl bg-[#090a16] border border-white/15 shadow-2xl overflow-hidden mb-16">
+      
+      <!-- Topo da Janela estilo Mac/Web App -->
+      <div class="px-5 py-3.5 bg-[#0e1022] border-b border-white/10 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+          <span class="text-xs text-slate-400 font-mono ml-2 hidden sm:inline">alunos.fluentenomundo.com</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-[11px] font-semibold text-emerald-400 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Plataforma 100% Ativa
+          </span>
+          <a
+            href="https://alunos.fluentenomundo.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-3 py-1 rounded-full text-[11px] font-bold text-white bg-white/10 hover:bg-white/20 border border-white/15 transition-all"
+          >
+            Abrir Plataforma &nearr;
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[580px]">
+        
+        <!-- COLUNA 1: SIDEBAR REAL DO ALUNO (Baseada na imagem anexada) -->
+        <div class="lg:col-span-4 bg-[#0a0b18] border-r border-white/10 p-4 sm:p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2.5 pb-4 border-b border-white/10 mb-3">
+              <img src="/images/logo-white.png" alt="" class="w-6 h-6 object-contain" />
+              <div>
+                <span class="font-bold text-sm text-white block">Fluente no Mundo</span>
+                <span class="text-[10px] text-slate-400 block -mt-0.5">Área do Aluno Oficial</span>
+              </div>
+            </div>
+
+            <!-- Lista de Módulos Clicáveis com Scroll Suave -->
+            <div class="space-y-1 max-h-[460px] overflow-y-auto pr-1" id="platform-module-list">
+              {modulesList.map((mod, idx) => (
+                <button
+                  type="button"
+                  data-mod-id={mod.id}
+                  class={`module-nav-btn ${idx === 0 ? 'active bg-white/10 text-white border-white/20' : 'text-slate-400 hover:text-white hover:bg-white/5 border-transparent'} w-full flex items-center justify-between px-3 py-2 rounded-xl text-left border text-xs transition-all`}
+                >
+                  <div class="flex items-center gap-2.5">
+                    <span class="text-sm shrink-0">{mod.icon}</span>
+                    <span class="font-semibold text-slate-200">{mod.name}</span>
+                  </div>
+                  <span class="text-[9px] font-bold uppercase tracking-wider text-[#c8c2ff] bg-white/5 px-2 py-0.5 rounded-full shrink-0">
+                    {mod.badge}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <!-- Imagem Real da Sidebar Anexada como Referência Oficial -->
+          <div class="pt-3 border-t border-white/10 mt-3 flex items-center justify-between text-[11px] text-slate-400">
+            <span>Sidebar original da plataforma</span>
+            <span class="text-emerald-400 font-bold">15 Módulos</span>
+          </div>
+        </div>
+
+        <!-- COLUNA 2: PAINEL INTERATIVO DO MÓDULO SELECIONADO -->
+        <div class="lg:col-span-8 p-6 sm:p-10 flex flex-col justify-between bg-gradient-to-br from-[#0c0d1c] to-[#090a16]">
+          
+          <div class="space-y-6" id="module-detail-display">
+            
+            <!-- Cabeçalho do Módulo -->
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-5">
+              <div class="flex items-center gap-3">
+                <span class="text-3xl p-2.5 rounded-2xl bg-white/5 border border-white/10" id="detail-icon">🎓</span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-[#9b8fff]" id="detail-badge">Curso Principal</span>
+                    <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full font-semibold">Liberado na Assinatura</span>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white mt-0.5" id="detail-title">Formação Global</h3>
+                </div>
+              </div>
+
+              <a
+                href="#planos"
+                class="btn-white-luxury px-5 py-2 text-xs uppercase tracking-wider shadow-md shrink-0"
+              >
+                Garantir Acesso
+              </a>
+            </div>
+
+            <!-- Descrição e Destaques do Módulo -->
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-sans" id="detail-desc">
+              Trilhas organizadas do básico à fluência avançada com cronograma semanal e módulos trimestrais certificados pela Metodologia Autêntica.
+            </p>
+
+            <!-- Card Interativo de Prévia da Aula / Atividade do Módulo -->
+            <div class="p-5 rounded-2xl bg-[#14162e] border border-white/10 space-y-4">
+              <div class="flex items-center justify-between text-xs text-slate-300 font-semibold border-b border-white/10 pb-3">
+                <span class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span id="preview-type">Demonstração Interativa do Conteúdo</span>
+                </span>
+                <span class="text-[11px] text-slate-400" id="preview-meta">Mini-Módulos de 3 meses</span>
+              </div>
+
+              <!-- Simulação Interativa Prática -->
+              <div class="space-y-3" id="interactive-preview-box">
+                <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-1">
+                  <span class="text-[11px] font-bold uppercase text-[#c8c2ff]">Frase da Vida Real (Linking Words):</span>
+                  <div class="text-sm font-serif text-white font-bold">"Could you give me a hand with this?"</div>
+                  <div class="text-xs text-slate-400">Pronúncia natural: /kəd-jə-gɪv-mi-ə-hænd/</div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-white/[0.02]">
+                    <span class="text-emerald-400">✓</span>
+                    <span id="feat-1">Aulas gravadas com acesso 24h</span>
+                  </div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-white/[0.02]">
+                    <span class="text-emerald-400">✓</span>
+                    <span id="feat-2">Exercícios práticos de fixação</span>
+                  </div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-white/[0.02]">
+                    <span class="text-emerald-400">✓</span>
+                    <span id="feat-3">Correções diretamente com a professora</span>
+                  </div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-white/[0.02]">
+                    <span class="text-emerald-400">✓</span>
+                    <span id="feat-4">Certificado reconhecido a cada módulo</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Imagem Anexa: Screenshot Original de Apoio -->
+            <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-2">
+                <span>📱</span>
+                <span>Acesso simultâneo em smartphone, tablet e notebook</span>
+              </span>
+              <a href="#planos" class="text-[#c8c2ff] font-semibold hover:underline">
+                Assinar por R$ 39,90/mês &rarr;
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Rodapé do Mockup -->
+          <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 mt-6">
+            <span class="text-xs text-slate-400">
+              Todos os 15 produtos ativados sem compras separadas
+            </span>
+            <a
+              href="#planos"
+              class="btn-primary-glow px-6 py-2.5 text-xs font-bold uppercase tracking-wider shadow-lg w-full sm:w-auto text-center"
+            >
+              Começar Agora
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BANNER DE DESTAQUE: MATERIAIS & EBOOKS DA BIBLIOTECA -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <div class="glass-card p-6 flex flex-col justify-between">
+        <div class="space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-[#9b8fff]/10 border border-[#9b8fff]/30 flex items-center justify-center text-[#c8c2ff]">
+            📚
+          </div>
+          <h4 class="text-lg font-bold text-white">Ebook "Resetei Meu Inglês"</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Obra oficial da Prof. Amanda Beatriz inclusa para download na biblioteca de materiais.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-white/5 text-[11px] font-semibold text-emerald-400">
+          Incluso gratuitamente nos planos
+        </div>
+      </div>
+
+      <div class="glass-card p-6 flex flex-col justify-between">
+        <div class="space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+            📑
+          </div>
+          <h4 class="text-lg font-bold text-white">+100 Cadernos e PDFs</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Apostilas diagramadas, esquemas mentais dos 4Ps e planners de rotina para imprimir ou estudar no tablet.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-white/5 text-[11px] font-semibold text-emerald-400">
+          Acervo editorial completo
+        </div>
+      </div>
+
+      <div class="glass-card p-6 flex flex-col justify-between">
+        <div class="space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-300">
+            🆘
+          </div>
+          <h4 class="text-lg font-bold text-white">SOS Professora Direto</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Travou em um e-mail de trabalho ou frase de viagem? Envie sua dúvida e receba resposta direta da mentora.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-white/5 text-[11px] font-semibold text-emerald-400">
+          Você nunca estuda sozinho
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Dados de exibição interativa de cada módulo
+  const detailsData: Record<string, {
+    title: string;
+    icon: string;
+    badge: string;
+    desc: string;
+    previewType: string;
+    previewMeta: string;
+    phrase: string;
+    ipa: string;
+    f1: string;
+    f2: string;
+    f3: string;
+    f4: string;
+  }> = {
+    formacao: {
+      title: 'Formação Global',
+      icon: '🎓',
+      badge: 'Curso Principal',
+      desc: 'Trilhas organizadas do básico à fluência avançada com cronograma semanal e módulos trimestrais certificados pela Metodologia Autêntica.',
+      previewType: 'Cronograma Semanal Unificado',
+      previewMeta: 'Mini-módulos de 3 meses',
+      phrase: '"Could you give me a hand with this?"',
+      ipa: 'Pronúncia natural: /kəd-jə-gɪv-mi-ə-hænd/',
+      f1: 'Aulas gravadas com acesso 24h',
+      f2: 'Exercícios práticos de fixação',
+      f3: 'Correções diretamente com a professora',
+      f4: 'Certificado reconhecido a cada módulo'
+    },
+    autentica: {
+      title: 'Método A.U.T.E.N.T.I.C.A',
+      icon: '✨',
+      badge: 'Metodologia',
+      desc: 'Os 9 pilares de neuroaprendizagem para falar sem tradução mental e eliminar o bloqueio emocional de errar em público.',
+      previewType: 'Treino Fonético dos 4Ps',
+      previewMeta: 'Neurociência 4D',
+      phrase: '"I am looking forward to hearing from you."',
+      ipa: 'Blocos conectados: /aɪm-lʊkɪŋ-fɔrwərd-tə/',
+      f1: 'Desbloqueio de filtros afetivos e ansiedade',
+      f2: 'Aquisição natural por contexto imersivo',
+      f3: 'Metacognição: aprenda a estudar melhor',
+      f4: 'Constância sustentável de 20 min/dia'
+    },
+    poliglota: {
+      title: 'Jornada Poliglota',
+      icon: '🌍',
+      badge: '12 Idiomas Inclusos',
+      desc: 'Inglês, Espanhol, Italiano, Francês, Mandarim, Alemão, Japonês e outros inclusos na mesma assinatura sem mensalidades adicionais.',
+      previewType: 'Trilha Multilíngue',
+      previewMeta: 'Sem pressão de fluência',
+      phrase: '"La vita è bella · C\'est la vie · Life is good"',
+      ipa: 'Conexões cognitivas entre famílias linguísticas',
+      f1: '12 idiomas com o mesmo método',
+      f2: 'Oficinas culturais e workshops',
+      f3: 'Vocabulário essencial para viagens',
+      f4: 'Incluso em todos os planos'
+    },
+    imersao: {
+      title: 'Imersão com a Prof',
+      icon: '🎬',
+      badge: 'Ao Vivo Semanal',
+      desc: 'Aulas ao vivo todas as quartas-feiras às 20h diretamente com a Prof. Amanda Beatriz com conversação guiada e correções de fonética.',
+      previewType: 'Encontro Interativo Toda 4ª-feira',
+      previewMeta: 'Gravações disponíveis 24h',
+      phrase: '"Let\'s break down this conversation live!"',
+      ipa: 'Prática de conversação em tempo real',
+      f1: 'Masterclasses exclusivas semanais',
+      f2: 'Simulações de entrevistas e viagens',
+      f3: 'Espaço aberto para dúvidas ao vivo',
+      f4: 'Gravações salvas na plataforma'
+    },
+    minuto: {
+      title: 'Minuto Fluente',
+      icon: '▶️',
+      badge: 'Microlearning',
+      desc: 'Pílulas audiovisuais de 60 segundos com phrasal verbs, gírias e nuances culturais para quem tem rotina corrida.',
+      previewType: 'Dose Rápida de 60 Segundos',
+      previewMeta: 'Ideal para o celular',
+      phrase: '"Hang out vs Hang up vs Hang on"',
+      ipa: 'Diferenças essenciais sem decoreba',
+      f1: 'Aprenda no café ou no trânsito',
+      f2: 'Cards de memorização instantânea',
+      f3: 'Áudio nativo e situações para evitar gafes',
+      f4: 'Novos vídeos adicionados frequentemente'
+    },
+    edufeed: {
+      title: 'EduFeed',
+      icon: '📡',
+      badge: 'Mural de Conteúdos',
+      desc: 'Notícias mundiais, tendências de negócios e artigos culturais em linguagem acessível com glossário comentado.',
+      previewType: 'Imersão Involuntária',
+      previewMeta: 'Troque a rolagem inútil por estudo',
+      phrase: '"Global trends in technology and culture."',
+      ipa: 'Leitura acompanhada com áudio adaptado',
+      f1: 'Artigos modernos do mundo real',
+      f2: 'Glossário de termos em 1 clique',
+      f3: 'Treino de leitura e vocabulário contextual',
+      f4: 'Atualizações frequentes no feed'
+    },
+    vocabulario: {
+      title: 'Vocabulário Ativo',
+      icon: '📖',
+      badge: 'Banco Inteligente',
+      desc: 'Mais de 1.200 expressões cotidianas classificadas para reuniões corporativas, viagens internacionais e imigração.',
+      previewType: 'Banco Temático de Expressões',
+      previewMeta: 'Meta: 20.000 vocábulos',
+      phrase: '"I\'m swamped with work today."',
+      ipa: 'Significa: Estou atolado de trabalho hoje',
+      f1: 'Áudio nativo em 2 velocidades',
+      f2: 'Classificação por situações reais',
+      f3: 'Adicione ao seu banco pessoal em 1 toque',
+      f4: 'Filtros para todos os idiomas'
+    },
+    revisao: {
+      title: 'Revisão Autêntica (SRS)',
+      icon: '🔁',
+      badge: 'Repetição Espaçada',
+      desc: 'Sistema de 3 etapas baseado na curva de esquecimento: Ouvir &rarr; Pronunciar &rarr; Traduzir para memorização de longo prazo.',
+      previewType: 'Algoritmo SRS Integrado',
+      previewMeta: '3 etapas ativas',
+      phrase: '"Listen &rarr; Speak &rarr; Translate"',
+      ipa: 'Evocação ativa antes da curva de esquecimento',
+      f1: 'Treino auditivo sem texto inicial',
+      f2: 'Gravação da sua própria fala',
+      f3: 'Consolidação de longo prazo',
+      f4: 'Zero sobrecarga mental diária'
+    },
+    biblioteca: {
+      title: 'Sua Biblioteca',
+      icon: '📁',
+      badge: 'Downloads Liberados',
+      desc: 'Acesso ilimitado ao acervo de mais de 100 cadernos em PDF, esquemas mentais, planners semanais e o Ebook Resetei Meu Inglês.',
+      previewType: 'Materiais em PDF de Alta Qualidade',
+      previewMeta: '+100 itens disponíveis',
+      phrase: '"Ebook Oficial: Resetei Meu Inglês"',
+      ipa: 'Download imediato em PDF para tablet ou print',
+      f1: 'Planners de 15, 30 e 60 minutos',
+      f2: 'Mapas conceituais dos 4Ps',
+      f3: 'Material diagramado profissional',
+      f4: 'Tudo incluso sem cobranças extras'
+    },
+    kids: {
+      title: 'Mundo Fluente Kids',
+      icon: '🧒',
+      badge: 'Família',
+      desc: 'Pedagogia lúdica, visual e natural para introduzir o inglês aos filhos desde cedo sem pressão ou decoreba.',
+      previewType: 'Ambiente Lúdico Bilíngue',
+      previewMeta: 'Incluso no mesmo plano',
+      phrase: '"Storytime & Sound Patterns for Kids"',
+      ipa: 'Histórias infantis e fonética natural',
+      f1: 'Atividades visuais intuitivas',
+      f2: 'Desenvolvimento bilíngue sem trauma',
+      f3: 'Aulas divertidas para os pequenos',
+      f4: 'Aproveite no mesmo acesso familiar'
+    },
+    comunidade: {
+      title: 'Comunidade Nós',
+      icon: '💬',
+      badge: 'Tribo Oficial',
+      desc: 'Ambiente seguro e colaborativo onde alunos trocam áudios diários, se apoiam e praticam conversação sem medo de julgamentos.',
+      previewType: 'Rede Social Exclusiva de Alunos',
+      previewMeta: 'Ambiente acolhedor',
+      phrase: '"Together we speak louder and better."',
+      ipa: 'Prática de áudios diários com feedback',
+      f1: 'Encontre duplas de conversação (Buddies)',
+      f2: 'Desafios semanais de fala',
+      f3: 'Moderação ativa e acolhedora',
+      f4: 'Espaço livre de críticas destrutivas'
+    },
+    conquista: {
+      title: 'Conquista & Constância',
+      icon: '🏆',
+      badge: 'Gamificação',
+      desc: 'Contador de sequência diária (streak), metas flexíveis ajustadas para a sua rotina e badges que celebram a sua evolução real.',
+      previewType: 'Sistema de Hábitos Diários',
+      previewMeta: 'Gamificação pedagógica',
+      phrase: '"Streak: 14 dias seguidos de imersão 🔥"',
+      ipa: 'Constância é o segredo da neuroplasticidade',
+      f1: 'Check-in diário com pontuação',
+      f2: 'Badges de evolução por nível',
+      f3: 'Gráfico visual de consistência semanal',
+      f4: 'Motivação nos dias cansativos'
+    },
+    vivencia: {
+      title: 'Vivência Global',
+      icon: '🌐',
+      badge: 'Cultura & Séries',
+      desc: 'Treine o ouvido para a velocidade nativa analisando diálogos de filmes famosos, séries, músicas internacionais e podcasts.',
+      previewType: 'Imersão com Audiovisual',
+      previewMeta: 'Inglês da vida real',
+      phrase: '"Gonna, wanna, gotta, kinda in TV shows"',
+      ipa: 'Desmistificação de contrações autênticas',
+      f1: 'Análises de trechos de filmes e séries',
+      f2: 'Músicas e letras comentadas',
+      f3: 'Treino de compreensão de sotaques',
+      f4: 'Situações de aeroportos e alfândegas'
+    },
+    conexoes: {
+      title: 'Conexões Autênticas',
+      icon: '🔗',
+      badge: 'Networking',
+      desc: 'Encontros estruturados de conversação em duplas com roteiros preparados pela equipe pedagógica sobre temas do mundo moderno.',
+      previewType: 'Sessões Guiadas de Conversação',
+      previewMeta: 'Networking internacional',
+      phrase: '"Topic of the week: Global Remote Careers"',
+      ipa: 'Conversas descontraídas com roteiro de apoio',
+      f1: 'Roteiros de conversa passo a passo',
+      f2: 'Pratique com alunos no mesmo nível',
+      f3: 'Networking e novas amizades',
+      f4: 'Facilitadores para apoiar a dinâmica'
+    },
+    sos: {
+      title: 'SOS Professora',
+      icon: '🆘',
+      badge: 'Resposta Pessoal',
+      desc: 'Canal de apoio direto onde a Prof. Amanda Beatriz responde pessoalmente suas dúvidas de pronúncia, frases e e-mails de trabalho.',
+      previewType: 'Canal Direto com a Mentora',
+      previewMeta: 'Resposta em até 48 horas',
+      phrase: '"Envie texto, áudio ou print com sua dúvida"',
+      ipa: 'Apoio pedagógico individualizado',
+      f1: 'Envio de áudio com sua pronúncia',
+      f2: 'Correção de e-mails corporativos',
+      f3: 'Resposta gravada pela professora',
+      f4: 'Segurança para nunca ficar travado'
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const navButtons = document.querySelectorAll('.module-nav-btn');
+    const titleEl = document.getElementById('detail-title');
+    const iconEl = document.getElementById('detail-icon');
+    const badgeEl = document.getElementById('detail-badge');
+    const descEl = document.getElementById('detail-desc');
+    const pTypeEl = document.getElementById('preview-type');
+    const pMetaEl = document.getElementById('preview-meta');
+    const f1El = document.getElementById('feat-1');
+    const f2El = document.getElementById('feat-2');
+    const f3El = document.getElementById('feat-3');
+    const f4El = document.getElementById('feat-4');
+
+    navButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-mod-id');
+        if (!id || !detailsData[id]) return;
+
+        navButtons.forEach((b) => {
+          b.classList.remove('active', 'bg-white/10', 'text-white', 'border-white/20');
+          b.classList.add('text-slate-400', 'border-transparent');
+        });
+
+        btn.classList.add('active', 'bg-white/10', 'text-white', 'border-white/20');
+        btn.classList.remove('text-slate-400', 'border-transparent');
+
+        const d = detailsData[id];
+        if (titleEl) titleEl.textContent = d.title;
+        if (iconEl) iconEl.textContent = d.icon;
+        if (badgeEl) badgeEl.textContent = d.badge;
+        if (descEl) descEl.textContent = d.desc;
+        if (pTypeEl) pTypeEl.textContent = d.previewType;
+        if (pMetaEl) pMetaEl.textContent = d.previewMeta;
+        if (f1El) f1El.textContent = d.f1;
+        if (f2El) f2El.textContent = d.f2;
+        if (f3El) f3El.textContent = d.f3;
+        if (f4El) f4El.textContent = d.f4;
+      });
+    });
+  });
+</script>
