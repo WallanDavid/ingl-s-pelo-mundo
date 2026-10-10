@@ -3,13 +3,13 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.replace(/\/$/, '') || '/';
 
 const navItems = [
-  { label: 'Explore a Plataforma', href: '/plataforma' },
-  { label: 'Metodologia', href: '/metodo' },
+  { label: 'A Plataforma', href: '/plataforma' },
+  { label: 'O Método', href: '/metodo' },
   { label: 'Formações', href: '/formacao-global' },
-  { label: 'Idiomas', href: '/idiomas' },
-  { label: 'Imersão', href: '/imersao' },
-  { label: 'Sobre', href: '/sobre' },
-  { label: 'Planos', href: '/planos' },
+  { label: 'Aulas ao Vivo', href: '/imersao' },
+  { label: 'Depoimentos', href: '/#depoimentos' },
+  { label: 'A Mentora', href: '/sobre' },
+  { label: 'Planos & Valores', href: '/planos' },
   { label: 'FAQ', href: '/faq' },
 ];
 ---
@@ -30,7 +30,7 @@ const navItems = [
       
       <!-- Logo da Marca -->
       <a href="/" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-lg p-1" aria-label="Fluente no Mundo - Início">
-        <div class="w-9 h-9 rounded-lg bg-slate-900 text-white flex items-center justify-center font-heading font-black text-sm tracking-wider">
+        <div class="w-9 h-9 rounded-lg bg-blue-700 text-white flex items-center justify-center font-heading font-black text-sm tracking-wider shadow-sm">
           FM
         </div>
         <div class="flex flex-col">
@@ -38,7 +38,7 @@ const navItems = [
             Fluente no Mundo
           </span>
           <span class="text-[10px] uppercase tracking-wider text-slate-500 font-medium -mt-1">
-            Método Amanda Beatriz · V3
+            Prof. Amanda Beatriz
           </span>
         </div>
       </a>
@@ -78,10 +78,10 @@ const navItems = [
         </a>
 
         <a
-          href="/plataforma"
-          class="btn-editorial-primary !py-2 !px-4 !text-xs"
+          href="/planos"
+          class="btn-editorial-primary !py-2 !px-4 !text-xs !bg-blue-700 hover:!bg-blue-800 shadow-sm"
         >
-          <span>Explorar Plataforma</span>
+          <span>Matricular Agora</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
@@ -91,10 +91,10 @@ const navItems = [
       <!-- Botão Menu Mobile -->
       <div class="flex lg:hidden items-center gap-2">
         <a
-          href="/plataforma"
-          class="px-2.5 py-1.5 text-xs font-bold text-white bg-slate-900 rounded-lg"
+          href="/planos"
+          class="px-3 py-1.5 text-xs font-bold text-white bg-blue-700 rounded-lg shadow-sm"
         >
-          Demo
+          Matricular
         </a>
         <button
           id="mobile-menu-btn"

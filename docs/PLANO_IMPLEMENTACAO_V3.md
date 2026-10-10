@@ -43,3 +43,14 @@
 - [x] Commit semântico no branch `main`.
 - [x] Envio para `origin main` via `git push`.
 - [x] Verificação do status de publicação no Netlify.
+
+#### Fase 7: Refatoração Comercial de Alta Conversão (CONCLUÍDA)
+- [x] Eliminação de funcionalidades simuladas, formulários fictícios e dados mockados que desviavam o foco da venda.
+- [x] Substituição de simuladores por Showcase Comercial com 6 telas reais da plataforma (`dashboard.png`, `courses.png`, `vocabulary.png`, `masterclasses.png`, `vivencia.png`, `sos.png`).
+- [x] Incorporação de Prova Social com 8 depoimentos autênticos da comunidade (`depoimento *.png`) com badges de validação profissional.
+- [x] Criação da seção de Bônus Exclusivos de Matrícula (`meuEbookResetei.png`, `materiais.png`, Jornada Poliglota).
+- [x] Correção de todos os botões de ação: 100% funcionais apontando para planos (`#planos` / `/planos`), login de alunos ou consultoria via WhatsApp.
+- [x] Inclusão de Selo de Garantia Incondicional de 7 Dias (Risco Zero).
+- [x] Atualização da suíte de testes E2E (`tests/e2e_v3_test.cjs`) com 100% de aprovação (TC-01 a TC-08).
+- [x] Validação visual via browser subagent com screenshots e gravação de sessão.
+

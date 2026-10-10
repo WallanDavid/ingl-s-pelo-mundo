@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import StudentPlatformLab from '../components/StudentPlatformLab.astro';
+import PlatformShowcase from '../components/PlatformShowcase.astro';
 
-const pageTitle = 'Laboratório Interativo da Plataforma | Fluente no Mundo';
-const pageDesc = 'Explore por dentro a plataforma do aluno: Dashboard semanal, SRS de vocabulário em 3 etapas, SOS Professora, gamificação e certificação trimestral.';
+const pageTitle = 'A Plataforma por Dentro | Fluente no Mundo - Ambiente Exclusivo do Aluno';
+const pageDesc = 'Conheça o ambiente digital completo do Fluente no Mundo: Dashboard diário de 20 minutos, trilhas de formação, sistema de vocabulário SRS, aulas ao vivo de quarta e SOS com a Prof. Amanda Beatriz.';
 ---
 
 <BaseLayout
@@ -13,33 +13,33 @@ const pageDesc = 'Explore por dentro a plataforma do aluno: Dashboard semanal, S
 >
   
   <!-- CABEÇALHO DA PÁGINA -->
-  <section class="pt-12 pb-10 bg-[#f8fafc] border-b border-slate-200">
+  <section class="pt-12 pb-12 bg-[#f8fafc] border-b border-slate-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="badge-subtle mb-4">Demonstração Funcional Completa</span>
-      <h1 class="text-4xl sm:text-5xl font-heading font-extrabold text-slate-900 tracking-tight leading-tight">
-        A Plataforma do Aluno por Dentro
+      <span class="badge-subtle mb-4">Tour da Área do Aluno</span>
+      <h1 class="text-4xl sm:text-5xl font-heading font-extrabold text-slate-900 tracking-tight leading-tight mt-2">
+        A Plataforma do Aluno em Detalhes
       </h1>
       <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-        Explore abaixo as 7 ferramentas reais da área interna — todas funcionais no navegador, sem login, sem backend e sem dados pessoais. Baseado nos 16 PDFs da experiência do aluno.
+        Tudo o que você precisa para falar inglês com naturalidade, organizado em um ambiente simples, estimulante e com acompanhamento constante da Prof. Amanda Beatriz.
       </p>
 
-      <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
         <a
-          href="#laboratorio"
-          class="btn-editorial-primary !py-3 !px-6 !text-sm w-full sm:w-auto"
+          href="/planos"
+          class="btn-editorial-primary !py-3.5 !px-8 !text-xs w-full sm:w-auto shadow-md"
         >
-          <span>Ir para o Laboratório</span>
+          <span>Quero Me Matricular Agora</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
         </a>
         <a
           href="https://alunos.fluentenomundo.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="btn-editorial-secondary !py-3 !px-6 !text-sm w-full sm:w-auto"
+          class="btn-editorial-secondary !py-3.5 !px-6 !text-xs w-full sm:w-auto"
         >
-          <span>Área Oficial do Aluno</span>
+          <span>Já Sou Aluno (Entrar)</span>
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
@@ -48,160 +48,119 @@ const pageDesc = 'Explore por dentro a plataforma do aluno: Dashboard semanal, S
     </div>
   </section>
 
-  <!-- O LABORATÓRIO INTERATIVO COMPLETO -->
-  <section id="laboratorio" class="py-20 bg-white border-b border-slate-200">
+  <!-- O SHOWCASE VISUAL DA PLATAFORMA COM AS IMAGENS REAIS -->
+  <section class="py-16 sm:py-20 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-center mb-14">
-        <span class="badge-neutral mb-3">7 Módulos Interativos</span>
-        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
-          Experimente a Plataforma em Profundidade
-        </h2>
-        <p class="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
-          Navegue pelos módulos exatamente como um aluno matriculado faria no dia a dia.
-        </p>
-      </div>
-
-      <!-- O COMPONENTE PRINCIPAL DO LABORATÓRIO -->
-      <StudentPlatformLab />
+      <PlatformShowcase />
     </div>
   </section>
 
-  <!-- RECURSOS ESPECIAIS DOCUMENTADOS -->
+  <!-- OS 3 DIFERENCIAIS EXCLUSIVOS DA PLATAFORMA -->
   <section class="py-20 bg-[#f8fafc] border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="badge-subtle mb-3">Recursos Documentados</span>
+        <span class="badge-subtle mb-3">Diferenciais da Escola</span>
         <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
-          O Ecossistema Completo do Estudante
+          Por que a nossa plataforma retém 3x mais?
         </h2>
         <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
-          Evidências reais documentadas na área interna de cada matriculado, extraídas dos 16 PDFs.
+          Projetada com base na neurociência do aprendizado de adultos para eliminar o cansaço e a sobrecarga.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <!-- Recurso: SOS Professora -->
-        <div class="editorial-card p-6 flex flex-col justify-between border-t-4 border-t-blue-700">
+        <!-- Recurso 1: SOS Professora -->
+        <div class="editorial-card p-6 flex flex-col justify-between border-t-4 border-t-blue-700 bg-white shadow-sm">
           <div>
-            <div class="w-9 h-9 rounded-lg bg-blue-50 border border-blue-200 text-blue-700 flex items-center justify-center mb-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
               </svg>
             </div>
             <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">
-              SOS Professora
+              Canal SOS com a Amanda
             </h3>
             <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              Envie dúvidas particulares em texto, gravação de áudio ou print. A Prof. Amanda responde pessoalmente em até 48 horas úteis (limite de 1 envio por semana).
+              Envie dúvidas em áudio, texto ou print diretamente pela plataforma. A fundadora responde pessoalmente em até 48h úteis com feedback fonético customizado para destravar sua fala.
             </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100">
             <span class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full inline-block">
               Atendimento 100% Humano
             </span>
           </div>
         </div>
 
-        <!-- Recurso: SRS Vocabulário 3 Etapas -->
-        <div class="editorial-card p-6 flex flex-col justify-between border-t-4 border-t-blue-500">
+        <!-- Recurso 2: SRS Vocabulário 3 Etapas -->
+        <div class="editorial-card p-6 flex flex-col justify-between border-t-4 border-t-blue-500 bg-white shadow-sm">
           <div>
-            <div class="w-9 h-9 rounded-lg bg-blue-50 border border-blue-200 text-blue-700 flex items-center justify-center mb-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
               </svg>
             </div>
             <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">
-              Vocabulário e SRS
+              Vocabulário Ativo (SRS)
             </h3>
             <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              Sistema de repetição espaçada em 3 etapas ativas: ouvir a pronúncia correta com síntese de voz, articular os 4Ps e aplicar a tradução em frases reais do seu dia.
+              Sistema inteligente de repetição em intervalos ideais. O aluno passa pelas 3 etapas de assimilação: Ouvir nativo, Articular os 4Ps musculares e Traduzir no contexto real do dia a dia.
             </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100">
             <span class="text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-200 px-2.5 py-1 rounded-full inline-block">
-              Fixação sem Decoreba
+              Meta de 20.000 Expressões
             </span>
           </div>
         </div>
 
-        <!-- Recurso: Biblioteca de Materiais -->
-        <div class="editorial-card p-6 flex flex-col justify-between border-t-4 border-t-amber-500">
+        <!-- Recurso 3: Biblioteca Digital -->
+        <div class="editorial-card p-6 flex flex-col justify-between border-t-4 border-t-amber-500 bg-white shadow-sm">
           <div>
-            <div class="w-9 h-9 rounded-lg bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center mb-4">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg>
             </div>
             <h3 class="text-xl font-heading font-bold text-slate-900 mb-2">
-              Sua Biblioteca Digital
+              Biblioteca de Materiais em PDF
             </h3>
             <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              Visualizador integrado com ebooks exclusivos, resumos em PDF de cada aula, slides e materiais complementares — organizados cronologicamente no seu painel.
+              Acesso a ebooks exclusivos da Prof. Amanda, resumos das masterclasses de quarta-feira, tabelas fonéticas e roteiros de conversação para você guardar no tablet ou celular.
             </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100">
             <span class="text-[11px] font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-full inline-block">
-              Acesso Imediato
+              Incluso na Matrícula
             </span>
           </div>
         </div>
 
       </div>
 
-      <!-- ROADMAP TRANSPARENTE -->
-      <div class="mt-14 p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm max-w-4xl mx-auto">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center">
-            <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-base font-heading font-bold text-slate-900">Transparência e Roadmap de Inovações</h3>
-            <span class="text-xs text-slate-500">Compromisso com dados verificáveis e cronologia honesta</span>
-          </div>
-        </div>
-        <p class="text-xs text-slate-600 leading-relaxed mb-4">
-          Acreditamos em marketing honesto. Abaixo detalhamos o status exato de recursos que estão no roadmap de tecnologia para os alunos:
-        </p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-            <span class="text-amber-600 font-bold block mb-1">Prof Robô (IA 24h)</span>
-            <span class="text-slate-500">Em desenvolvimento. Assistente de IA complementar para dúvidas pontuais fora do horário da professora.</span>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-            <span class="text-amber-600 font-bold block mb-1">Mundo Fluente Kids</span>
-            <span class="text-slate-500">Em planejamento para futuras turmas infantis. Não ativo no plano atual de alunos adultos.</span>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
-            <span class="text-blue-700 font-bold block mb-1">EduFeed e Shorts</span>
-            <span class="text-slate-500">Pílulas de conteúdo rápido e micro-learning atualizadas progressivamente na plataforma.</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  <!-- CTA FINAL DE CONVERSÃO -->
   <section class="py-20 bg-white text-center">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="p-8 sm:p-12 rounded-2xl bg-[#f8fafc] border border-slate-200 shadow-sm">
-        <span class="badge-subtle mb-4">Próximo Passo</span>
+      <div class="p-8 sm:p-12 rounded-3xl bg-[#f8fafc] border border-slate-200 shadow-sm">
+        <span class="badge-subtle mb-4">Matrículas Abertas</span>
         <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
-          Gostou do que viu no laboratório?
+          Pronto para ter acesso a tudo isso?
         </h2>
         <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
-          Conheça os planos de matrícula e descubra como acessar a plataforma completa com todas as ferramentas, aulas ao vivo e mentoria individual por R$ 39,90/mês.
+          Matricule-se agora a partir de R$ 39,90/mês e comece a estudar ainda hoje na plataforma do aluno com garantia incondicional de 7 dias.
         </p>
 
         <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a href="/planos" class="btn-editorial-primary !py-3.5 !px-8 text-sm w-full sm:w-auto">
-            Ver Planos e Matrícula
+          <a href="/planos" class="btn-editorial-primary !py-3.5 !px-8 text-xs w-full sm:w-auto">
+            Ver Planos e Valores &rarr;
           </a>
-          <a href="/metodo" class="btn-editorial-secondary !py-3.5 !px-6 text-sm w-full sm:w-auto">
-            Conhecer a Metodologia
+          <a href="/metodo" class="btn-editorial-secondary !py-3.5 !px-6 text-xs w-full sm:w-auto">
+            Conhecer o Método A.U.T.E.N.T.I.C.A
           </a>
-        </div>
-
-        <div class="mt-6 pt-6 border-t border-slate-100 text-[11px] text-slate-400">
-          Projeto demonstrativo independente de interface e experiência de aprendizagem digital.
         </div>
       </div>
     </div>

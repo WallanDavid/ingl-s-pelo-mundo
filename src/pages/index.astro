@@ -1,53 +1,66 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import StudentPlatformLab from '../components/StudentPlatformLab.astro';
+import PlatformShowcase from '../components/PlatformShowcase.astro';
+import TestimonialsShowcase from '../components/TestimonialsShowcase.astro';
+import BonusShowcase from '../components/BonusShowcase.astro';
+import PricingCard from '../components/PricingCard.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
 
-const pageTitle = 'Fluente no Mundo | Uma Jornada de Idiomas que Vai Além das Aulas';
-const pageDesc = 'Conheça o ecossistema Fluente no Mundo: formação estruturada, repetição espaçada em 3 etapas, aulas ao vivo semanais com a Prof. Amanda Beatriz e acompanhamento direto.';
+const pageTitle = 'Fluente no Mundo | Fale Inglês com Naturalidade com a Prof. Amanda Beatriz';
+const pageDesc = 'Aprenda a falar inglês com naturalidade, sem travar e sem decoreba. Aulas ao vivo semanais, repetição espaçada em 3 etapas, mentoria com a Prof. Amanda Beatriz e planos a partir de R$ 39,90/mês.';
 
-const journeySteps = [
+const targetProfiles = [
   {
-    step: '01',
-    title: 'Formação Estruturada',
-    desc: 'Metas diárias organizadas em cronogramas semanais e mensais. Você sabe exatamente o que estudar a cada dia sem perder tempo.',
-    detail: 'Formações Essenciais & Complementares',
+    icon: 'speaker',
+    title: 'Para quem trava na hora de falar',
+    desc: 'Você entende bem o que ouve e lê, mas na hora de responder em inglês dá um branco, a voz falha e o medo do julgamento trava sua boca.',
+    solution: 'O Treinamento 4P destrava os músculos da fala e constrói segurança psicológica real.'
   },
   {
-    step: '02',
-    title: 'Prática Biomecânica (4Ps)',
-    desc: 'Treinamento focado em padrões fonéticos, posição da musculatura bucal e ritmo nativo (connected speech) para falar sem travar.',
-    detail: 'Padrões · Pronúncia · Psicológico · Prática',
+    icon: 'briefcase',
+    title: 'Para quem precisa crescer na carreira',
+    desc: 'Perdeu oportunidades de promoção, tem pavor de reuniões globais ou precisa se preparar para entrevistas de emprego em inglês com urgência.',
+    solution: 'Vocabulário corporativo prático, connected speech e simulação de cenários profissionais.'
   },
   {
-    step: '03',
-    title: 'Revisão Espaçada Ativa (3Rs)',
-    desc: 'Ciclo em três etapas (Ouvir, Pronunciar e Traduzir no contexto). Seu cérebro consolida o vocabulário no momento exato.',
-    detail: 'Sistema SRS com Meta de 20.000 Expressões',
+    icon: 'globe',
+    title: 'Para viajantes que querem independência',
+    desc: 'Quer viajar pelo mundo, passar pela imigração, fazer pedidos em restaurantes e conversar com nativos sem depender de tradutores no celular.',
+    solution: 'Inglês da vida real: situações cotidianas, gírias e pronúncia clara para qualquer país.'
   },
   {
-    step: '04',
-    title: 'Imersão Cultural & Vida Real',
-    desc: 'Vivência Global com séries, podcasts, filmes e músicas originais sem legendas em português, aplicando o idioma na rotina.',
-    detail: 'Desafios Semanais de Aculturamento',
-  },
-  {
-    step: '05',
-    title: 'Evolução & Certificação',
-    desc: 'Acompanhamento do streak diário, pontuação acumulada e emissão de certificados com carga horária comprovada a cada 3 meses.',
-    detail: 'Certificados Modulares Trimestrais',
-  },
+    icon: 'sparkles',
+    title: 'Para quem cansou de cursinhos tradicionais',
+    desc: 'Passou anos pagando mensalidades caras de R$ 400 em escolas tradicionais e só aprendeu regras gramaticais chatas sem falar nada.',
+    solution: 'Dose diária de 20 minutos focada em assimilação natural, sem listas mecânicas de decoreba.'
+  }
 ];
 
-const pillarsList = [
-  { letter: 'A', name: 'Assimilação e Aculturamento', desc: 'Integração cultural profunda que elimina a tradução mental literal.' },
-  { letter: 'U', name: 'União, Equilíbrio e Constância', desc: 'Harmonia entre ouvir, falar, ler e escrever em doses diárias sustentáveis.' },
-  { letter: 'T', name: 'Treine os 4P', desc: 'Padrões, Pronúncia muscular, Psicológico seguro e Prática oral ativa.' },
-  { letter: 'E', name: 'Emoções', desc: 'Ambiente acolhedor onde o erro é instrumento de aprendizado sem ansiedade.' },
-  { letter: 'N', name: 'Neurociência 4D', desc: 'Aplicação de sinapses ativas e consolidação durante o repouso.' },
-  { letter: 'T', name: 'Técnicas de Metacognição', desc: 'Autonomia para diagnosticar suas dificuldades e aprender a estudar.' },
-  { letter: 'I', name: 'Input Massivo e Imersão', desc: 'Repertório sonoro contextual que antecede a análise gramatical.' },
-  { letter: 'C', name: 'Conexões Autênticas', desc: 'Aplicação das expressões à sua vida, profissão e projetos pessoais.' },
-  { letter: 'A', name: 'Aquisição 3R', desc: 'Revisão espaçada, Repetição contextual e Reapresentação multissensorial.' },
+const homeFaqs = [
+  {
+    question: 'Como funciona o acesso à plataforma e às aulas?',
+    answer: 'Assim que sua matrícula for confirmada, você recebe imediatamente no seu e-mail os dados de acesso à plataforma do aluno. Você pode estudar pelo computador, tablet ou celular, no horário que for mais conveniente para a sua rotina.'
+  },
+  {
+    question: 'Eu nunca estudei inglês antes. O método serve para quem está no zero?',
+    answer: 'Com certeza! O Método A.U.T.E.N.T.I.C.A foi desenvolvido exatamente para acolher desde quem nunca falou uma palavra até quem já tem vocabulário mas trava na hora de falar. Você começa pelas Formações Essenciais no seu próprio ritmo.'
+  },
+  {
+    question: 'Quanto tempo por dia preciso dedicar para ter resultados?',
+    answer: 'Apenas 20 minutos diários de estudo focado são suficientes. Nosso cronograma inteligente divide o conteúdo em micro-metas diárias que cabem na rotina mais corrida, sem sobrecarga mental.'
+  },
+  {
+    question: 'Como funcionam as aulas ao vivo de quarta-feira com a Prof. Amanda?',
+    answer: 'Todas as quartas-feiras, às 20h, Amanda entra ao vivo em uma sessão interativa para desmistificar pronúncia, praticar conversação e responder dúvidas da turma. Se você não puder assistir ao vivo, a gravação completa fica disponível na plataforma no dia seguinte.'
+  },
+  {
+    question: 'Como funciona a garantia incondicional de 7 dias?',
+    answer: 'Você tem 7 dias corridos para acessar a plataforma, assistir às aulas e participar da aula ao vivo. Se por qualquer motivo achar que o curso não atende às suas expectativas, basta solicitar o reembolso com um clique e devolvemos 100% do seu valor.'
+  },
+  {
+    question: 'Posso cancelar a assinatura mensal quando quiser?',
+    answer: 'Sim! No Plano Mensal (R$ 39,90/mês), você não tem fidelidade nem multas rescisórias. É uma assinatura simples, como um serviço de streaming, e você tem controle total para cancelar quando quiser.'
+  }
 ];
 ---
 
@@ -57,342 +70,271 @@ const pillarsList = [
   canonicalUrl="https://fluentenomundo.com/"
 >
   
-  <!-- SEÇÃO 1: HERO EDITORIAL PRODUCT-LED -->
-  <section class="pt-12 pb-20 lg:pt-20 lg:pb-28 bg-[#f8fafc] border-b border-slate-200">
+  <!-- SEÇÃO 1: HERO COMERCIAL DE ALTA CONVERSÃO -->
+  <section class="pt-10 pb-20 lg:pt-16 lg:pb-28 bg-[#f8fafc] border-b border-slate-200 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="max-w-3xl mx-auto text-center mb-12">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-6">
-          <span>Metodologia Autêntica · Área do Aluno</span>
-        </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- COLUNA DA ESQUERDA: COPY PERSUASIVA & CTAs -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Matrículas Abertas · Acesso Imediato</span>
+          </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-          Uma jornada de idiomas que vai além das aulas.
-        </h1>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-slate-900 tracking-tight leading-[1.12]">
+            Fale inglês com a naturalidade de um nativo — <span class="text-blue-700">sem travar e sem vergonha.</span>
+          </h1>
 
-        <p class="mt-6 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-          Esqueça os cursinhos genéricos baseados em decoreba mecânica. O <strong>Fluente no Mundo</strong> integra cronograma diário, repetição espaçada em 3 etapas, aulas ao vivo semanais e mentoria individual com a <strong>Prof. Amanda Beatriz</strong>.
-        </p>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Esqueça a decoreba de gramática mecânica. O <strong>Fluente no Mundo</strong> combina neurociência cognitiva, repetição espaçada inteligente, aulas ao vivo semanais com a <strong>Prof. Amanda Beatriz</strong> e mentoria direta para você falar inglês com confiança.
+          </p>
 
-        <!-- Ações do Hero -->
-        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a
-            href="#laboratorio-interativo"
-            class="btn-editorial-primary !py-3.5 !px-6 !text-sm w-full sm:w-auto"
-          >
-            <span>Explorar Demonstração Interativa</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </a>
-
-          <a
-            href="/metodo"
-            class="btn-editorial-secondary !py-3.5 !px-6 !text-sm w-full sm:w-auto"
-          >
-            <span>Conhecer os 9 Pilares do Método</span>
-          </a>
-        </div>
-
-        <div class="mt-8 flex items-center justify-center gap-6 text-xs text-slate-500 font-medium">
-          <span class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            Aulas ao Vivo Semanais
-          </span>
-          <span class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-            Canal SOS Professora em 48h
-          </span>
-          <span class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-            Certificados Modulares a cada 3 Meses
-          </span>
-        </div>
-      </div>
-
-      <!-- Preview da Plataforma no Topo do Hero -->
-      <div class="max-w-5xl mx-auto">
-        <div class="p-2 sm:p-3 rounded-2xl bg-slate-200/80 border border-slate-300 shadow-sm">
-          <div class="rounded-xl overflow-hidden bg-slate-900 border border-slate-700/60 aspect-[16/9] relative group">
-            <img
-              src="/images/platform/dashboard.png"
-              alt="Interface do Dashboard da Plataforma do Aluno Fluente no Mundo"
-              class="w-full h-full object-cover object-top"
-              loading="eager"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex items-end p-6 sm:p-8">
-              <div class="text-white max-w-xl">
-                <span class="text-[11px] font-mono uppercase tracking-widest text-blue-300 bg-blue-900/60 px-2.5 py-0.5 rounded inline-block mb-2">
-                  Ambiente Oficial do Estudante
-                </span>
-                <h3 class="text-lg sm:text-2xl font-heading font-bold text-white">
-                  O painel diário onde a sua rotina acontece
-                </h3>
-                <p class="text-xs sm:text-sm text-slate-300 mt-1">
-                  Mapa de foco semanal, polyglot check, desafio diário de vocabulário e recados ao vivo da professora.
-                </p>
+          <!-- PROVA SOCIAL RÁPIDA NO HERO -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-semibold text-slate-600">
+            <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
+              <div class="flex text-amber-500">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               </div>
+              <span class="text-slate-900 font-bold">4.9/5</span>
+              <span class="text-slate-500">(+10.000 alunos)</span>
+            </div>
+
+            <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm text-emerald-700">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              <span>7 Dias de Garantia Total</span>
             </div>
           </div>
+
+          <!-- BOTÕES DE AÇÃO HERO -->
+          <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+            <a
+              href="#planos"
+              class="btn-editorial-primary !py-4 !px-8 !text-sm w-full sm:w-auto text-center !bg-blue-700 hover:!bg-blue-800 shadow-xl shadow-blue-900/20 flex items-center justify-center gap-2"
+            >
+              <span>Quero Começar Agora</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+
+            <a
+              href="#plataforma-tour"
+              class="btn-editorial-secondary !py-4 !px-6 !text-sm w-full sm:w-auto text-center flex items-center justify-center gap-2"
+            >
+              <span>Ver Plataforma por Dentro</span>
+              <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="pt-1 text-xs text-slate-500">
+            <span>Apenas R$ 39,90/mês no plano flexível · Cancele quando quiser</span>
+          </div>
+
         </div>
+
+        <!-- COLUNA DA DIREITA: COMPOSIÇÃO VISUAL COM FOTO DE AMANDA E PLATAFORMA -->
+        <div class="lg:col-span-5 relative">
+          
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Foto de Amanda Beatriz em Card Elevado -->
+            <div class="relative z-10 rounded-3xl overflow-hidden bg-slate-900 border-4 border-white shadow-2xl">
+              <div class="aspect-[4/5] relative">
+                <img
+                  src="/images/about me.png"
+                  alt="Professora Amanda Beatriz - Criadora do Método Fluente no Mundo"
+                  class="w-full h-full object-cover object-top"
+                  loading="eager"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex items-end p-6">
+                  <div class="text-white">
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-blue-300 bg-blue-950/80 px-2.5 py-1 rounded inline-block mb-1 border border-blue-500/30">
+                      Sua Mentora de Fluência
+                    </span>
+                    <h3 class="text-xl font-heading font-bold text-white">
+                      Amanda Beatriz
+                    </h3>
+                    <p class="text-xs text-slate-300 mt-0.5">
+                      "O inglês não é sobre regras perfeitas. É sobre liberdade para ser você em qualquer lugar do mundo."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Flutuante 1: Aula ao Vivo Toda Quarta -->
+            <div class="absolute -bottom-6 -left-6 z-20 p-4 rounded-2xl bg-white border border-slate-200 shadow-xl max-w-[220px] hidden sm:block animate-bounce-subtle">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-rose-600">Ao Vivo</span>
+              </div>
+              <strong class="text-xs text-slate-900 block font-heading">Toda Quarta às 20h</strong>
+              <p class="text-[10px] text-slate-500 mt-0.5">
+                Treino de fala prático e correção direta com Amanda.
+              </p>
+            </div>
+
+            <!-- Card Flutuante 2: Plataforma em Uso Real -->
+            <div class="absolute -top-6 -right-6 z-20 p-3 rounded-2xl bg-white border border-slate-200 shadow-xl max-w-[200px] hidden sm:block">
+              <div class="aspect-video rounded-lg overflow-hidden bg-slate-950 mb-2 border border-slate-100">
+                <img
+                  src="/images/cafe com plataforma.jpg"
+                  alt="Estudando na plataforma do aluno"
+                  class="w-full h-full object-cover"
+                  loading="eager"
+                />
+              </div>
+              <span class="text-[10px] font-semibold text-slate-700 block">Estude onde quiser</span>
+              <span class="text-[9px] text-slate-400">20 minutos diários guiados</span>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
     </div>
   </section>
 
-  <!-- SEÇÃO 2: VEJA COMO FUNCIONA (O LABORATÓRIO INTERATIVO COMPLETO) -->
-  <section id="laboratorio-interativo" class="py-20 bg-white border-b border-slate-200">
+  <!-- BARRA DE MÉTIRICAS E PILARES DE CONFIANÇA -->
+  <section class="py-12 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="max-w-3xl mx-auto text-center mb-12">
-        <span class="badge-subtle mb-3">Laboratório de Demonstração</span>
-        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
-          Experimente as Ferramentas da Plataforma
-        </h2>
-        <p class="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
-          Navegue abaixo pelo simulador funcional desenvolvido a partir das evidências reais documentadas nos 16 PDFs da área interna do aluno.
-        </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="text-3xl sm:text-4xl font-heading font-black text-blue-700 block">
+            +10.000
+          </span>
+          <span class="text-xs font-bold text-slate-800 uppercase tracking-wider block mt-1">
+            Alunos Impactados
+          </span>
+          <span class="text-[11px] text-slate-500 mt-0.5 block">
+            Pessoas reais falando sem medo
+          </span>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="text-3xl sm:text-4xl font-heading font-black text-purple-700 block">
+            Toda 4ª
+          </span>
+          <span class="text-xs font-bold text-slate-800 uppercase tracking-wider block mt-1">
+            Aulas ao Vivo às 20h
+          </span>
+          <span class="text-[11px] text-slate-500 mt-0.5 block">
+            Prática direta com a fundadora
+          </span>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="text-3xl sm:text-4xl font-heading font-black text-emerald-700 block">
+            4Ps
+          </span>
+          <span class="text-xs font-bold text-slate-800 uppercase tracking-wider block mt-1">
+            Treino Biomecânico
+          </span>
+          <span class="text-[11px] text-slate-500 mt-0.5 block">
+            Fim do sotaque travado
+          </span>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="text-3xl sm:text-4xl font-heading font-black text-amber-600 block">
+            7 Dias
+          </span>
+          <span class="text-xs font-bold text-slate-800 uppercase tracking-wider block mt-1">
+            Garantia Incondicional
+          </span>
+          <span class="text-[11px] text-slate-500 mt-0.5 block">
+            Risco zero absoluto para testar
+          </span>
+        </div>
+
       </div>
-
-      <!-- O COMPONENTE DO LABORATÓRIO INTERATIVO -->
-      <StudentPlatformLab />
-
-      <div class="mt-8 text-center">
-        <p class="text-xs text-slate-500">
-          Deseja uma visão aprofundada de cada tela da plataforma? 
-          <a href="/plataforma" class="text-blue-700 hover:text-blue-800 font-semibold underline ml-1">
-            Acessar o guia completo da experiência do aluno &rarr;
-          </a>
-        </p>
-      </div>
-
     </div>
   </section>
 
-  <!-- SEÇÃO 3: SUA JORNADA DE APRENDIZAGEM (TIMELINE EDITORIAL) -->
+  <!-- SEÇÃO 2: PARA QUEM É O FLUENTE NO MUNDO (IDENTIFICAÇÃO DAS DORES) -->
   <section class="py-20 bg-[#f8fafc] border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="max-w-3xl mb-14">
-        <span class="badge-neutral mb-3">Ciclo Pedagógico</span>
-        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
-          Como a fluência é construída na prática
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="badge-subtle mb-4">Você se Identifica?</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-slate-900 tracking-tight leading-tight mt-3">
+          O método feito sob medida para destravar sua voz
         </h2>
-        <p class="mt-3 text-slate-600 text-sm sm:text-base">
-          Um método progressivo que substitui listas aleatórias por um fluxo de assimilação em cinco etapas fundamentadas.
+        <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+          Se você se enxerga em qualquer um dos cenários abaixo, o Fluente no Mundo foi desenhado especificamente para você:
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
-        {journeySteps.map((step) => (
-          <div class="editorial-card p-6 flex flex-col justify-between relative bg-white">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {targetProfiles.map((p) => (
+          <div class="editorial-card p-6 bg-white flex flex-col justify-between border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all">
             <div>
-              <span class="text-xs font-mono font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded inline-block mb-4">
-                {step.step}
-              </span>
+              <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold text-sm mb-4">
+                <svg class="w-5 h-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              </div>
               <h3 class="text-lg font-heading font-bold text-slate-900 mb-2">
-                {step.title}
+                {p.title}
               </h3>
               <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                {step.desc}
+                {p.desc}
               </p>
             </div>
-            <div class="pt-3 border-t border-slate-100 text-[11px] font-semibold text-slate-500">
-              {step.detail}
+
+            <div class="pt-4 border-t border-slate-100">
+              <span class="text-[11px] font-semibold text-emerald-700 block">
+                Como a escola resolve:
+              </span>
+              <p class="text-[11px] text-slate-500 mt-0.5">
+                {p.solution}
+              </p>
             </div>
           </div>
         ))}
       </div>
 
+      <div class="mt-12 text-center">
+        <a
+          href="#planos"
+          class="btn-editorial-primary !py-3.5 !px-8 text-xs inline-flex items-center gap-2"
+        >
+          <span>Quero Destravar Minha Fluência &rarr;</span>
+        </a>
+      </div>
+
     </div>
   </section>
 
-  <!-- SEÇÃO 4: FERRAMENTAS REAIS DA PLATAFORMA (COMPOSIÇÃO EDITORIAL) -->
+  <!-- SEÇÃO 3: SHOWCASE DA PLATAFORMA POR DENTRO (COM IMAGENS REAIS E ABAS FLUIDAS) -->
   <section class="py-20 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="max-w-3xl mx-auto text-center mb-16">
-        <span class="badge-subtle mb-3">Recursos Documentados</span>
-        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
-          As Quatro Ferramentas Centrais do Aluno
-        </h2>
-        <p class="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
-          Cada recurso foi desenhado para resolver um obstáculo real: falta de tempo, esquecimento de vocabulário, vergonha de falar e desmotivação.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-        
-        <!-- Recurso 1: Formação Global & Cronograma -->
-        <div class="editorial-card p-8 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full">
-                Organização Diária
-              </span>
-              <span class="text-xs text-slate-400">PDF: Courses</span>
-            </div>
-            <h3 class="text-2xl font-heading font-bold text-slate-900 mb-3">
-              Formação Global & Cronograma Unificado
-            </h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-              O aluno é conduzido por formações essenciais (obrigatórias para a base) e formações complementares. A cada semana, as metas são divididas em doses diárias de 20 minutos com calendário único.
-            </p>
-            <ul class="space-y-2.5 text-xs text-slate-700">
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Foco diário guiado: saiba exatamente qual aula assistir hoje</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Trilhas de Pronúncia, Viagens, Expressão e Gramática Natural</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Certificados modulares com carga horária comprovada a cada 3 meses</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="mt-8 pt-6 border-t border-slate-100">
-            <a href="/formacao-global" class="text-xs font-bold text-blue-700 hover:text-blue-800 flex items-center gap-1.5">
-              <span>Ver grade curricular completa das formações</span>
-              <span>&rarr;</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Recurso 2: Vocabulário & Revisão SRS -->
-        <div class="editorial-card p-8 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full">
-                Memória Ativa
-              </span>
-              <span class="text-xs text-slate-400">PDF: Vocabulary & Revisão</span>
-            </div>
-            <h3 class="text-2xl font-heading font-bold text-slate-900 mb-3">
-              Vocabulário Ativo & Revisão SRS (3 Etapas)
-            </h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-              A curva de esquecimento é superada por um algoritmo que agenda revisões nos intervalos exatos, exigindo que o aluno passe por três etapas: Ouvir a pronúncia nativa, Articular os sons dos 4Ps e Traduzir no contexto.
-            </p>
-            <ul class="space-y-2.5 text-xs text-slate-700">
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Banco pessoal de expressões integrado automaticamente às aulas</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Rastreamento rumo à meta de 20.000 expressões para fluência</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Eliminação definitiva de listas de decoreba sem uso prático</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="mt-8 pt-6 border-t border-slate-100">
-            <a href="/plataforma" class="text-xs font-bold text-blue-700 hover:text-blue-800 flex items-center gap-1.5">
-              <span>Testar a revisão em 3 etapas no laboratório</span>
-              <span>&rarr;</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Recurso 3: Vivência Global -->
-        <div class="editorial-card p-8 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full">
-                Aculturamento Real
-              </span>
-              <span class="text-xs text-slate-400">PDF: Vivência Global</span>
-            </div>
-            <h3 class="text-2xl font-heading font-bold text-slate-900 mb-3">
-              Vivência Global & Séries da Vida Real
-            </h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-              O inglês não vive em livros acadêmicos. O módulo de Vivência Global conecta os estudos a filmes, séries, podcasts e músicas com desafios semanais guiados para você entender o humor, as gírias e o ritmo de rua.
-            </p>
-            <ul class="space-y-2.5 text-xs text-slate-700">
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Desafios semanais de consumo sem legendas em português</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Podcasts de conversas reais de nativos em situações comuns</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Compreensão de referências culturais que nenhuma gramática ensina</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="mt-8 pt-6 border-t border-slate-100">
-            <a href="/idiomas" class="text-xs font-bold text-blue-700 hover:text-blue-800 flex items-center gap-1.5">
-              <span>Conhecer os módulos culturais e a Jornada Poliglota</span>
-              <span>&rarr;</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Recurso 4: Conquista & Constância -->
-        <div class="editorial-card p-8 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full">
-                Sustentação de Hábitos
-              </span>
-              <span class="text-xs text-slate-400">PDF: Conquista Constância</span>
-            </div>
-            <h3 class="text-2xl font-heading font-bold text-slate-900 mb-3">
-              Conquista & Constância (Gamificação com Propósito)
-            </h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-6">
-              A neurociência comprova que a consistência precisa de feedback positivo. A plataforma registra seus dias ativos de estudo, streaks ininterruptos e metas mensais, mantendo seu compromisso ativo sem pressão punitiva.
-            </p>
-            <ul class="space-y-2.5 text-xs text-slate-700">
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Check-in diário com pontuação cumulativa (+10 pts por dia ativo)</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Badges que celebram a disciplina real e horas de exposição</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Metas trimestrais alinhadas à emissão dos certificados oficiais</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="mt-8 pt-6 border-t border-slate-100">
-            <a href="/plataforma" class="text-xs font-bold text-blue-700 hover:text-blue-800 flex items-center gap-1.5">
-              <span>Simular seu check-in no painel da plataforma</span>
-              <span>&rarr;</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
+      <PlatformShowcase />
     </div>
   </section>
 
-  <!-- SEÇÃO 5: EXPERIÊNCIA HUMANA (PROFESSORA, AULAS AO VIVO E SOS) -->
-  <section class="py-20 bg-[#f8fafc] border-b border-slate-200">
+  <!-- SEÇÃO 4: DEPOIMENTOS REAIS DOS ALUNOS (PROVA SOCIAL COM IMAGENS REAIS) -->
+  <TestimonialsShowcase />
+
+  <!-- SEÇÃO 5: A MENTORA AMANDA BEATRIZ -->
+  <section class="py-20 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <div class="lg:col-span-5">
-          <div class="p-3 bg-white border border-slate-200 rounded-2xl shadow-sm">
-            <div class="aspect-[4/5] rounded-xl overflow-hidden bg-slate-100">
+          <div class="p-3 bg-[#f8fafc] border border-slate-200 rounded-3xl shadow-sm">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-slate-900 relative">
               <img
                 src="/images/about me.png"
                 alt="Professora Amanda Beatriz"
@@ -400,51 +342,33 @@ const pillarsList = [
                 loading="lazy"
               />
             </div>
-            <div class="mt-3 p-3 text-center">
-              <strong class="text-slate-900 block font-heading text-base">Amanda Beatriz</strong>
+            <div class="mt-4 p-2 text-center">
+              <strong class="text-slate-900 block font-heading text-lg font-bold">Amanda Beatriz</strong>
               <span class="text-xs text-slate-500">Mentora, Fundadora e Criadora do Método Autêntico</span>
             </div>
           </div>
         </div>
 
         <div class="lg:col-span-7 space-y-6">
-          <span class="badge-neutral">Presença e Mentoria Real</span>
-          <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900 tracking-tight leading-tight">
-            Você não estuda sozinho diante de vídeos anônimos.
+          <span class="badge-subtle">Quem Estará com Você</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-slate-900 tracking-tight leading-tight">
+            "Eu também já travei. E descobri que o problema nunca foi você."
           </h2>
-          
+
           <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Em muitas plataformas digitais, o aluno é apenas um número em um banco de dados. No <strong>Fluente no Mundo</strong>, a professora fundadora está ativamente presente na sua rotina em dois momentos decisivos:
+            Durante anos, o ensino de inglês no Brasil fez as pessoas acreditarem que não tinham o "dom" para idiomas. Mas a verdade é outra: métodos ultrapassados ensinam gramática mecânica e cobram perfeição imediata, gerando ansiedade e vergonha.
           </p>
 
-          <div class="space-y-4 pt-2">
-            <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
-              <div class="flex items-center justify-between mb-1">
-                <strong class="text-slate-900 text-sm font-heading font-bold">1. Aulas ao Vivo Semanais (Quartas-feiras)</strong>
-                <span class="text-[11px] font-mono font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">Toda Quarta às 20h</span>
-              </div>
-              <p class="text-xs text-slate-600 leading-relaxed">
-                Encontros práticos e ao vivo dedicados à desmistificação de regras, prática de padrões fonéticos dos 4Ps e dinâmicas de conversação. Todas as sessões são gravadas e integradas ao acervo da plataforma.
-              </p>
-            </div>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            No <strong>Fluente no Mundo</strong>, criei um ecossistema seguro onde você erra sem medo, treina a musculatura da boca com os 4Ps, expande seu vocabulário em doses de 20 minutos e conta comigo toda semana nas aulas ao vivo e no canal SOS individual.
+          </p>
 
-            <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
-              <div class="flex items-center justify-between mb-1">
-                <strong class="text-slate-900 text-sm font-heading font-bold">2. Canal Exclusivo SOS Professora</strong>
-                <span class="text-[11px] font-mono font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Resposta em até 48h</span>
-              </div>
-              <p class="text-xs text-slate-600 leading-relaxed">
-                Trava em um som ou não entendeu um contexto? Envie sua dúvida diretamente pela plataforma em formato de mensagem de texto, gravação de áudio ou print. A própria Prof. Amanda responde de forma individualizada (limite documentado: 1 SOS semanal por aluno).
-              </p>
-            </div>
-          </div>
-
-          <div class="pt-2 flex items-center gap-4">
-            <a href="/imersao" class="btn-editorial-primary !text-xs !py-3 !px-5">
-              <span>Ver detalhes das Masterclasses</span>
+          <div class="pt-2 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+            <a href="#planos" class="btn-editorial-primary !py-3.5 !px-6 !text-xs text-center">
+              Quero Estudar com a Amanda Beatriz &rarr;
             </a>
-            <a href="/sobre" class="text-xs font-bold text-slate-700 hover:text-slate-900 underline">
-              Conhecer a trajetória de Amanda Beatriz &rarr;
+            <a href="/sobre" class="text-xs font-bold text-slate-700 hover:text-slate-900 underline text-center sm:text-left">
+              Ler a trajetória completa da professora
             </a>
           </div>
 
@@ -455,75 +379,61 @@ const pillarsList = [
     </div>
   </section>
 
-  <!-- SEÇÃO 6: METODOLOGIA EDITORIAL (OS 9 PILARES EM LEITURA CONTÍNUA) -->
-  <section class="py-20 bg-white border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- SEÇÃO 6: BÔNUS EXCLUSIVOS DE MATRÍCULA -->
+  <BonusShowcase />
+
+  <!-- SEÇÃO 7: PLANOS E MATRÍCULA COMERCIAL -->
+  <PricingCard />
+
+  <!-- SEÇÃO 8: PERGUNTAS FREQUENTES COMERCIAIS -->
+  <FaqAccordion
+    items={homeFaqs}
+    title="Dúvidas Frequentes sobre o Curso"
+    subtitle="Tudo o que você precisa saber antes de dar o passo rumo à sua liberdade em inglês."
+  />
+
+  <!-- SEÇÃO 9: CTA FINAL DE FECHAMENTO ESTIMULANTE -->
+  <section class="py-20 lg:py-28 bg-gradient-to-br from-blue-900 via-slate-900 to-slate-950 text-white text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
       
-      <div class="max-w-3xl mb-14">
-        <span class="badge-subtle mb-3">Fundamento Pedagógico</span>
-        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
-          A Metodologia A.U.T.E.N.T.I.C.A em 9 Pilares
-        </h2>
-        <p class="mt-3 text-slate-600 text-sm sm:text-base">
-          Uma arquitetura didática documentada que combina neurociência cognitiva, segurança psicológica e repetição inteligente.
-        </p>
-      </div>
+      <span class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-mono uppercase tracking-widest border border-blue-400/30">
+        Sua Transformação Começa Hoje
+      </span>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {pillarsList.map((p) => (
-          <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-slate-300 transition-all flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-2 mb-3">
-                <span class="w-7 h-7 rounded-md bg-slate-900 text-white font-mono font-bold text-xs flex items-center justify-center">
-                  {p.letter}
-                </span>
-                <h3 class="text-sm font-heading font-bold text-slate-900">
-                  {p.name}
-                </h3>
-              </div>
-              <p class="text-xs text-slate-600 leading-relaxed">
-                {p.desc}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+      <h2 class="text-4xl sm:text-5xl font-heading font-extrabold text-white tracking-tight leading-tight">
+        O próximo passo para a sua fluência está a um clique de distância.
+      </h2>
 
-      <div class="mt-10 text-center">
-        <a href="/metodo" class="btn-editorial-secondary !text-xs !py-3 !px-6">
-          <span>Aprofundar nos fundamentos biomecânicos e neurocognitivos</span>
-          <span>&rarr;</span>
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Não adie mais a sua liberdade para viajar, trabalhar e conversar sem travar. Entre hoje, teste por 7 dias com garantia incondicional e comprove na prática.
+      </p>
+
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="#planos"
+          class="btn-editorial-primary !py-4 !px-8 !text-sm w-full sm:w-auto text-center !bg-blue-600 hover:!bg-blue-500 !text-white shadow-xl shadow-blue-950/50 flex items-center justify-center gap-2"
+        >
+          <span>Garantir Minha Vaga a partir de R$ 39,90/mês</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+
+        <a
+          href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20matr%C3%ADcula%20no%20Fluente%20no%20Mundo."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold transition-all w-full sm:w-auto"
+        >
+          <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.941-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+          <span>Tirar Dúvidas no WhatsApp</span>
         </a>
       </div>
 
-    </div>
-  </section>
-
-  <!-- SEÇÃO 7: EXPLORAR A PLATAFORMA & ENCERRAMENTO INSTITUCIONAL -->
-  <section class="py-20 bg-[#f8fafc] text-center">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="p-8 sm:p-12 rounded-2xl bg-white border border-slate-200 shadow-sm">
-        <span class="badge-subtle mb-3">Demonstração Completa</span>
-        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
-          Pronto para testar a plataforma por dentro?
-        </h2>
-        <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
-          Acesse a central interativa com simuladores reais de cronograma semanal, vocabulário, treino fonético com áudio sintetizado e mentoria SOS.
-        </p>
-
-        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a href="/plataforma" class="btn-editorial-primary !py-3.5 !px-8 text-sm w-full sm:w-auto">
-            Abrir Laboratório Interativo Completo
-          </a>
-          <a href="/planos" class="btn-editorial-secondary !py-3.5 !px-6 text-sm w-full sm:w-auto">
-            Consultar Planos e Condições
-          </a>
-        </div>
-
-        <div class="mt-6 pt-6 border-t border-slate-100 text-[11px] text-slate-400">
-          Projeto demonstrativo independente de interface e experiência de aprendizagem digital.
-        </div>
+      <div class="pt-6 text-xs text-slate-400">
+        <span>Garantia de 7 dias · Pagamento seguro com PIX ou Cartão · Acesso imediato</span>
       </div>
+
     </div>
   </section>
 
